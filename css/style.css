@@ -1,0 +1,317 @@
+.restart{
+  height: 60px !important;
+  margin-top: 60px;
+}
+.page-content{
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 0;
+  width: 65%;
+  margin: 0 auto;
+  text-align: center;
+}
+.page-content h1{
+  font-weight: 400;
+}
+.page-content h1, .page-content h3, .page-content h4{
+  text-align: left;
+}
+.page-content h3, .page-content h4{
+  color: gray;
+}
+.page-content p{
+  text-align: left;
+}
+#sidebaricon{
+  left: 20px;
+  font-size: 3em;
+  position: fixed;
+  top: 24px;
+  bottom: 0;
+  color: #ccc;
+}
+.toggle{
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1;
+}
+.toggle:hover{
+  color: #6dadf9 !important;
+}
+.sidebar{
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: -250px;
+  right: 0;
+  width: 180px;
+  padding: 0;
+  border-right: 1px solid #157efb;
+  z-index: 0;
+  color: #ccc;
+}
+.sidebar ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.sidebar li, .sidebar label{
+  cursor: pointer;
+  padding: 12px 0 0 12px;
+}
+.sidebar label{
+  display: inline-block;
+}
+.sidebar input[type=checkbox] {
+  transform: scale(1.5);
+  position: relative;
+  top: 1px;
+  left: 12px;
+}
+.sidebar label, .sidebar .deck-picker{
+  font-size: 28px;
+}
+.sidebar ul.info{
+  font-size: 16px;
+}
+.sidebar h3{
+  margin: 24px 0 0 12px;
+}
+.sidebar ul.info li{
+  padding-top: 12px;
+}
+
+li.selected{
+  color: #6dadf9;
+}
+#sidebartoggler, #infotoggler{
+  display: none;
+}
+#sidebartoggler:checked + .page-wrapper .sidebar{
+  left: 0px;
+}
+#sidebartoggler:checked + .page-wrapper #sidebaricon{
+  left: 208px;
+}
+#sidebartoggler:checked + .page-wrapper .page-content{
+  padding-left: 208px;
+}
+
+#sidebartoggler:checked + .page-wrapper #infoicon{
+  right: -184px;
+}
+.card-container{ 
+  height: 280px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+#card{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  text-align: center;
+}
+.counter{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.25em;
+  width: 100%;
+}
+.front-text, .back-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  width: 100%;
+  color: #0B0B61;
+}
+#card figure{
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+#card .back{
+  transform: rotateY( 180deg );
+}
+#card.flipped{
+  transform: rotateY( 180deg );
+}
+.controls{
+  height: 90px;
+  margin-top: 30px;
+}
+input[type=button]{
+  height: 100%;
+  font-size: 3em !important;
+  color: #515151;
+  width: 48%;
+  margin-right: 4%;
+  cursor: pointer;
+  border: 2px solid #333;
+  padding: 0;
+
+}
+input[type=button]:last-child{
+  margin-right: 0;
+}
+input[type=button]:focus{
+  outline: none;
+  border: 2px solid #157efb;
+}
+
+.remove{
+  background: #dcdcdc url('../images/thumb-up.png') no-repeat;
+  background-position: center center;
+}
+.skip{
+  background: #dcdcdc url('../images/thumb-down.png') no-repeat;
+  background-position: center center;
+}
+
+
+
+body {
+  width: 800px;
+  margin: 0 auto;
+}
+
+section {
+  position: fixed;
+  left: 10px;
+  top: 480px; 
+  width: 600px;
+}
+section article {
+  width: 25%;
+  float: left;
+}
+section p {
+  margin: 5px 0;
+}
+section ul {
+  margin-top: 0;
+}
+
+
+        h1 {
+  font-weight: bold;
+  font-size: 10pt;
+  padding: 0px;
+  margin: 0px;
+  -webkit-column-break-before: always
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 9pt;
+  padding: 0px;
+  margin: 0px;
+}
+
+.node circle {
+    stroke-width: 1.5px;
+}
+
+.node {
+    font: 7px sans-serif;
+}
+
+.node.notFound {
+/* not using opaciy to avoid conflicts when reverting related node filter */
+  fill: #ddd;
+}
+
+.node.notFound circle {
+  stroke: #ddd!important;
+  fill: #ddd!important;
+}
+
+.link {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 1.5px;
+}
+
+.panel-action {
+    padding: 5px;
+    text-align: center;
+}
+
+.details {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 400px;
+}
+
+.details ul {
+    padding: 0 20px;
+}
+
+.details ul li {
+    margin-left: 0px;
+}
+
+.panel-heading input {
+    margin: -7px -12px;
+}
+
+.properties input {
+    border: 1px solid #CCC;
+    border-radius: 4px;
+}
+
+.properties.edit ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.properties.edit ul ul {
+    margin: 0 0 8px 8px;
+}
+
+.properties.edit .glyphicon {
+    font-size: 12px;
+    color: #bce8f1;    
+}
+
+.properties.edit .remove {
+    float: left;
+    margin-right: 5px;
+}
+.properties.edit li .remove {
+    top: 5px;
+}
+
+#node-active {
+    font-size: 8px;
+    font-weight: bold;
+}
+#node-active text {
+    fill: rgb(70, 130, 180);
+}
+
+#graph {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 400px;
+}

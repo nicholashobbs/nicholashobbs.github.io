@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> </title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    
+    <body>
+        <script src="js/vendor/d3.v3.js"></script>
+        <script src="js/vendor/angular.min.js"></script>
+        <script src="js/d3.architectureTree.js"></script>
+        <script src="js/angular.architectureTree/app.js"></script>
+        <script src="js/angular.architectureTree/controllers/chart.js"></script>
+        <script src="js/angular.architectureTree/controllers/filter.js"></script>
+        <script src="js/angular.architectureTree/controllers/json-data.js"></script>
+        <script src="js/angular.architectureTree/controllers/panel.js"></script>
+        <script src="js/angular.architectureTree/controllers/undo.js"></script>
+        <script src="js/angular.architectureTree/directives/tree-chart.js"></script>
+        <script src="js/angular.architectureTree/directives/init-focus.js"></script>
+        <script src="js/angular.architectureTree/services/data.js"></script>
+        <script src="js/angular.architectureTree/services/bus.js"></script>
+        
+        
+            <div ng-app="ChartsApp">
+
+                <div ng-controller="chartCtrl">
+                    <tree-chart data="data" diameter="460"></tree-chart>
+                </div>
+
+                <div ng-controller="panelCtrl">
+                    <div id="panel">
+                            <ng-include src="'js/angular.architectureTree/templates/panel-detail.html'"></ng-include>
+                    </div>
+                </div>
+            </div>
+        
+    <section>
+    </section>
+        <script src ="js/columns.js"></script>
+        </script>
+    </body> 
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="css/flashcards.css" />
+    <script type="text/javascript" src="js/data.js"></script>
+    <script type="text/javascript" src="js/flashcards.js"></script>
+</head>
+<body onkeypress='app.flipOnEnter(event);'>
+   <input type="checkbox" id="sidebartoggler">
+  <div class="page-wrapper">
+     <label id="sidebaricon" class="toggle" for="sidebartoggler">☰</label>
+    <div class="page-content">
+      <section class="card-container" ></section>
+      <section class="controls" ></section>
+    </div>
+    <div class="sidebar"></div>
+  </div>
+  <script>var app = new FlashcardApp(); app.init();</script>
+</body>
+</html>
