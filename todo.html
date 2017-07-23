@@ -1,64 +1,284 @@
-<!doctype html>
-<html ng-app="todoApp">
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
-    <script src="todo.js"></script>
-    <link rel="stylesheet" href="todo.css">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> </title>
+        <meta charset="utf-8">
+
     <style>
-    .done-true {
-  text-decoration: line-through;
-  color: grey;
+    body {
+	font-family: "lucida grande", sans-serif;
+	font-size: 13px;
+	line-height: 1.5;
+	color: #666;
+	padding: 0;
+	margin: 0;
+	background-color: #f2f2f2;
+}
+
+button {
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0,0,0,.15);
+
+	border: 1px solid rgba(0,0,0,.1);
+	border-radius: 2px;
+	box-shadow: 0 0 0 1px #fff;
+
+	padding: 1px 4px 2px 4px;
+
+	font-family: Tahoma, sans-serif;
+	font-size: 11px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+
+	cursor: pointer;
+}
+
+.container {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+	border-bottom: 1px solid #ddd;
+}
+
+h1 {
+	margin: 0;
+	padding: 10px 15px;
+	background-color: #8bad53;
+	border-bottom: 1px solid #6f8b42;
+	color: #fff;
+
+	font-size: 16px;
+}
+
+.hidden {
+	display: none;
+}
+#notice {
+	padding: 10px;
+	margin: 15px;
+	background-color: #f8f8f8;
+	border: 1px solid #ddd;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+	counter-reset:li;
+}
+
+li {
+	padding: 10px 15px 10px 40px;
+	border-bottom: 1px solid #ddd;
+
+	position: relative;
+}
+
+li:before {
+	content:counter(li); /* Use the counter as content */
+	counter-increment:li; /* Increment the counter by 1 */
+
+	position:absolute;
+	top: 0;
+	left: 0;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+
+	background: #f2f2f2;
+	border-right: 1px solid #ddd;
+
+	margin: 0;
+	padding:10px;
+
+	font-size: 11px;
+	height: 100%;
+	color:#999;
+	text-align: center;
+}
+
+.delete {
+	background-color: #d95e5e;
+	margin: 0;
+
+	position: absolute;
+	right: 15px;
+	top:32%;
+
+	opacity: 0;
+	-webkit-transition: opacity linear .1s;
+	-moz-transition: opacity linear .1s;
+	transition: opacity linear .1s;
+}
+
+li:hover .delete {
+	opacity: 1;
+}
+
+textarea {
+	display: block;
+	overflow: auto;
+    vertical-align: top;
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: 2px;
+	box-shadow: 0 1px 0 rgba(0,0,0,.1);
+	margin: 15px 15px 10px 15px;
+	padding: 10px;
+	font-size: 13px;
+}
+textarea:focus {
+	outline: none;
+	border-color: rgba(82, 168, 236, 1);
+	box-shadow: 0 1px 1px rgba(82, 168, 236, 0.3);
+}
+
+#add {
+	background: #8e8f8d;
+	margin: 0 15px 15px 15px;
+}
+
+p[role="contentinfo"] {
+	padding: 20px;
+	margin: 0;
+	text-align: center;
+	color: #bbb;
+}
+
+span {
+	font-family: Georgia, serif;
+	font-style: italic;
+}
+
+a {
+	color: #bbb;
+	text-decoration: none;
+}
+a:hover {
+	color: #555;
+}
+
+
+
+/*
+ * Non-mobile screens
+ */
+@media screen and (min-width: 400px) {
+	.container {
+		width: 400px;
+		margin: 100px auto 0;
+		border: 1px solid #ddd;
+	}
+	h1 {
+		margin: -1px -1px 0 -1px;
+		border: 1px solid #6f8b42;
+	}
+	textarea {
+		width: 348px;
+	}
 }
     </style>
-    <script>
-    angular.module('todoApp', [])
-  .controller('TodoListController', function() {
-    var todoList = this;
-    todoList.todos = [
-      {text:'learn AngularJS', done:true},
-      {text:'build an AngularJS app', done:false}];
+    </head>
+    <body>
 
-    todoList.addTodo = function() {
-      todoList.todos.push({text:todoList.todoText, done:false});
-      todoList.todoText = '';
-    };
+      <div class="container">
 
-    todoList.remaining = function() {
-      var count = 0;
-      angular.forEach(todoList.todos, function(todo) {
-        count += todo.done ? 0 : 1;
-      });
-      return count;
-    };
+      			<h1 id="title">Today&rsquo;s Goals</h1>
 
-    todoList.archive = function() {
-      var oldTodos = todoList.todos;
-      todoList.todos = [];
-      angular.forEach(oldTodos, function(todo) {
-        if (!todo.done) todoList.todos.push(todo);
-      });
-    };
-  });
-    </script>
-  </head>
-  <body>
-    <h2>Todo</h2>
-    <div ng-controller="TodoListController as todoList">
-      <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
-      [ <a href="" ng-click="todoList.archive()">archive</a> ]
-      <ul class="unstyled">
-        <li ng-repeat="todo in todoList.todos">
-          <label class="checkbox">
-            <input type="checkbox" ng-model="todo.done">
-            <span class="done-{{todo.done}}">{{todo.text}}</span>
-          </label>
-        </li>
-      </ul>
-      <form ng-submit="todoList.addTodo()">
-        <input type="text" ng-model="todoList.todoText"  size="30"
-               placeholder="add new todo here">
-        <input class="btn-primary" type="submit" value="add">
-      </form>
-    </div>
+      			<p id="notice" class="hidden">You have no goals for today.</p>
+
+      			<ul id="list">
+      				<li>Buy apples <button class="delete">Delete</button></li>
+      				<li>Buy bananas<button class="delete">Delete</button></li>
+      				<li>Eat apples and bananas <button class="delete">Delete</button></li>
+      			</ul>
+
+      			<textarea id="task-input" name="description" rows="1" placeholder="Enter new goal here"></textarea>
+
+      			<button id="add">Add to list</button>
+
+      		</div><!-- .container -->
+
+      		
+          <script>
+          (function() {
+
+
+            var doc           = document,
+                notification  = doc.getElementById("notice").classList,
+                addButton     = doc.getElementById("add"),
+                listWrapper   = doc.getElementById("list"),
+                allItems      = doc.getElementsByTagName("li"),
+                allDelButtons	= listWrapper.getElementsByTagName("button"),
+                addTask       = function() {
+
+                  var taskItem	= doc.createElement("li"),
+                      userInput	= doc.getElementById("task-input").value;
+
+                  if (!userInput.length) {
+
+                    alert("You need to enter a goal first.");
+
+                  } else {
+
+                    taskItem.innerHTML = userInput + " <button class=\"delete\">Delete</button>";
+
+                    listWrapper.appendChild( taskItem );
+
+                    doc.getElementById("task-input").value = "";
+
+                    loadRemoveOptions();
+
+
+                    if (allItems.length) {
+                      notification.add("hidden");
+                    }
+
+                  }
+
+                },
+                loadRemoveOptions	= function() {
+
+                  for (var i = 0, l = allItems.length; i < l; i++) {
+                    //console.log(allDelButtons[i].length);
+                    //console.log(typeof allDelButtons[i]);
+                    allDelButtons[i].addEventListener("click", removeTask, false);
+                  }
+
+                },
+                removeTask = function() {
+
+                  var taskToDelete = this.parentNode,
+                      confirmRemoval = confirm("This action is irreversible. Are you sure you want to delete this goal?");
+
+                  /* codepen kills alerts so replaced with a simplified version
+                  if (confirmRemoval) {
+
+                    taskToDelete.outerHTML = "";
+
+                    if (!allItems.length) {
+                      notification.remove("hidden");
+                    }
+
+                  }
+              */
+                taskToDelete.outerHTML = "";
+
+                if (!allItems.length) {
+                  notification.remove("hidden");
+                }
+
+
+              };
+
+
+            loadRemoveOptions();
+
+            addButton.addEventListener("click", addTask, false);
+
+          }());
+          </script>
+
   </body>
 </html>
