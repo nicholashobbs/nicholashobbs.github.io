@@ -1,164 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title> </title>
-        <meta charset="utf-8">
+<html>
+<head>
 
-    <style>
-
-button {
-	color: #fff;
-	font-size: 11px;
-  border: none;
-}
-
-.container {
-  width: 300px;
-	margin: 0;
-	padding: 0;
-}
-
+<style>
 h1 {
-	margin: 0;
-	color: #000;
-  font-weight: bold;
-  font-size: 10pt;
-  padding: 0px;
-  -webkit-column-break-before: always;
+    font-size: 1.5em;
 }
-
-.hidden {
-	display: none;
-}
-
-
 ul {
-	margin: 0;
-	padding: 0;
+    padding: 10px;
 }
-
-li {
-	padding: 0px;
-	position: relative;
+.done {
+    text-decoration: line-through;
 }
+</style>
 
-li:before {
-	position:absolute;
-	top: 0;
-	left: 0;
-	margin: 0;
-	padding:10px;
-	font-size: 11px;
-	text-align: center;
-}
-
-.delete {
-	background-color: #000;
-	margin: 0;
-	position: absolute;
-	right: 0px;
-	top:0px;
+<script type="text/javascript">
+function appendTaskToList(val) {
+    $('#list').append("<li>" + val + "  <a href='#' class='done-btn'>Done</a> <a href='#' class='cancel-btn'>Cancel Task</a></li>");
 }
 
 
-textarea {
-	display: block;
-	overflow: auto;
-  vertical-align: top;
-	margin: 5px;
-	padding: 5px;
-	font-size: 13px;
+if (localStorage['tasks']) {
+    var tasks = JSON.parse(localStorage['tasks']);
+}else {
+    var tasks = [];
 }
 
-
-#add {
-	background: #000;
-	margin: 0px;
+for(var i=0;i<tasks.length;i++) {
+    appendTaskToList(tasks[i]);
 }
 
+var addTask = function(){
+    // get value from #name input
+    var val = $('#name').val();
 
-    </style>
-    </head>
-    <body>
+    // add the task to the array
+    tasks.push(val);
 
-      <div class="container">
+    // save to local storage
+    localStorage["tasks"] = JSON.stringify(tasks);
 
-      			<h1 id="title">Today&rsquo;s Goals</h1>
+    // append the name to the list
+    appendTaskToList(val);
 
-      			<p id="notice" class="hidden">You have no goals for today.</p>
+    // reset the input field and focus it.
+    $('#name').val("").focus();
+}
 
-      			<ul id="list">
-      				<li>Buy apples <button class="delete">X</button></li>
-      				<li>Buy bananas<button class="delete">X</button></li>
-      				<li>Eat apples and bananas <button class="delete">X</button></li>
-      			</ul>
-
-      			<textarea id="task-input" name="description" rows="1" placeholder="Enter new goal here"></textarea>
-
-      			<button id="add">Add to list</button>
-
-
-      </div>
-
-
-          <script>
-          (function() {
+$('#add-btn').click(addTask);
+$('#name').keyup(function(e){
+    if (e.keyCode === 13) {
+        addTask();
+    }
+});
 
 
-            var doc           = document,
-                notification  = doc.getElementById("notice").classList,
-                addButton     = doc.getElementById("add"),
-                listWrapper   = doc.getElementById("list"),
-                allItems      = doc.getElementsByTagName("li"),
-                allDelButtons	= listWrapper.getElementsByTagName("button"),
-                addTask       = function() {
+// approach 1
+/*$('.done-btn').click(function(){
+    $(this).parent('li').addClass('done');
+});*/
 
-                  var taskItem	= doc.createElement("li"),
-                      userInput	= doc.getElementById("task-input").value;
+// correct approach
+$('.done-btn').live( 'click', function() {
+  $(this).parent('li').addClass('done');
+});
 
-                  if (!userInput.length) {
-
-                    alert("You need to enter a goal first.");
-
-                  } else {
-
-                    taskItem.innerHTML = userInput + " <button class=\"delete\">X</button>";
-
-                    listWrapper.appendChild( taskItem );
-
-                    doc.getElementById("task-input").value = "";
-
-                    loadRemoveOptions();
-
-
-                    if (allItems.length) {
-                      notification.add("hidden");
-                    }
-
-                  }
-
-                },
-                loadRemoveOptions	= function() {
-
-                  for (var i = 0, l = allItems.length; i < l; i++) {
-                    allDelButtons[i].addEventListener("click", removeTask, false);
-                  }
-
-                },
-                removeTask = function() {
-
-                  var taskToDelete = this.parentNode,
-                      confirmRemoval = true;
-                      taskToDelete.outerHTML = "";
-              };
-
-
-            loadRemoveOptions();
-
-            addButton.addEventListener("click", addTask, false);
-
-          }());
-          </script>
-
-  </body>
+$('.cancel-btn').live( 'click', function() {
+  $(this).parent('li').fadeOut();
+});
+</script>
+</head>
+<body>
+  <h1>TodoList</h1>
+  <input type='text' id='name' placeholder='New Task'>
+  <a href='#' id='add-btn'>Add Task</a>
+  <ul id='list'>
+  </ul>
+</body>
 </html>
