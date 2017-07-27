@@ -2,7 +2,7 @@
 <html lang="en-US">
 	<head>
 		<meta charset="UTF-8">
-		<title>Todo Demo</title>
+		<title> </title>
 		<script>
 			window.onload = function() {
 				var item, complete, list;
@@ -59,16 +59,18 @@
 				}
 			};
 		</script>
-		<style>
-			body { font-family: helvetica, arial; }
-			header { font-size: 24pt; font-variant: small-caps; }
-			input { font-size: 16pt; }
-			input#item { width: 800px; }
-			li { font-size: 16pt; list-style: none; }
 
-			.content { width: 900px; margin: 0 auto; }
+		<style>
+			header { font-size: 12pt; }
+			input { font-size: 10pt; }
+			input#item { width: 350px; }
+			li { font-size: 10pt; list-style: none; }
+
+			.content { position:absolute; top: 10px; left: 10px; width: 400px; margin: 0 auto; }
 			.incomplete { font-weight: bold; }
 			.complete { text-decoration: line-through; }
+      .close{position:relative; float:right; height: 10px; width: 10px; background-color: #000;}
+
 		</style>
 	</head>
 	<body>
@@ -77,11 +79,9 @@
 				Todo List
 			</header>
 
-			<div id="main">
-				<input type="text" id="item"> <input type="button" value="Add" id="add" onclick="addItem()">
-				<hr>
+				<input type="text" id="item">  <input type="button" value="Add" id="add" onclick="addItem()">
 				<div id="list"></div>
-			</div>
+
 		</div>
 	</body>
 </html>
