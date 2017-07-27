@@ -1,80 +1,87 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!DOCTYPE HTML>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<title>Todo Demo</title>
+		<script>
+			window.onload = function() {
+				var item, complete, list;
+				list = document.getElementById('list');
 
-<style>
-h1 {
-    font-size: 1.5em;
-}
-ul {
-    padding: 10px;
-}
-.done {
-    text-decoration: line-through;
-}
-</style>
+				if (typeof(localStorage) == 'undefined') {
+					list.innerHTML = 'Sorry, you need a browser that supports localStorage.';
+					document.getElementById('add').disabled = true;
+				} else {
+					try {
+						var keys = localStorage.getItem('__keys').split(',');
+						for (k in keys) {
+							k = keys[k].replace(/ /g,'');
+							if (k) {
+								item = localStorage.getItem(k);
+								complete = localStorage.getItem(k + '_complete');
+								if (complete === 'true') list.innerHTML += '<li class="complete"> <input type="checkbox" id="'+ k +'" onclick="checkedItem(this)" checked> ' + item;
+								else list.innerHTML += '<li class="incomplete"> <input type="checkbox" id="'+ k +'" onclick="checkedItem(this)"> ' + item;
+							}
+						}
+					} catch (e) { localStorage.setItem('__keys', ''); }
+				}
+			};
 
-<script type="text/javascript">
-function appendTaskToList(val) {
-    $('#list').append("<li>" + val + "  <a href='#' class='done-btn'>Done</a> <a href='#' class='cancel-btn'>Cancel Task</a></li>");
-}
+			var addItem = function() {
+				// attempt unique name
+				var item, val, key;
+				item = document.getElementById('item').value;
+				val = item.split(' ');
 
+				key = '';
+				for (v in val) {
+					v = val[v];
+					key = key + v.substring(0,1);
+				}
 
-if (localStorage['tasks']) {
-    var tasks = JSON.parse(localStorage['tasks']);
-}else {
-    var tasks = [];
-}
+				key = key.toLowerCase();
+				localStorage.setItem(key, item);
+				localStorage.setItem(key + '_complete', false);
+				document.getElementById('list').innerHTML += '<li class="incomplete"> <input type="checkbox" id="'+ k +'" onclick="checkedItem(this)"> ' + item;
 
-for(var i=0;i<tasks.length;i++) {
-    appendTaskToList(tasks[i]);
-}
+				// update key list
+				var keylist = localStorage.getItem('__keys') + key + ',';
+				localStorage.setItem('__keys', keylist);
+			};
 
-var addTask = function(){
-    // get value from #name input
-    var val = $('#name').val();
+			var checkedItem = function(ele) {
+				if (ele.checked) {
+					ele.parentNode.className = 'complete';
+					localStorage.setItem(ele.id+'_complete', 'true');
+				} else {
+					ele.parentNode.className = 'incomplete';
+					localStorage.setItem(ele.id+'_complete', 'false');
+				}
+			};
+		</script>
+		<style>
+			body { font-family: helvetica, arial; }
+			header { font-size: 24pt; font-variant: small-caps; }
+			input { font-size: 16pt; }
+			input#item { width: 800px; }
+			li { font-size: 16pt; list-style: none; }
 
-    // add the task to the array
-    tasks.push(val);
+			.content { width: 900px; margin: 0 auto; }
+			.incomplete { font-weight: bold; }
+			.complete { text-decoration: line-through; }
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			<header>
+				Todo List
+			</header>
 
-    // save to local storage
-    localStorage["tasks"] = JSON.stringify(tasks);
-
-    // append the name to the list
-    appendTaskToList(val);
-
-    // reset the input field and focus it.
-    $('#name').val("").focus();
-}
-
-$('#add-btn').click(addTask);
-$('#name').keyup(function(e){
-    if (e.keyCode === 13) {
-        addTask();
-    }
-});
-
-
-// approach 1
-/*$('.done-btn').click(function(){
-    $(this).parent('li').addClass('done');
-});*/
-
-// correct approach
-$('.done-btn').live( 'click', function() {
-  $(this).parent('li').addClass('done');
-});
-
-$('.cancel-btn').live( 'click', function() {
-  $(this).parent('li').fadeOut();
-});
-</script>
-</head>
-<body>
-  <h1>TodoList</h1>
-  <input type='text' id='name' placeholder='New Task'>
-  <a href='#' id='add-btn'>Add Task</a>
-  <ul id='list'>
-  </ul>
-</body>
+			<div id="main">
+				<input type="text" id="item"> <input type="button" value="Add" id="add" onclick="addItem()">
+				<hr>
+				<div id="list"></div>
+			</div>
+		</div>
+	</body>
 </html>
