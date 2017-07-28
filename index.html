@@ -1,43 +1,302 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title> </title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
 
-    <body>
-        <script src="js/vendor/d3.v3.js"></script>
-        <script src="js/vendor/angular.min.js"></script>
-        <script src="js/d3.architectureTree.js"></script>
-        <script src="js/angular.architectureTree/app.js"></script>
-        <script src="js/angular.architectureTree/controllers/chart.js"></script>
-        <script src="js/angular.architectureTree/controllers/filter.js"></script>
-        <script src="js/angular.architectureTree/controllers/json-data.js"></script>
-        <script src="js/angular.architectureTree/controllers/panel.js"></script>
-        <script src="js/angular.architectureTree/controllers/undo.js"></script>
-        <script src="js/angular.architectureTree/directives/tree-chart.js"></script>
-        <script src="js/angular.architectureTree/directives/init-focus.js"></script>
-        <script src="js/angular.architectureTree/services/data.js"></script>
-        <script src="js/angular.architectureTree/services/bus.js"></script>
+  <script type="text/javascript" src="//d3js.org/d3.v3.js"></script>
 
 
-            <div ng-app="ChartsApp">
+<script type='text/javascript'>//<![CDATA[
+window.onload=function(){
+var pubs =
+{
+    "name": " ",
+    "children": [
+         {
+            "name": "Math","children": [
+              {"name": "Calculus"},
+              {"name": "Linear Algebra"},
+              {"name": "Differential Equations"},
+              {"name": "Probability"},
+              {"name": "Statistics"},
+              {"name": "Stochastic Calculus"},
+              {"name": "Numerical Analysis"}
+            ]
+        },
+         {
+            "name": "Computer","children": [
+              {"name": "Practice Problems"},
+              {"name": "Hardware"},
+              {"name": "Software"},
+              {"name": "OS Level"},
+              {"name": "High Level"},
+              {"name": "Internet"},
+              {"name": "Functional Programming"},
+              {"name": "Tools"}
+            ]
+        },
+        {"name": "Machine Learning","children": [
+              {"name": "Optimization"},
+              {"name": "Linear Models"},
+              {"name": "Theory"},
+              {"name": "Deep Learning"}
+            ]
+        },
+      {"name": "Languages","children": [
+              {"name": "Python"},
+              {"name": "R"},
+              {"name": "C++"},
+              {"name": "Processing"},
+              {"name": "Lisp/Scheme/Ratchet"}
+            ]
+        },
+        {
+            "name": "Additional Topics","children": [
+              {"name": "Stochastic Processes"},
+              {"name": "Information Theory"},
+              {"name": "Cryptography"},
+              {"name": "Functional Programming"}
+            ]
+        }
 
-                <div ng-controller="chartCtrl">
-                    <tree-chart data="data" diameter="460"></tree-chart>
-                </div>
+    ]
+};
 
-                <div ng-controller="panelCtrl">
-                    <div id="panel">
-                            <ng-include src="'js/angular.architectureTree/templates/panel-detail.html'"></ng-include>
-                    </div>
-                </div>
-            </div>
+var diameter = 420;
 
-    <section>
-    </section>
-    <script src ="js/columns.js"></script>
-    </body>
+var margin = {top: 0, right: 0, bottom: 0, left: 0},
+    width = 2 * diameter,
+    height = diameter;
+
+var i = 0,
+    duration = 350,
+    root;
+
+var tree = d3.layout.tree()
+    .size([360, diameter / 2 - 80])
+    .separation(function(a, b) { return (a.parent == b.parent ? 1 : 10) / a.depth; });
+
+var diagonal = d3.svg.diagonal.radial()
+    .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
+
+var svg = d3.select("#mindmap").append("svg")
+    .attr("width", width )
+    .attr("height", height )
+    .append("g")
+    .attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+
+root = pubs;
+root.x0 = height;
+root.y0 = 0;
+
+root.children.forEach(collapse); // start with all children collapsed
+update(root);
+
+d3.select(self.frameElement).style("height", "800px");
+
+function update(source) {
+
+  // Compute the new tree layout.
+  var nodes = tree.nodes(root),
+      links = tree.links(nodes);
+
+  // Normalize for fixed-depth.
+  nodes.forEach(function(d) { d.y = d.depth * 80; });
+
+  // Update the nodes…
+  var node = svg.selectAll("g.node")
+      .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+  // Enter any new nodes at the parent's previous position.
+  var nodeEnter = node.enter().append("g")
+      .attr("class", "node")
+      //.attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
+      .on("click", click);
+
+  nodeEnter.append("circle")
+      .attr("r", 1e-6)
+      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+  nodeEnter.append("text")
+      .attr("x", 10)
+      .attr("dy", ".35em")
+      .attr("text-anchor", "start")
+      //.attr("transform", function(d) { return d.x < 180 ? "translate(0)" : "rotate(180)translate(-" + (d.name.length * 8.5)  + ")"; })
+      .text(function(d) { return d.name; })
+      .style("fill-opacity", 1e-6);
+
+  // Transition nodes to their new position.
+  var nodeUpdate = node.transition()
+      .duration(duration)
+      .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
+
+  nodeUpdate.select("circle")
+      .attr("r", 4.5)
+      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+  nodeUpdate.select("text")
+      .style("fill-opacity", 1)
+      .attr("transform", function(d) { return d.x < 180 ? "translate(0)" : "rotate(180)translate(-" + (d.name.length + 50)  + ")"; });
+
+  // TODO: appropriate transform
+  var nodeExit = node.exit().transition()
+      .duration(duration)
+      //.attr("transform", function(d) { return "diagonal(" + source.y + "," + source.x + ")"; })
+      .remove();
+
+  nodeExit.select("circle")
+      .attr("r", 1e-6);
+
+  nodeExit.select("text")
+      .style("fill-opacity", 1e-6);
+
+  // Update the links…
+  var link = svg.selectAll("path.link")
+      .data(links, function(d) { return d.target.id; });
+
+  // Enter any new links at the parent's previous position.
+  link.enter().insert("path", "g")
+      .attr("class", "link")
+      .attr("d", function(d) {
+        var o = {x: source.x0, y: source.y0};
+        return diagonal({source: o, target: o});
+      });
+
+  // Transition links to their new position.
+  link.transition()
+      .duration(duration)
+      .attr("d", diagonal);
+
+  // Transition exiting nodes to the parent's new position.
+  link.exit().transition()
+      .duration(duration)
+      .attr("d", function(d) {
+        var o = {x: source.x, y: source.y};
+        return diagonal({source: o, target: o});
+      })
+      .remove();
+
+  // Stash the old positions for transition.
+  nodes.forEach(function(d) {
+    d.x0 = d.x;
+    d.y0 = d.y;
+  });
+}
+
+// Toggle children on click.
+function click(d) {
+  if (d.children) {
+    d._children = d.children;
+    d.children = null;
+  } else {
+    d.children = d._children;
+    d._children = null;
+  }
+
+  update(d);
+}
+
+// Collapse nodes
+function collapse(d) {
+  if (d.children) {
+      d._children = d.children;
+      d._children.forEach(collapse);
+      d.children = null;
+    }
+}
+}//]]>
+
+</script>
+
+<style>
+
+    .node {
+  cursor: pointer;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font: 10px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+
+.twocolumns {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+}
+
+.eightcolumns {
+    -webkit-column-count: 8; /* Chrome, Safari, Opera */
+    -moz-column-count: 8; /* Firefox */
+    column-count: 8;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 10pt;
+  padding: 0px;
+  margin: 0px;
+  -webkit-column-break-before: always
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 9pt;
+  padding: 0px;
+  margin: 0px;
+}
+mindmap {
+    position: relative;
+    top: 0px;
+    left: 0px;
+  }
+
+/* unvisited link */
+a:link {
+    color: black;
+}
+
+/* visited link */
+a:visited {
+    color: black;
+}
+
+/* mouse over link */
+a:hover {
+    color: red;
+}
+
+/* selected link */
+a:active {
+    color: red;
+}
+</style>
+</head>
+<body>
+ <div class = "twocolumns">
+
+    <div id = "mindmap">
+    </div>
+
+    <ol>
+    </ol>
+
+ </div>
+
+
+
+</body>
 </html>

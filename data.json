@@ -1,99 +1,49 @@
 {
-  "name": " ",
-  "children": [
-    {
-      "name": "Math",
-      "children": [
-        {
-          "name": "Pre-Calculus",
-          "url": "www.my-media-website.com",
-          "dependsOn": ["Content API", "Search API", "Account API", "Picture API", "Facebook", "Twitter"],
-          "technos": ["PHP", "Silex", "Javascript", "NGINX", "Varnish"],
-          "host": { "Amazon": ["fo-1", "fo-2"] }
-         },
-        {
-          "name": "Calculus",
-          "url": "www.my-media-website.com",
-          "dependsOn": ["Content API", "Search API", "Account API", "Picture API", "Facebook", "Twitter"],
-          "technos": ["PHP", "Silex", "Javascript", "NGINX", "Varnish"],
-          "host": { "Amazon": ["fo-1", "fo-2"] }
-         },
-        {
-          "name": "Linear Algebra",
-          "url": "www.my-media-website.com",
-          "dependsOn": ["Content API", "Search API", "Account API", "Picture API", "Facebook", "Twitter"],
-          "technos": ["PHP", "Silex", "Javascript", "NGINX", "Varnish"],
-          "host": { "Amazon": ["fo-1", "fo-2"] }
-         },
-        {
-          "name": "Differential Equations",
-          "url": "www.my-media-website.com",
-          "dependsOn": ["Content API", "Search API", "Account API", "Picture API", "Facebook", "Twitter"],
-          "technos": ["PHP", "Silex", "Javascript", "NGINX", "Varnish"],
-          "host": { "Amazon": ["fo-1", "fo-2"] }
-         },
-        {
-          "name": "Probability",
-          "url": "www.my-media-website.com",
-          "dependsOn": ["Content API", "Search API", "Account API", "Picture API", "Facebook", "Twitter"],
-          "technos": ["PHP", "Silex", "Javascript", "NGINX", "Varnish"],
-          "host": { "Amazon": ["fo-1", "fo-2"] }
-         },
-        {
-          "name": "Statistics",
-          "url": "www.my-media-website.com",
-          "dependsOn": ["Content API", "Search API", "Account API", "Picture API", "Facebook", "Twitter"],
-          "technos": ["PHP", "Silex", "Javascript", "NGINX", "Varnish"],
-          "host": { "Amazon": ["fo-1", "fo-2"] }
-         },
-         {
-          "name": "Statistical Inference",
-          "url": "www.my-media-website.com",
-          "dependsOn": ["Content API", "Search API", "Account API", "Picture API", "Facebook", "Twitter"],
-          "technos": ["PHP", "Silex", "Javascript", "NGINX", "Varnish"],
-          "host": { "Amazon": ["fo-1", "fo-2"] }
-         }
-        ]
-    },
-    {
-      "name": "Computer",
-      "children": [
-        {
-          "name": "Data Structures",
-          "url": "www.my-media-website.com",
-          "dependsOn": ["Content API", "Search API", "Account API", "Picture API", "Facebook", "Twitter"],
-          "technos": ["PHP", "Silex", "Javascript", "NGINX", "Varnish"],
-          "host": { "Amazon": ["fo-1", "fo-2"] }
-         },
-        {
-          "name": "Algorithms",
-          "url": "www.my-media-website.com",
-          "dependsOn": ["Content API", "Search API", "Account API", "Picture API", "Facebook", "Twitter"],
-          "technos": ["PHP", "Silex", "Javascript", "NGINX", "Varnish"],
-          "host": { "Amazon": ["fo-1", "fo-2"] }
-         },
-        {
-          "name": "Hardware",
-          "url": "www.my-media-website.com",
-          "dependsOn": ["Content API", "Search API", "Account API", "Picture API", "Facebook", "Twitter"],
-          "technos": ["PHP", "Silex", "Javascript", "NGINX", "Varnish"],
-          "host": { "Amazon": ["fo-1", "fo-2"] }
-         },
-        {
-          "name": "OS",
-          "url": "www.my-media-website.com",
-          "dependsOn": ["Content API", "Search API", "Account API", "Picture API", "Facebook", "Twitter"],
-          "technos": ["PHP", "Silex", "Javascript", "NGINX", "Varnish"],
-          "host": { "Amazon": ["fo-1", "fo-2"] }
-         },
-        {
-          "name": "Web",
-          "url": "www.my-media-website.com",
-          "dependsOn": ["Content API", "Search API", "Account API", "Picture API", "Facebook", "Twitter"],
-          "technos": ["PHP", "Silex", "Javascript", "NGINX", "Varnish"],
-          "host": { "Amazon": ["fo-1", "fo-2"] }
-         }
-        ]
-    }
-  ]
-}
+    "pagename": " ",
+    "children": [
+         {"subjectname": "Math","children": [
+              {"name": "Calculus"},
+              {"name": "Linear Algebra"},
+              {"name": "Differential Equations"},
+              {"name": "Probability"},
+              {"name": "Statistics"},
+              {"name": "Stochastic Calculus"},
+              {"name": "Numerical Analysis"}
+            ]
+        },
+        {"subjectname": "Computer","children": [
+              {"name": "Practice Problems"},
+              {"name": "Hardware"},
+              {"name": "Software"},
+              {"name": "OS Level"},
+              {"name": "High Level"},
+              {"name": "Internet"},
+              {"name": "Functional Programming"},
+              {"name": "Tools"}
+            ]
+        },
+        {"subjectname": "Machine Learning","children": [
+              {"name": "Optimization"},
+              {"name": "Linear Models"},
+              {"name": "Theory"},
+              {"name": "Deep Learning"}
+            ]
+        },
+        {"subjectname": "Languages","children": [
+              {"name": "Python"},
+              {"name": "R"},
+              {"name": "C++"},
+              {"name": "Processing"},
+              {"name": "Lisp/Scheme/Ratchet"}
+            ]
+        },
+        {"subjectname": "Additional Topics","children": [
+              {"name": "Stochastic Processes"},
+              {"name": "Information Theory"},
+              {"name": "Cryptography"},
+              {"name": "Functional Programming"}
+            ]
+        }
+
+    ]
+};

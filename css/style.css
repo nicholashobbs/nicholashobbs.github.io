@@ -197,7 +197,7 @@ section {
   position: fixed;
   left: 10px;
   top: 480px;
-  width: 600px;
+  width: 100%;
 }
 section article {
   width: 25%;
@@ -208,6 +208,12 @@ section p {
 }
 section ul {
   margin-top: 0;
+}
+
+#bottomright {
+    position: fixed;
+    top: 500px;
+    right:10px;
 }
 
 

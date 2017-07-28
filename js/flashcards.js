@@ -39,7 +39,7 @@ function FlashcardApp(){
     // While there remain elements to shuffle...
     while ( 0 !== currentIndex ){
       // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex); 
+      randomIndex = Math.floor(Math.random() * currentIndex);
       if( randomIndex % 2 != 0 ){ randomIndex -= 1; }
       currentIndex -= 2;
       // And swap it with the current element.
@@ -156,11 +156,11 @@ function ControlBar(){
   }
   // html of the remove button - onclick removes card from deck
   this.removeButton = function(){
-    return "<input class='remove' type='button' onClick='app.remove();' name='reset' value='&nbsp;' title='Remove' tabindex='2'/>";
+    return "<input class='remove' type='button' onClick='app.remove();' name='reset' value='Remove' title='Remove' tabindex='2'/>";
   }
   // html of the skip button - onclick loads next card from deck
   this.skipButton = function(){
-    return "<input class='skip' type='button' onClick='app.skip();' value='&nbsp;' title='Skip' tabindex='1'/>";
+    return "<input class='skip' type='button' onClick='app.skip();' value='Skip' title='Skip' tabindex='1'/>";
   }
 }
 // additional controls

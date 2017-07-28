@@ -1,5 +1,5 @@
 body{
-  background-color: #333;
+  background-color: #000;
 }
 .restart{
   height: 60px !important;
@@ -166,7 +166,7 @@ li.selected{
   text-align: center;
   margin-top: 12px;
 }
-.card-container{ 
+.card-container{
   height: 280px;
   position: relative;
   margin: 0 auto;
@@ -191,7 +191,7 @@ li.selected{
   width: 100%;
 }
 .front, .back{
-  background-image: url("../images/paper.jpg");
+background-color: #FFF;
 }
 .front-text, .back-text{
   position: absolute;
@@ -225,7 +225,7 @@ li.selected{
 input[type=button]{
   height: 100%;
   font-size: 3em !important;
-  color: #515151;
+  background-color: #FFF;
   width: 48%;
   margin-right: 4%;
   cursor: pointer;
@@ -242,10 +242,8 @@ input[type=button]:focus{
 }
 
 .remove{
-  background: #dcdcdc url('../images/thumb-up.png') no-repeat;
-  background-position: center center;
+
 }
 .skip{
-  background: #dcdcdc url('../images/thumb-down.png') no-repeat;
-  background-position: center center;
+
 }
