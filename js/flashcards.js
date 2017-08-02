@@ -107,7 +107,7 @@ function Card(){
     document.activeElement.blur();
     document.getElementById( "card" ).className = "focused";
   };
-  // html of the eleent
+  // html of the element
   this.html = function(){
     return "<div id='card' onClick='app.flipCard();'>" +
             this.face( "front", this.text( false ) ) +
