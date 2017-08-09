@@ -6,7 +6,7 @@
 
     <script type="text/javascript" src="js/vis.js"></script>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-    <link href="https://fonts.googleapis.com/css?family=Muli:300,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
@@ -30,10 +30,10 @@
     <style type="text/css">
     #container {display:table;width:100%}
     body {
-    font-family: 'Muli', sans-serif;
+    font-family: 'Computer Modern Serif', serif;
 }
 strong,b {
-  font-weight: 800;
+  font-weight: 700;
 }
         #mynetwork {
             width: 500px;
@@ -403,6 +403,8 @@ table, th, td {
 
 <h4>Practice Problems</h4>
 <ul>
+  <li><a href = "https://projecteuler.net/">Project Euler</a></li>
+  <li><a href = "https://www.hackerrank.com/">Hacker Rank</a></li>
 <li>Elements of Programming Interviews in Python - Adnan Aziz, Tsung-Hsien Lee, Amit Prakash</li>
 </ul>
 
@@ -1238,14 +1240,7 @@ $H_{OB}:\beta_{1}=...=\beta_{I}=0$ vs $H_{aB}:$ at least one $\beta_{j} \ne 0$</
 <li><strong>distributed memory model</strong>, where each processor must explicity send a message to another to access its memory, which is more accurate for a cluster.</li>
 </ul>
 <p>Challenges to writing parallel programs include races, starvation, deadlock, and livelock.</p>
-<h3>Design Considerations</h3>
-<p>Creating a set of services or a larger system is a more complex problem than just implementing a program. Consider the design trade-offs, sketch data structures, consider algorithms and technology stack (programming languages, libraries, OS, hardware, and services)</p>
-<p>Key considerations include implementation time, extensibility, scalability, testability, security, internationalization, IP issues.</p>
-<p>Design principles include algorithms, data structures , decomposition (front-end (user management, web page design, reporting functionality), back-end (middleware, storage, database, cron services, algorithms for ranking),  scalability (independently solvable subproblems, efficient construction of solution to original problem from subproblems, consider RAM, network bandwidth, memory and databases, caching for repeated computations)</p>
-<h3>Object Oriented Design</h3>
-<p>A class is an encapsulation of data and methods operating on that data. Classes provide encapsulation, which reduces the conceptual burden of writing code. A design pattern is any general repeatable solution to a commonly occuring problem.</p>
-<h3>Tools</h3><p>Tools to consider include version control systems, scripting languages, build systems, databases, and the networking stack.</p>
-<h3>Honors Class</h3>
+
 </div>
 
 <div id ="number12">
@@ -1314,6 +1309,15 @@ API design and documentation
 proactive test planning
 programming at the large
 quality assurance</p>
+
+<h3>Design Considerations (EPI)</h3>
+<p>Creating a set of services or a larger system is a more complex problem than just implementing a program. Consider the design trade-offs, sketch data structures, consider algorithms and technology stack (programming languages, libraries, OS, hardware, and services)</p>
+<p>Key considerations include implementation time, extensibility, scalability, testability, security, internationalization, IP issues.</p>
+<p>Design principles include algorithms, data structures , decomposition (front-end (user management, web page design, reporting functionality), back-end (middleware, storage, database, cron services, algorithms for ranking),  scalability (independently solvable subproblems, efficient construction of solution to original problem from subproblems, consider RAM, network bandwidth, memory and databases, caching for repeated computations)</p>
+<h3>Object Oriented Design</h3>
+<p>A class is an encapsulation of data and methods operating on that data. Classes provide encapsulation, which reduces the conceptual burden of writing code. A design pattern is any general repeatable solution to a commonly occuring problem.</p>
+<h3>Tools</h3><p>Tools to consider include version control systems, scripting languages, build systems, databases, and the networking stack.</p>
+
 </div>
 
 
@@ -1365,6 +1369,19 @@ implementation of arrays and objects</p>
 <div id ="number17">
 <h2>AI</h2>
 
+<h3>References/Resources</h3>
+
+<ul>
+<li><a href = "http://colah.github.io/">Christoper Olah's Blog</a></li>
+<li><a href = "https://github.com/ChristosChristofidis/awesome-deep-learning">Christos Christofidis - Awesome Deep Learning</a></li>
+
+<li><a href = "http://people.idsia.ch/~juergen/">Juergen Schmidhuber's Home Page</a></li>
+<li><a href="https://unsupervisedmethods.com/my-curated-list-of-ai-and-machine-learning-resources-from-around-the-web-9a97823b8524">Robbie Allen - My Curated List of AI and Machine Learning Resources From Around the Web</a></li>
+<li><a href="https://unsupervisedmethods.com/learning-machine-learning-and-nlp-from-185-quora-questions-cebe42e47da8">Robbie Allen - Learning Machine Learning and NLP from 187 Quora Questions</a></li>
+</ul>
+
+
+
 <h4>History/Theory/Philosophy</h4>
 <ul>
 <li><a href = "http://www.nickbostrom.com/">Superintelligence - Nick Bostrom</a></li>
@@ -1374,7 +1391,8 @@ implementation of arrays and objects</p>
 
 <h4>Deep Learning</h4>
 <ul>
-<li><a href = "http://www.deeplearningbook.org/">Deep Learning - Ian Goodfellow, Yoshua Bengio, Aaron Courville(Chapter 2)</a></li>
+<li><a href = "http://www.deeplearningbook.org/">Deep Learning - Ian Goodfellow, Yoshua Bengio, Aaron Courville</a></li>
+<li>Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems - Aurelien Geron</li>
 </ul>
 <h4>Machine Learning</h4>
 <ul>
@@ -1960,9 +1978,9 @@ mod n $\forall i \le k-1$, n is a strong witness</li>
     // create an array with nodes
     var nodes = new vis.DataSet([
         {id: 1, label: ' ', shape: 'text'},
-        {id: 2, label: 'Math', shape: 'text', font: '24px Muli black', margin: { top: 8, right: 8, bottom: 8, left: 8 }},
-        {id: 3, label: 'Computer', shape: 'text', font: '24px Muli black', margin: { top: 8, right: 8, bottom: 8, left: 8 }},
-        {id: 4, label: 'Additional Topics', shape: 'text', font: '24px Muli black', margin: { top: 8, right: 8, bottom: 8, left: 8 }},
+        {id: 2, label: 'Math', shape: 'text', font: '24px Computer Modern Serif black', margin: { top: 8, right: 8, bottom: 8, left: 8 }},
+        {id: 3, label: 'Computer', shape: 'text', font: '24px Computer Modern Serif black', margin: { top: 8, right: 8, bottom: 8, left: 8 }},
+        {id: 4, label: 'Additional Topics', shape: 'text', font: '24px Computer Modern Serif black', margin: { top: 8, right: 8, bottom: 8, left: 8 }},
 
           {id: 5, label: 'Calculus', shape: 'text', margin: { top: 5, right: 5, bottom: 5, left: 5 }},
           {id: 6, label: 'Linear Algebra', shape: 'text', margin: { top: 5, right: 5, bottom: 5, left: 5 }},
@@ -1984,14 +2002,14 @@ mod n $\forall i \le k-1$, n is a strong witness</li>
           {id: 20, label: 'Information Theory', shape: 'text', margin: { top: 5, right: 5, bottom: 5, left: 5 }},
           {id: 21, label: 'Complexity', shape: 'text', margin: { top: 5, right: 5, bottom: 5, left: 5 }},
 
-            {id: 22, label: 'Python', shape: 'text', font: '12px Muli black', margin: { top: 1, right: 1, bottom: 1, left: 1 }},
-            {id: 23, label: 'C++', shape: 'text', font: '12px Muli black', margin: { top: 1, right: 1, bottom: 1, left: 1 }},
-            {id: 24, label: 'Javascript', shape: 'text', font: '12px Muli black', margin: { top: 1, right: 1, bottom: 1, left: 1 }},
-            {id: 25, label: 'Linux', shape: 'text', font: '12px Muli black', margin: { top: 1, right: 1, bottom: 1, left: 1 }},
+            {id: 22, label: 'Python', shape: 'text', font: '12px Computer Modern Serif black', margin: { top: 1, right: 1, bottom: 1, left: 1 }},
+            {id: 23, label: 'C++', shape: 'text', font: '12px Computer Modern Serif black', margin: { top: 1, right: 1, bottom: 1, left: 1 }},
+            {id: 24, label: 'Javascript', shape: 'text', font: '12px Computer Modern Serif black', margin: { top: 1, right: 1, bottom: 1, left: 1 }},
+            {id: 25, label: 'Linux', shape: 'text', font: '12px Computer Modern Serif black', margin: { top: 1, right: 1, bottom: 1, left: 1 }},
 
-            {id: 26, label: 'Theory/Philosophy/History', shape: 'text', font: '12px Muli black', margin: { top: 1, right: 1, bottom: 1, left: 1 }},
-            {id: 27, label: 'Machine Learning', shape: 'text', font: '12px Muli black', margin: { top: 1, right: 1, bottom: 1, left: 1 }},
-            {id: 28, label: 'Deep Learning', shape: 'text', font: '12px Muli black', margin: { top: 1, right: 1, bottom: 1, left: 1 }}
+            {id: 26, label: 'Theory/Philosophy/History', shape: 'text', font: '12px Computer Modern Serif black', margin: { top: 1, right: 1, bottom: 1, left: 1 }},
+            {id: 27, label: 'Machine Learning', shape: 'text', font: '12px Computer Modern Serif black', margin: { top: 1, right: 1, bottom: 1, left: 1 }},
+            {id: 28, label: 'Deep Learning', shape: 'text', font: '12px Computer Modern Serif black', margin: { top: 1, right: 1, bottom: 1, left: 1 }}
 
     ]);
 
@@ -2055,7 +2073,7 @@ mod n $\forall i \le k-1$, n is a strong witness</li>
           "color": '#878787'
         },
         "nodes": {
-          "font": '18px Muli black'
+          "font": '18px Computer Modern Serif black'
         },
         "layout":{
           "randomSeed": 21}
