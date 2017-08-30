@@ -1,0 +1,84 @@
+# Deep Learning - Goodfellow, Bengio, Courville
+
+<h2> Ch 1 - Intro </h2>
+The <strong>knowledge base</strong> approach to AI seeks to hard-code knowledge about the world into a formal language.
+<strong>Logistic regression</strong> - refers to regression with a categorical outcome (dependent) variable
+Machine learning depends on <strong>representation</strong> - the way that a set of informative variables known as <strong>features</strong> is organized.
+<strong>Representation learning</strong> uses the machine to discover representation itself, instead of just mapping representation to output.
+An <strong>autoencoder</strong> is a combination of an <strong>encoder</strong> which converts input data to representation, and a <strong>decoder</strong>, which converts the new representation back to its original format.
+One of the keys to designing features is to find <strong>factors of variation</strong>, which are descriptive measures to make sense of rich variability in the data.
+
+Deep learning allows representation learning to work by giving the computer a set of simpler representations out of which to build more complex concepts.
+
+A <strong>feedforward deep network</strong> or <strong>multilayer perceptron</strong> is a mathematical function mapping input values to output values through complex representations composed of many simpler functions.
+
+Each layer of representation can be thought of as the state of the computer's memory after executing another set of instructions. Networks with greater depth can execute more instructions in sequence.
+
+The input is presented at the <strong>visible layer</strong>, while <strong>hidden layers</strong> extract increasingly abstract features and analyze them.
+
+Deep learning has been historically known as cybernetics and then connectionism.
+
+The <strong>mccullough pitts neuron</strong> and <strong>adaptive linear element (ADALINE)</strong> are early models of brain function. <strong>Stochastic gradient descent</strong> is a training algorithm which allows a model to learn the correct weights for its factors.
+
+Linear models can not learn the XOR function.
+
+A <strong>neocognitron</strong> is a model architecture for processing images inspired by the mammalian visual system.
+Most neural networks today use a <strong>rectified linear unit</strong>.
+<strong>Distributed representation</strong> refers to the concept that each input to a system should be represented by many features, and that each feature should be involved in the representation of many inputs.
+
+<h2> Ch 2 - Linear Algebra </h2>
+A <strong>scalar</strong> is a single number, such as $s \in \mathbb{R}$ or $n \in \mathbb{N}$, vectors, matrices, tensors, transpose, main diagonal, matrix product, hadamard product, dot product, commutative, inversion, linear combination, origin, span, column space, range, linearly independent, dependence, square, singular, norm, max norm, frobenius norm, diagonal matrix, unit vector, unit norm, symmetric, orthogonal, orthonormal, eigendecomposition, eigenvectors, eigenvalues, positive definite, positive semidefinite, negative semidefinite, singular value decomposition, singular vectors, singular values, moore penrose pseudoinverse, trace operator, principal components analysis, determinant
+
+<h2> Ch 3 - Probability </h2>
+inherent stochastity, incomplete observability, incomplete modeling, degrees of belief, frequentist/bayesian, random variable, probability distributions, pmf, jpdf, pdf, discrete/continuous, uniform distribution, marginal probability, conditional probability, intervention query, causal modeling, chain rule of probability, independence, conditional independence, expectation, variance, standard deviation, correlation, covariance matrix, bernoulli distribution, multinomial, gaussian, central limit theorem, multivariate normal distribution, precision matrix, isotropic, exponential distribution, laplace distribution, dirac delta function, empirical distribution, mixture distribution, latent variable, gaussian mixture, logistic sigmoid, saturates, softplus function, positive part function, bayes rule, measure theory, measure zero, almost everywhere, jacobian matrix, information theory, nats, bits, shannons, self information, differential entroy, kullback-leiber divergence, cross-entropy, graphical model, directed model, proportionality
+
+<h2> Ch 4 - Numerical Computation </h2>
+underflow, overflow, multinoulli, condition number, objective function, criterion, cost function, loss function, error function, derivative, gradient descent, critical points, local min/max, saddle point , global min/max, directional derivative, learning rate, live search, hill climbing, curvature/2nd derivative, hessian matrix, first order optimization, second order, lipschitz continuous, lipschitz constant, convex optimization, constrained optimization, feasible, karush kuhn-tucker, generalized lagrangian, equality/inequality contraints, active contstraint, linear least squares
+
+<h2> Ch 5 - ML Basics </h2>
+learning, example, features, classification, missing inputs, regression, transcription, translation, structured output, anomaly detection, synthesis/sampling, imputation of missing values, denoising, density estimation, accuracy, error rate, test set, unsupervised, supervised, dataset, data points, reinforcement learning, design matrix, linear regression, parameters, weights, mean squared error, normal equations, bias, generalization error, training error, statistical learning theory, iid assumptions, data generating distribution, under/overfitting, capacity, hypothesis space, input, parameters, representational capacity, effective capacity, occams razor, vapnik-chernovekis dimension, non-parametric models, nearest neighbor, under/over fitting regimes, opimal capacity, bayes error, no free lunch theorem, weight decay, regulizer, regularization, hyper parameters, validation set, cross-validation, estimates, bias, variance, point estimator, statistic, unbiased, asymptotically unbiased, standard error, consistency, almost sure convergence, maximum likelihood, log-likelihood, conditional, statistic efficiency, parametric case, CRLB, prior probability distribution, a priori, posterior distribution, MAP estimation, supervised, support vector machines, kernel trick, gaussian kernel, template matching, kernel methods, support vectors, simpler representations, k-means cluster, SGD, curse of dimensionality, local constancy prior, local kernels, composition of factors, manifold learning, manifold hypothesis
+
+<h2> Ch 6 - Deep Feedforward Networks </h2>
+deep feedforward network, multilayer perceptron, feedback, recurrent neural networks, output layer, hidden layers, width, phi nonlinear transformation, activation functions, back-propagation, rectified linear unit, cost function, calculus of variations, mean absolute error, sigmoid units, softmax units, winner take all, heteroskedastic, misture density networks, clip gradients, hidden units, rectified linear units, absolute value rectification, maxout units, leaky/parametric ReLU, catastrophic forgetting, radial basis function, softplus, hard/hidden units, architecture, universal approximation theorem, forward/back propagation, computational graph, recursive chain rule is backprop, symbolic representations, numeric value, tensor V, dynamic programming, automatic differentiation, reverse mode accumulation, forward mode accumulation, hessian, krylov methods, sparse activations
+
+<h2> Ch 7 - Regularization in Deep Learning </h2>
+parameter norm penalties, L2 parameter regularization, weight decay, tikhonov regularization, L1 regularization, ridge regression, feature selection, karush kuhn-tucker multiplier, under constrained, dropout, augmentation, noise robustness, label smoothing, semi-supervised, multi-task, early stopping, parameter sharing, convolutional neural nets, orthogonal, matching pursuit, bagging (bootstrap aggregating), model averaging, ensemble methods, boosting, weight scaling inference rule, dropout boosting, fast dropout, adversarial example, adversarial training, virtual adversarial example, tangent distance algorithm, tangent prop algorithm, double back prop, manifold tangent classifiers
+
+<h2> Ch 8 - Optimization for Deep Learning </h2>
+theta parameters, j of theta cost function, data generating distribution, risk, empirical risk, surragate loss function, batch/deterministc, stochastic/online, minibatch, minibatch stochastic, generalization error, stream, model identifiability, weight space symmetry, saddle free newton method, gradient clipping heuristic, cliffs, explaining gradients, vanishing gradients, power method, excess error, momentum, nesterov momentum, correction factor, normalized initialization, sparse initialization, adagrad, rmsprop, adam, conjugate directions, fletcher-reeves, polak-ribune, nonlinear conjugate dradients, bfgs algorithm, limitied memory bfgs, batch normalization, coordinate descent, polyak averaging, supervised pretraining, fine tuning, greedy, continuation methods, curriculum learning
+
+<h2> Ch 9 - Convolutional Neural Nets </h2>
+pooling, convolution, feature map, cross-correlation, toeplitz matrix, dobsky block circulant matrix, parameter sharing, equivariant representations, tied weights, equivariance, invariant, permutation invariant, stride, unshared convolution, tiled convolution, structured outputs, separable, primary visual center, simple/complex cells, fovea, saccades, time delay neural nets, reverse correlation, gabor functions, quadrature pair
+
+<h2> Ch 10 - Recurrent Neural Nets </h2>
+unfolding back propagation through time, teacher forcing, open-loop, stationary, optimizing, encoder, reader, input, decoder, writer, output, attention mechanisms, echo state networks, liquid state machines, reservoir computing, spectral radius, contractive, leaky units, gated RNNs, long short term memory, gated recurrent unit, forget-gate unit, external input gate, output gate, clipping the norm, explicit memory, working memory, memory networks, neural turing machine, content based addressing, location based addressing, attention mechanism
+
+<h2> Ch 11 - Practical Methodologies </h2>
+precision, recall, f-score, pr-curve integral, converge, hyperparameter optimization, grid search, finite differences, centered difference
+
+<h2> Ch 12 - Applications </h2>
+coalesced, gp-gpus, data parallelism, model parallelism, asynchronous stochastic gradient descent, parameter server, model compression, dynamic structure, conditional computation, cascade, gater, expert networks, mixture of experts, hard mixture, global contrast normalization, sphering, whitening, local contrast normalization, automatic speech recognition, natural language processing, n-grams, language model smoothing, back-off methods, neural language models, word embeddings, shortlist, hierarchical softmax, postive/negative phase, importance sampling, biased importance sampling, maximum entropy language models, read, memory, exploit, collaborative filtering, content based recommender systems, contextual bandits, relation, binary relation, relational databases, attributes, knowledge base, link prediction, word-sense disambiguation
+
+<h2> Ch 13 - Linear Factor Models </h2>
+factor analysis, conditionally independent, capture dependencies, probabilistic PCA, reconstruction error, nonlinear independent components estimation, independent subspace analysis, topographic ICA, slow feature analysis, sparse coding
+
+<h2> Ch 14 - Autoencoders </h2>
+recirculation, undercomplete, overcomplete, sparse, actual zeroes, denoising autoencoder, contractive autoencoder, encoding function, encoding distribution, reconstruction distribution, denoising score matching, tangent planes, nearest neighbor graph, contractive autoencoders, predictive sparse decomposition, learned approximate inference, information retrieval, semantic hashing
+
+<h2> Ch 15 - Representation Learning </h2>
+unsupervised pretraining, greedy algorithm, fine-tuning, transfer learning, domain adaptation, concept drift, one-shot learning, zero-data learning, multi-modal learning, generative adversarial networks, symbolic representation, sum product network
+
+<h2> Ch 16 - Structured Probabilistic Models </h2>
+probabilistic models, graphical models, directed graphical model, structured bayesian network, local conditional probability distributions, undirected models, markov random fields, clique potential, partition function, energy based model, boltzman distribution/machines, product of experts, free energy, separation, context-specific independencies, immorality, moralized graphs, chordal/triangulated, factor graphs, ancestral sampling, gibbs sampling, loopy belief propagation, harmonium, restricted boltzman machine
+
+<h2> Ch 17 - Monte Carlo Methods </h2>
+LLN, approximation by average, CLT, biased importance sampling, markov chain monte carlo, ancestral sampling, stationary/equilibrium distribution, stochastic matrices, burning in, mixing time, block gibbs sampling, tempered transitions, critical temperations, parralel tempering
+
+<h2> Ch 18 - Partition Function </h2>
+partition is integral or summation, positive/negative phase, hallucinations, fantasy particles, contrastive divergence, spurious modes, stochastic maximum likelihood, persistent contrastive divergence, fast PCD, pseudolikelihood noise contrastive estimation,  noise distribution, self contrastive estimation, bridge the gap, annealed importance sampling, bridge sampling, linked importance sampling
+
+<h2> Ch 19 - Approximate Inference </h2>
+evidence lower bound, variational, maximum a posteriori inference, mean field approach, structured variational inference, binary sparse coding, damping, calculus of variations, euler-lagrange equation
+
+<h2> Ch 20 - Deep Generative Models </h2>
+boltzmann machines, harmonium, deep belief networks, deep boltzmann machine, multi-prediction deep boltzmann machine, centered deep boltzmann, enhanced gradient, spike/slab restricted boltzmann, convolutional boltzmann, probablistic max pooling, reparameterization trick, stochastic back-propagation, perturbation analysis, REINFORCE algorithm, baseline, variance reduction, variance normalization, sigmoid belief networks, generator network, inverse transform sampling, variational autoencoder, importance weighted autoencoder, deep reccurent attention writer, discriminator network, self-supervised boosting, generative moment matching networks, maximum mean discrepancy, fully visible bayes networks, reuse of features, parameters, neural autoregressive density estimator, generalized denoising autoencoders, clamping, generative stochastic networks, detailed balance, walk-back training, diffusion inversion, approximate bayesian computation
