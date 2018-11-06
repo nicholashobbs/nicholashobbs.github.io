@@ -2,8 +2,9 @@
 <!doctype html>
 <html>
 <head>
-    <title> </title>
+    <title>Personal Mindmap</title>
 
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="js/vis.js"></script>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
@@ -29,331 +30,37 @@
 
     <link href="css/vis-network.css" rel="stylesheet" type="text/css"/>
 
-    <style type="text/css">
-    #container {display:table;width:100%}
-    body {
-    font-family: 'Computer Modern Serif', serif;
-}
-strong,b {
-  font-weight: 700;
-}
-        #mynetwork {
-            width: 500px;
-            height: 400px;
-            border: 1px solid lightgray;
-        }
 
-        #number1 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number2 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number3 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number4 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number5 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number6 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number7 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number8 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number9 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number10 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number11 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number12 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number13 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number14 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number15 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number16 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number17 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number18 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number19 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number20 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number21 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number22 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number23 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number24 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number25 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number26 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number27 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number28 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #number29 {
-          position: absolute;
-          background-color: white;
-          width: auto;
-          height:600px;
-          overflow: scroll;
-          top:10px;
-          left:520px;
-          opacity:0;
-        }
-        #bottom {
-          position: absolute;
-          top:410px;
-          left:10px;
-          width: 500px;
-          height: 150px;
-        }
-        table {
-    border-collapse: collapse;
-}
-
-table, th, td {
-    border: 1px solid black;
-}
-    </style>
 </head>
 <body>
+
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'mynetwork')">mynetwork</button>
+    <button class="tablinks" onclick="openTab(event, 'mynetwork2')">mynetwork2</button>
+  </div>
+
+
+  <script>
+  function openTab(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+  }
+  </script>
+
+
 <div id="container">
 
-<div id="mynetwork"></div>
-
+<div id="mynetwork" class="tabcontent"></div>
+<div id="mynetwork2" class="tabcontent"></div>
 
 <div id ="number1">
 
