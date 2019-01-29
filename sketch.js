@@ -1,5 +1,7 @@
 let a = 0;
 let counter = 0;
+var w = window.innerWidth;
+var h = window.innerHeight;
 let height = 0;
 let width = 0;
 let ax = [0];
@@ -19,7 +21,7 @@ therules[1] = ['B', 'AF+BF+A']; // second rule
 var whereinstring = 0; // where in the L-system are we?
 
 function setup() {
-	createCanvas(600, 600);
+	createCanvas(w, h);
 	background(255);
 	stroke(0, 0, 0, 255);
 	// start the x and y position at lower-left corner
@@ -33,7 +35,7 @@ function setup() {
 }
 
 function draw() {
-	translate(300,300);
+	translate(w/2,h/2);
 	// draw the current character in the string:
 
 	drawIt(thestring[whereinstring]);
