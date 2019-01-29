@@ -94,7 +94,7 @@ function drawIt(k) {
 		scale(scaling);
 		for (var i = 0; i < counter; i++) {
 			colorMode(HSB);
-   		stroke(i*(255/243)/9%255,100,100);
+   		stroke(i*(255/243)/9%255,100,0);
 			line(ax[i - 1], ay[i - 1], ax[i], ay[i]);
 
 	}
