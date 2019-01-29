@@ -90,11 +90,11 @@ function drawIt(k) {
 		translate(-1*height,-1*width);
 		scaling = (80 / width);
 
-		background(255, 0, 100);
+		background(255, 0, 0);
 		scale(scaling);
 		for (var i = 0; i < counter; i++) {
 			colorMode(HSB);
-   		stroke(i*(255/243)/9%255,100,0);
+   		stroke(i*(255/243)/9%255,100,100);
 			line(ax[i - 1], ay[i - 1], ax[i], ay[i]);
 
 	}
