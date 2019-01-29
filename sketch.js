@@ -1,9 +1,11 @@
 let a = 0;
 let counter = 0;
+let height = 0;
+let width = 0;
 let ax = [0];
 let ay = [0];
 var x, y; // the current position of the turtle
-var currentangle = -60; // which way the turtle is pointing
+var currentangle = 0; // which way the turtle is pointing
 var step = 3; // how much the turtle moves with each 'F'
 var angle = 60; // how much the turtle turns with a '-' or '+'
 
@@ -17,11 +19,9 @@ therules[1] = ['B', 'AF+BF+A']; // second rule
 var whereinstring = 0; // where in the L-system are we?
 
 function setup() {
-	createCanvas(600, 540);
+	createCanvas(600, 600);
 	background(255);
 	stroke(0, 0, 0, 255);
-
-
 	// start the x and y position at lower-left corner
 	x = 0;
 	y = 0;
@@ -33,10 +33,7 @@ function setup() {
 }
 
 function draw() {
-
-	translate(5, 495);
-
-
+	translate(300,300);
 	// draw the current character in the string:
 
 	drawIt(thestring[whereinstring]);
@@ -72,30 +69,42 @@ function lindenmayer(s) {
 // this is a custom function that draws turtle commands
 function drawIt(k) {
 
-	var logthree = Math.log(counter) / Math.log(3);
-
-
-
-	scaling = (120 / Math.pow(2, logthree));
-	background(255, 255, 255);
-	scale(scaling);
-
 	if (k == 'F') { // draw forward
 		// polar to cartesian based on step and currentangle:
 		var x1 = x + step * cos(radians(currentangle));
 		var y1 = y + step * sin(radians(currentangle));
 		x = x1;
 		y = y1;
-		counter += 1; // count number of steps forward
 		ax.push(x1);
 		ay.push(y1);
+
+		counter += 1; // count number of steps forward
+		var logthree = Math.log(counter) / Math.log(3);
+		var width = Math.pow(2, (logthree));
+		var height = width*(Math.sqrt(3)/2);
+
+
+		rotate(counter/500);
+		translate(-1*height,-1*width);
+		scaling = (80 / width);
+
+		background(255, 0, 100);
+		scale(scaling);
+		for (var i = 0; i < counter; i++) {
+			colorMode(HSB);
+   		stroke(i*(255/243)/9%255,100,100);
+			line(ax[i - 1], ay[i - 1], ax[i], ay[i]);
+
+	}
+
+
 
 	} else if (k == '+') {
 		currentangle += angle; // turn left
 	} else if (k == '-') {
 		currentangle -= angle; // turn right
 	}
-	for (var i = 0; i < counter; i++) {
-		line(ax[i - 1], ay[i - 1], ax[i], ay[i]); // connect the old and the new
-	}
+
+
+
 }
