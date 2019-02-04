@@ -1,0 +1,42 @@
+version: "3"
+services:
+  stats:
+    container_name: clickflow_stats_app
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+  stats_worker:
+    container_name: clickflow_stats_worker_solo
+    command: python3 -u worker.py
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - redis
+  redis:
+    container_name: clickflow_stats_redis
+    image: redis:4.0.1-alpine
+    ports:
+      - "6379:6379"
+  db:
+    container_name: clickflow_stats_db
+    image: postgres:10.0-alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - .:/usr/src/app
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: saas_framework
+      POSTGRES_DB: clickflow_stats_dev
+      PGDATA: /var/lib/postgresql/data/9-6-1
