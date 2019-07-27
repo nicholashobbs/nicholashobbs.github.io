@@ -1,3 +1,43 @@
+Categorize what you learn
+
+make your own categories and fill it in by learning those things
+
+spend more time on specifics than generalities like this
+
+focus on technical stuff and leave obvious to stay in the books
+
+how to submit and communicate well
+
+how to do technical side well
+
+CREATE A VOCAB LIST THEN ORGANIZE YOURSELF
+
+always have an unorganized vocab list - quick ways to remember critical things that you might otherwise forget about. 
+
+
+# Networking
+
+# Linux
+
+# Coding Interview
+
+# Web App Hacking
+
+# Docker
+
+# AWS
+
+complete vocab list. just build and build. just start studying
+
+
+# Bugcrowd University
+
+
+
+# Hacker101
+
+
+
 # OTGV4
 
 ## CONFIG
