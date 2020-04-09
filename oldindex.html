@@ -1,0 +1,1682 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Personal Mindmap</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/vis.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+
+    <link href="css/vis-network.css" rel="stylesheet" type="text/css"/>
+
+
+</head>
+
+<body>
+
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'MathTab')">Math</button>
+    <button class="tablinks" onclick="openTab(event, 'ComputerTab')">Computer</button>
+  </div>
+
+
+  <script>
+  function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+  }
+  </script>
+
+
+<div id="container">
+
+<div id="MathTab" class="tabcontent"></div>
+<div id="ComputerTab" class="tabcontent"></div>
+
+<div id ="number1">
+
+</div>
+
+<div id ="number2">
+<h2>Math</h2>
+<h3>References/Resources</h3>
+
+<h4>Calculus</h4>
+<ul>
+<li>Calculus - Michael Spivak</li>
+<li>Mathematics: Its Content, Methods, and Meaning - A.D. Aleksandrov, A.N. Kolmogorov, M.A. Lavrent'ev (Chapter 2)</li>
+</ul>
+
+<h4>Linear Algebra</h4>
+<ul>
+<li>Linear Algebra Done Right - Sheldon Axler</li>
+<li><a href = "http://www.deeplearningbook.org/">Deep Learning - Ian Goodfellow, Yoshua Bengio, Aaron Courville(Chapter 2)</a></li>
+<li><a href = "http://math.mit.edu/~gs/linearalgebra/linearalgebra5_6Great.pdf">Six Great Theorems of Linear Algebra - Gilbert Strang</a></li>
+</ul>
+
+<h4>Differential Equations</h4>
+<ul>
+<li>Ordinary Differential Equations - Morris Tenenbaum, Harry Pollard</li>
+</ul>
+
+<h4>Statistics</h4>
+<ul>
+<li>Probability and Statistics- Jay Devore</li>
+</ul>
+
+<h4>Statistical Inference</h4>
+<ul>
+<li>Introduction to Probability and Mathematical Statistics - Lee J. Bain, Max Engelhardt</li>
+</ul>
+
+<h4>Probability</h4>
+<ul>
+<li>Introduction to Probability - Dimitri P. Bertsekas, John N. Tsitsikilis</li>
+</ul>
+
+</div>
+
+<div id ="number3">
+<h2>Computer</h2>
+<h3>References/Resources</h3>
+
+<h4>Practice Problems</h4>
+<ul>
+  <li><a href = "https://projecteuler.net/">Project Euler</a></li>
+  <li><a href = "https://www.hackerrank.com/">Hacker Rank</a></li>
+<li>Elements of Programming Interviews in Python - Adnan Aziz, Tsung-Hsien Lee, Amit Prakash</li>
+</ul>
+
+<h4>Hardware</h4>
+<ul>
+<li>Elements of Computing Systems - Noam Nisan, Shimon Shocken</li>
+</ul>
+
+<h4>Algorithms</h4>
+<ul>
+<li><a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/readings/">Introduction to Algorithms</a></li>
+<li><a href="">The Design and Analysis of Computer Algorithms - Alfred V. Aho, John E. Hopcroft, Jeffery D. Ullman</a></li>
+</ul>
+<h4>OS</h4>
+<ul>
+<li>How Linux Works - Brian Ward</li>
+</ul>
+
+<h4>Software Design</h4>
+<ul>
+<li><a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-005-software-construction-spring-2016/index.htm">Software Construction - Robert Miller, Max Goldman</a></li>
+</ul>
+
+</div>
+
+<div id ="number4">
+<h2>Additional Topics</h2>
+<h3>References/Resources</h3>
+
+<h4>Information Theory</h4>
+<ul>
+<li><a href = "http://math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf">The Mathematical Theory of Communication - Claude E. Shannon, Warren Weaver</a></li>
+<li>An Introduction to Information Theory - John R. Pierce</li>
+</ul>
+
+<h4>Functional Programming</h4>
+<ul>
+<li><a href = "https://pdfs.semanticscholar.org/d986/546bc3780db3a3c0f8d88b35e421ae4eec21.pdf">An Introduction to Functional Programming Through Lambda Calculus - Greg Michaelson</a></li>
+</ul>
+
+<h4>Complexity</h4>
+<ul>
+<li><a href = "http://www.fooledbyrandomness.com/FatTails.html">Doing Statistics Under Fat Tails: The Program - Nassim Nicholas Taleb</a></li>
+<li><a href ="http://abel.math.harvard.edu/archive/118r_spring_05/handouts/text.pdf">Dynamical Systems - Oliver Knill</a></li>
+<li><a href ="http://ifts.zju.edu.cn/profiles/xingangwang/Course2010/download/Yorke-chaos.pdf">CHAOS: An Introduction to Dynamical Systems - Kathleen T. Alligood, Tim D. Sauer, James A. Yorke</a></li>
+<li><a href ="https://en.wikipedia.org/wiki/Complexity">Wikipedia - Complexity</a></li>
+</ul>
+
+<h4>Number Theory/Cryptography</h4>
+<ul>
+<li><a href ="https://www.math.utah.edu/~savin/book08_jun.pdf">Numbers, Groups and Cryptography - Gordan Savin</a></li>
+</ul>
+
+
+</ul>
+
+</div>
+
+<div id ="number5">
+  <h2>Calculus</h2>
+
+  <h3>Foundations</h3>
+
+  <p>
+  The most common <b>number systems</b> are written as $\mathbb{Z,N,Q,R,C}$: integers, natural, rational, real, and complex numbers. Each are defined by a number of properties.
+  </p>
+  <p>
+  A <b>function</b> is a mapping $x \rightarrow f(x)$ that transforms x values by some operation. The value $f(x)$ is f evaluated at x and refered to as <b>f at x</b>. <b>Linear functions</b> are those which are of the form $y=mx+b$.
+  </p>
+  <p>
+  <b>Closed intervals</b> $[a,b] \in \mathbb{R}$ and <b>open intervals</b> $(a,b) \in \mathbb{R}$ are the segments of $\mathbb{R}$ which contain and do not contain endpoints. By definition, if $\infty$ is on either side of an interval, that side is open. $(-\infty,\infty)$. * add <b>graphs</b>, 1-d and 2-d
+  </p>
+  <p>
+  <b>Limits</b> are the central concept that makes calculus work. A function $f(x)$ approaches the limit $l$ near $a$  if as $x \rightarrow a$, $f(x) \rightarrow l$. This is notated $\lim _{ x \rightarrow a }{  f(x)=l} $.
+  </p>
+  <p>
+   A function is <b>continuous</b> at a if $\lim _{ x \rightarrow a }{  f(x)= f(a)} $. It is <b>continuous on $\mathbb{R}$</b> if this is true from $-\infty$ to $\infty$.
+  </p>
+  <p>
+  A function is <b>one-to-one</b> if there is a unique mapping from each $a \rightarrow f(a)$. This also means that $f(a)$ <b>has an inverse</b> $f^{-1}(a)$. An <b>inverse function</b> $f^{-1}(a)$ is the mapping from $f(a)$ back to $a$. Inverse functions are mirrored over the diagonal line of the <b>identity function</b> $I(x)=x$.
+  </p>
+
+  <h3> Derivatives </h3>
+
+  <p>
+  A function is <b>differentiable</b> at h if $\lim _{ h \rightarrow 0 }{\frac{f(a+h)-f(a)}{h}}$, the <b>differential</b> or <b>derivative</b> exists.
+  </p>
+  <p>
+  <b>Differentiation</b> refers to the process of finding <b>derivatives</b>. Derivatives are notated multiple different ways such as $f'$, $\frac{d}{dx}$, etc. <b>Second order</b> derivatives are just the derivative of the derivative $f''(x)=f'(f'(x))$. <b>Higher order</b> derivatives are those which require more operations than 2.
+  </p>
+  <p>
+  The <b>mean value theorem</b> states that if f is continuous on $[a,b]$, and differentiable on $(a,b)$, $\exists x$ such that $f'(x)=\frac{f(b)-f(a)}{b-a}$ * add illustrtive graph that angle must = straight line between a and b anglel.
+  </p>
+  <p>
+  Functions have <b>min</b> points, which are those for which $f(x) \le f(y)$ and <b>max</b> points, where $f(x) \ge f(y) \forall y \in a$.
+  </p>
+  <p>
+  There is a <b>local max</b> if $\exists \delta > 0$ such that x is the max in $A \cap (x-\delta, x+\delta)$, or a <b>local min</b> if x is the min. A point is a <b>local max</b> if $f'(a)=0, f''(a)\le 0$ and a <b>local min</b> if $f'(a)=0, f''(a)\ge 0$
+  </p>
+  <p>
+  A <b>critical point</b> is any point where $f'(x)=0$. The value $f(x)$ at this point is a <b>critical value</b>.
+  </p>
+  <p>
+  A function is <b>increasing</b> if $ a < b \rightarrow f(a) < f(b) $ or <b>decreasing</b> if $ a < b  \rightarrow f(a) > f(b) $.
+  </p>
+  <p>
+  A function is <b>convex</b> if $\forall a,x,b$ such that $a<x<b$, $\frac{f(x)-f(a)}{x-a}<\frac{f(b)-f(a)}{b-a}$, or  <b>concave</b> if you replace the inequality with >.
+  </p>
+  <p>
+  <b>L'Hopital rule</b> is a set of 3 conditions which leads to a simple conclusion.
+  </p>
+
+  <ol>
+  <li>  $\lim _{ x \rightarrow a }{f(x)}=0$</li>
+  <li>  $\lim _{ x \rightarrow a }{g(x)}=0$</li>
+  <li>  $\lim _{ x \rightarrow a }{\frac{f'(x)}{g'(x)}} \exists$</li>
+  </ol>
+
+  <p>
+  $\rightarrow \lim _{ x \rightarrow a }{\frac{f(x)}{g(x)}} =\frac{f'(x)}{g'(x)}$
+  </p>
+
+  <b>* parametric representation of curves</b>
+
+  <h3> Integrals </h3>
+
+  <p>
+  A <b>Riemann sum</b> is any sum of the form $\sum _{ i=1 }^{ n }{ f(x_{i})(t_{i}-t_{i-1}) }$.
+  </p>
+  <p>
+  An <b>upper sum</b> $U(f,P)=\sum _{ i=1 }^{ n }{ M_{i}(t_{i}-t_{i-1}) }$ is the approximation based on points above the line, while a <b>lower sum</b> $ L(f,P)=\sum_{ i=1 }^{ n }{ m_{i}(t_{i}-t_{i-1})}$ is based on points below the line. * graph to illustrate and explain this
+  </p>
+  <p>
+  The <b>sup</b> (short for supremum) is the least element $\ge$ all elements in its subset, while the <b>inf</b> (short for infimum) is the greatest element $\le$ all elements in its subset.
+  </p>
+  <p>
+  A function is <b>integrable</b> on $a,b$ if $\text{sup}\{L(f,P):P\} =\text{inf}\{U(f,P):P\}$. * write integral symbol, draw graphic with thin slices of integral adding up between a and b under the curve.
+  </p>
+  <p>
+  For $a < c < b$, $f$ integrable on $[a,b]$, $f$ is also integrable on $[a,c]$ and $[c,b]$. In addition, we have several important properties.
+  </p>
+
+  <ul>
+  <li> $\int _{ a }^{ b }{ f }=\int _{ a }^{ c }{ f }+\int _{ b }^{ c }{ f }$ </li>
+  <li> $\int _{ a }^{ b }{ (f + g) }=\int _{ a }^{ b }{ f }+\int _{ a }^{ b }{ g }$ </li>
+  <li> $c$ constant, $\int _{ a }^{ b }{ cf } = c \cdot \int _{ a }^{ b }{ f }$ </li>
+  <li> $F(x)$ is often used to refer to some $\int _{ a }^{ b }{ f }$ </li>
+  <li> Integrals sometimes have a constant term +C which refers to a number by which the answer can vary and still be a valid antiderivative.</li>
+  </ul>
+
+  <p>
+  The <b>Fundamental Theorem of Calculus:</b> $F'(c)=f(c)$ - the derivative of the integral is the original function.
+  </p>
+  <p>
+  The <b>2nd Fundamental Theorem of Calculus:</b> For $G(x)=\int _{ x }^{ b }{ g }$, $\int _{ a }^{ b }{ f }= g(b)-g(a)$
+  </p>
+  <p>
+  There are a number of interesting properties of the <b>trigonometric functions</b> in calculus, beginning with the fact that $\pi = 2 \cdot \sqrt{1-x^2}dx$  * draw chart of half circle integral
+  </p>
+  <ul>
+  <li> For $-1\le x \le 1$, $A(x)=\frac{x\sqrt{1-x^{2}}}{2}+\int _{ x }^{ 1 }{ \sqrt{1-t^2} }dt$ </li>
+
+  <li> $1=\text{sin}^2x+\text{cos}^2x$ </li>
+
+  <li> For $0\le x\le \pi$, cos(x) is a unique number in $[-1,1]$ such that $A(\text{cos}x) = \frac{x}{2}$ </li>
+
+  <li> $\text{sin}(x)=\sqrt{1-(\text{cos}x)^{2}}$ </li>
+
+  <li> To integrate $\text{sin}^{n}$, $\text{cos}^{n}$, n even, use $\text{sin}^2=\frac{1-\text{cos}2x}{2}$ and $\text{cos}^2=\frac{1+\text{cos}^{2}x}{2}$ </li>
+  </ul>
+
+  <p>
+  The integral can also be used to calculate certain volumes easily using the <b>volume of a rotated disk</b>. In this case, $\pi m_{i}(t{i}-t_{i-1})$ is the volume inside V. $V = \pi \int_{a}^{b} f(x)^{2}dx$
+  </p>
+  <p>
+  The <b>log function</b> is extremely important in many applications of calculus, and it has several important properties. $\text{log}(x)= \int _{ 1 }^{ x }{ \frac{1}{t} }dt$.   * draw chart log x equalling integral of 1/t
+
+  <ul>
+  <li> $a^{x} =e^{x \text{log}a}$</li>
+
+  <li> $e = log^{-1}(1)$</li>
+
+  <li> $\text{exp}(x)=\text{log}^{-1}(x) = e^{x}$</li>
+
+  <li> $\text{log}(xy) = \text{log}x+\text{log}y$</li>
+
+  <li> $\text{log}(x^{n})=n \text{log} x$</li>
+  </ul>
+
+  <p>
+  <b>Integration by parts</b> (pg 366) is a common method for solving more advanced integrals. For $f',g'$ continuous, $\rightarrow \int fg' = fg- \int f'g$. * step by step, clarify
+  </p>
+  <p>
+  The <b>substitution formula</b> is an interesting way to reorganize and more easily solve certain integrals. For $f',g'$ continuous, $\rightarrow \int_{g(a)}^{g(b)}{f} = \int_{a}^{b}{f(g)\cdot g'}$. * draw example
+  </p>
+  <p>
+  <b>U substitution</b> allows you to replace a certain part of a function with a placeholder, integrate, and substitute back in to solve.
+  </p>
+  <ol>
+  <li> Let $u=g(x)$, so $du=g'(x)dx$ </li>
+  <li> Evaluate $\int f(u)du$ </li>
+  <li> Substitute $x$ back in for $u$ </li>
+  </ol>
+
+
+  <h3> Infinite Sequences and Series </h3>
+
+  <p>
+  An <b>infinite sequence</b> is any infinitely long list of numbers from domain $\mathbb{N}$. A sequence $a_{n}$ converges to $l$, $\{a_{n}\}\rightarrow l$, or $\lim_{n\rightarrow \infty}{a_{n}}=l$ if $\forall \epsilon >0, \exists n \in N$ such that if $n>N$, $|a_{n}-l|<\epsilon$. * A sequence is summable ?
+  </p>
+  <p>
+  Where $a_{k}=\frac{f^{k}(a)}{k!}, 0 \le k \le n$, the <b>taylor polynomial of degree n for f at a</b> is written $P_{n,a}(x)=a_{0}+...+a_{n}(x-a)^{n}$.
+  </p>
+  <p>
+  A <b>cauchy sequence</b> is one for which if $n,m>N \rightarrow |a_{n}-a_{m}|<\epsilon$.
+  </p>
+  <p>
+  A value f is a <b>uniform limit</b> if $\forall \epsilon >0, \exists n \in N$ such that $\forall x \in A$, if $n>N \rightarrow |f(x)-f_{n}(x)|<\epsilon$. This also means that $f_{n}$ <b>converges uniformly</b> to f on A. If the condition is only true for each x individually rather than for all x, it <b>converges pointwise</b>. The <b>series converges</b> uniformly to f on A if $f_{1},f_{1}+f_{2},f_{1}+f_{2}+f_{3}+...$ converges uniformly to f on A.
+  </p>
+  <p>
+  $\mathbb{C}$ refers to the <b>complex numbers</b> $z=(a,b)=a+bi$ where a is real, b is imaginary.
+  <ul>
+  <li> i = (0,1) </li>
+
+  <li> For two complex numbers given by the pairs $(a,b)$ and $(c,d)$, $(a,b)+(c,d)=(a+c,b+d)$ </li>
+
+  <li> $(a,b)\cdot(c,d)=(a\cdot c - b \cdot d, a\cdot d+ b\cdot c)$ </li>
+
+  <li> If $z = x+iy$, the <b>complex conjugate</b> $\bar{z}=x-iy$ </li>
+
+  <li> $|z|=\sqrt{x^{2}+y^{2}}$ </li>
+
+  <li> The <b>conjugate function</b> $f(z)=\bar{z}=\text{Re}(z)-i\text{Im}(z)$ </li>
+  </ul>
+
+   <b>*complex power series</b>,<b>cauchy criterion</b>,<b>vanishing condition</b>,<b>boundedness criterion</b>, <b>comparison test</b>,<b>limit comparison test</b>, <b>ratio test</b>,<b>integral test</b>,<b>absolute convergence/summability</b>,<b>leibniz's theorem</b>,<b>weierstrass m test</b></p>
+
+  <h3> Table of Common Integrals and Derivatives </h3>
+   <table>
+   <tbody>
+   <tr>
+     <td><strong>Derivative</strong></td>
+   <td><strong>Integral</strong></td>
+   </tr>
+   <tr>
+   <td> $\frac{d}{dx}n=0$</td>
+   <td>$\int 0 dx= C$</td>
+   </tr>
+   <tr>
+   <td> $\frac{d}{dx}x=1$</td>
+   <td>$\int 1 dx= x+C$</td>
+   </tr>
+   <tr>
+   <td>$\frac{d}{dx}x^{n}=nx^{n-1}$</td>
+   <td>$\int x^{n}dx=\frac{x^{n+1}}{n+1} +C$</td>
+   </tr>
+   <tr>
+   <td>$\frac{d}{dx}\text{ln}x=\frac{1}{x}$</td>
+   <td>$\int e^{x} dx= e^{x}+C$</td>
+   </tr>
+   <tr>
+   <td>$\frac{d}{dx}n^{x}=n^{x}\text{ln}x $</td>
+   <td>$\int n^{x} dx= \frac{n^{x}}{\text{ln}x}+C$</td>
+   </tr>
+   <tr>
+   <td>$\frac{d}{dx}\text{sin}x=\text{cos}x $</td>
+   <td>$\int \text{sin}x dx=-\text{cos}x +C$</td>
+   </tr>
+   <tr>
+   <td>$\frac{d}{dx}\text{cos}x=-\text{sin}x$</td>
+   <td>$\int \text{cos}x dx=\text{sin}x +C$</td>
+   </tr>
+   <tr>
+   <td>$\frac{d}{dx}\text{tan}x=\text{sec}^{2}x$</td>
+   <td>$\int \frac{1}{x} dx= \text{ln}\begin{vmatrix}x\end{vmatrix} +C$</td>
+   </tr>
+   </tbody>
+   </table>
+
+   <p>Solution using rational functions, also known as <strong>partial fraction decomposition</strong>, uses the fact that for $n=m$, $p(x)=x^{n}+a_{n-1}x^{n-1}...+a_{0}$, $q(x)=x^{m}+b_{m-1}x^{m-1}...+b_{0}$, $\frac{p(x)}{q(x)}=[\frac{a_{1}}{(x-\alpha_{1})}+...+\frac{a_{k}r_{1}}{(x-\alpha_{1})^{r_{k}}}]+...+[\frac{a_{k}}{(x-\alpha_{1})}+...+\frac{a_{k}r_{1}}{(x-\alpha_{1})^{r_{k}}}]+[\frac{b_{1}}{(x-\alpha_{1})}+...+\frac{b_{k}c_{1}}{(x-\alpha_{1})^{r_{k}}}]$
+  * incomplete/wrong/clarify</p>
+   <p><strong>Tabular integration</strong> is a convenient technique for carrying out multiple layers of integration by parts at once. For example, $f(x)=x^{2}$ and $g(x)=e^{x}$, then we have:</p>
+
+   <table>
+   <thead><tr>
+   <th>D</th>
+   <th>I</th>
+   </tr>
+   </thead>
+   <tbody>
+   <tr>
+   <td>$x^{2}$ (a)</td>
+   <td>$e^{x}$</td>
+   </tr>
+   <tr>
+   <td>$\frac{d}{dx}x^{2}=2x$ (b)</td>
+   <td>$e^{x}$ (a)</td>
+   </tr>
+   <tr>
+   <td>$\frac{d}{dx}2x=2$ (c)</td>
+   <td>$e^{x}$ (b)</td>
+   </tr>
+   <tr>
+   <td>$\frac{d}{dx}2=0$</td>
+   <td>$e^{x}$    (c)</td>
+   </tr>
+   </tbody>
+   </table>
+   <p>Multiply together values marked a, b, c, d etc to get these values. Finally, the answer is simply $\int f(x)g(x) = a-b+c-d+e-...+C$. In this case $\int f(x)g(x) = x^{2}e^{x}-2xe^{x}+2e^{x}+C$</p>
+
+</div>
+
+<div id ="number6">
+  <h2>Linear Algebra</h2>
+  <p>A <strong>scalar</strong> is a single numeric value, often used for scaling.</p>
+  <p>A <strong>vector</strong> $x=\begin{bmatrix}  x_{1}\\ ... \\  x_{n}\ \end{bmatrix}$ is any list of numbers of length n, also known as an n-tuple.</p>
+  <p>A <strong>matrix</strong> is a 2-dimensional grid of values which has a vector in each column. Matrices commonly have m <strong>rows</strong> and n <strong>columns</strong>, and a specific value is described as $a_{i,j}$ where i represents the row, and j represents the column. $A=\begin{bmatrix} a_{ 1,1 } & ... & a_{ 1,m } \\ ... & a_{ { i,j } } & ... \\ a_{ n,1 } & ... & a_{ { m,n } } \end{bmatrix}$</p>
+  <p>A <strong>tensor</strong> is a higher-dimensional grid, analogous to a 3+ dimensional matrix. The <strong>degree</strong> of a tensor refers to the dimenionality of its grid.</p>
+  <p>Each matrix has a <strong>main diagonal</strong>, which refers to the set of points $a_{i,i}$ for each $i$. The <strong>transpose</strong> $A^{T}$ of a matrix is simply a reflection of the values across the main diagonal - each $a_{i,j} \rightarrow a_{j,i}$</p>
+  <p>The <strong>identity matrix</strong> $I$ refers to any matrix with 1s along the main diagonal and 0s everywhere else. The <strong>inverse of a matrix A</strong> is defined as the matrix such that $AA^{-1}=I \iff$ its columns are linearly independent and m=n. A matrix is called <strong>singular</strong> if it is not invertible.</p>
+  <p>Each point in the <strong>matrix product</strong> $C=AB$ is defined by $c_{i,j}= \sum_{k}A_{i,k}B_{k,j}$. In other words, $c_{i,j}$ is the <strong>dot product</strong> of row i in A and column j in B.</p>
+  <p>A <strong>linear combination</strong> of vectors is a summation of the each component distance and direction. Any matrix has a <strong>span</strong>, which refers to the set of points which are accessible by some linear combination of the vectors in the matrix. The <strong>column space</strong> or <strong>range</strong> of matrix A is the span of its column vectors.</p>
+  <p>The <strong>origin</strong> refers to a vector of all zeroes.</p>
+  <p>A vector is called <strong>linearly independent</strong> if it is not equivalent to any combination of other vectors in its matrix. If the vector can be expressed as some combination of other vectors, it is <strong>linearly dependent</strong>.</p>
+  <p>The <strong>norm</strong> is a measure of distance given by $\|x\|_{p}=(\sum_{i}|x_{i}|^{p})^{1/p}$. ◉ The norm has 3 properties</p>
+  <p>The <strong>max norm</strong> is a different type of norm $\|x\|_{n} = \text{max}_{i}|x_{i}|$</p>
+  <p>The <strong>frobenius norm</strong> is 'obscure outside of machine learning' $\|A\|_{F} = \sum_{i,j}{ A_{i,j}^{2}}$</p>
+  <ul>
+  <li><p>A <strong>square matrix</strong> is any matrix where the row count m = column count n. If a matrix is square and has linearly dependent vectors, it is singular.</p>
+  </li>
+  <li><p>A <strong>diagonal matrix</strong> refers to any matrix $D$ where $D_{i,j}=0 \forall i \ne j$. An upper triangular matrix is one for which every value below the diagonal is 0.</p>
+  </li>
+  <li><p>A <strong>symmetric</strong> matrix is any for which $A = A^{T}$.</p>
+  </li>
+  <li><p>An <strong>orthogonal</strong> matrix is one for which $AA^{T}=A^{T}A=I$, or $A^{-1}=A^{T}$. In orthogonal matrices, $x^{T}y=0$.</p>
+  </li>
+  <li><p>A <strong>unit vector</strong> refers to any vector x which has <strong>unit norm</strong> $\|x\|_{2}=1$. An <strong>orthonormal</strong> matrix is an orthognal matrix where each of the columns is a unit vector.</p>
+  </li>
+  </ul>
+  <p><strong>Eigendecomposition</strong> is a procedure which allows us to express and transform matrices more simply. Eigendecomposition is based on the equation $A=V\text{diag}(\lambda)V^{-1}$. The <strong>eigenvectors</strong> of a matrix are non-zero vectors such that $Av=\lambda v$, or those vectors for which A only alters the scale of $v$. The <strong>eigenvalues</strong> are the values of $\lambda$ which make this possible.</p>
+  <p>A matrix is <strong>positive definite</strong> if all of its eigenvalues are $>0$, or <strong>positive semidefinite</strong> if all of its eigenvalues are $\ge 0$. Similarly, a matrix is <strong>negative semidefinite</strong> if all of its eigenvalues are $<0$, or <strong>negative semidefinite</strong> if all of its eigenvalues are $\le 0$</p>
+  <p><strong>Singular value decomposition</strong> is another procedure to simplify matrices which partially generalizes the concept of matrix inversion to non-square matrices. A matrix $A$ can be expressed as $A=UDV^{T}$, where $A$ is the original m by n matrix, $U$ is an orthogonal m by m matrix of <strong>left singular vectors</strong>, D is a diagonal matrix where each element is a <strong>singular value</strong>, and $V^{T}$ is the transpose of a matrix containing <strong>right singular vectors</strong>.</p>
+  <p>thing about taller than wide and wider than tall?</p>
+  <p>The <strong>moore penrose pseudoinverse</strong> is defined as $A^{ + } = \lim _{ \alpha \searrow 0 }{ (A^{T}A+\alpha I)^{-1} A^{T}}$. It is normally solved for with the form  $A^{+}=VD^{+}U^{T}$, where U, V and D are the same as in VD, and $D^{+}$ is the reciprocal of non-zero elements transposed.</p>
+  <p>The <strong>trace</strong> of a matrix is $\text{Tr}(A)= \sum_{i}A_{i,i}$.</p>
+  <p><strong>Principal components analysis (PCA)</strong> is a lossy compression algorithm. The encoding function is given by $f(x)=c$, and the decoding function by $x \approx g(f(x))$. The decoding matrix $D \in \mathbb{R}^{n \cdot l}$ allows us to compute $g(c)=Dc$. $c^{*} = \text{argmin}_{c}-2x^{T}Dc+c^{T}c$. To encode use $f(x)=D^{T}(x)$, and to decode use $g(f(x))=DD^{T}x$. $d^{*}=\text{argmax}_{d}\text{Tr}(d^{T}X^{T}Xd)$ subject to $d^{T}d=1$, The optimal d is given by the eigenvector of $X^{T}X$ with the largest eigenvalue. If $l=1$, D is l eigenvectors with largest eigenvalues.</p>
+  <p>The <strong>determinant</strong> $\text{det}(A)$ can be thought of as a measure of expansion or contraction of space due to multiplication by a given matrix A. The determinant is 0 if space contracts completely in one or more of its dimensions. The determinant is 1 if the volume is preserved. The determinant is also given by the product of a matrix's eigenvalues.</p>
+
+
+  <h3>Ch 2 - Linear Algebra (Goodfellow, Bengio, Courville)</h3>
+
+  <p>scalars, vectors, matrices, tensors, transpose, main diagonal, matrix product, hadamard product, dot product, commutative, inversion, linear combination, origin, span, column space, range, linearly independent, dependence, square, singular, norm, max norm, frobenius norm, diagonal matrix, unit vector, unit norm, symmetric, orthogonal, orthonormal, eigendecomposition, eigenvectors, eigenvalues, positive definite, positive semidefinite, negative semidefinite, singular value decomposition, singular vectors, singular values, moore penrose pseudoinverse, trace operator, principal components analysis, determinant</p>
+
+
+</div>
+
+<div id ="number7">
+  <h2>Differential Equations</h2>
+  <h3>First Order Differential Equations</h3>
+  <p><strong>Existence and Uniqueness</strong>   Given a rectangle in the x,y plane, there exists a unique solution to the differential equation in this rectangle if for $y(a)=b$ there is only one solution for $\frac { dy }{ dx } =f(x,y)$</p>
+  <p><strong>Exponential Growth and Decay</strong></p>
+  <p><strong>General and Particular Solutions</strong>   A general solution describes a relationship between a general x and a general y. A particular solution describes the result of putting specific values into that equation.}</p>
+  <p>Many differentials involve just a simple rate of growth or decay that involves just a constant multiplied by  $P(t)$, the function giving the number of individuals at a specified time.</p>
+  <p><strong>Population</strong> $P(t)$ is the number of individuals in a population at time t, with constant birth rate $\beta$ and death rate $\delta$ $\Delta P\approx (\beta -\delta )P(t)\Delta t$, and $\frac { dP }{ dt } =kP$</p>
+  <p><strong>Integrals as Differential Equations</strong>   An integration problem is an especially simple form of differential equation. For $\frac{dy }{ dx } =f(x)$, y is the general solution $y(x) = \int{f(x)dx}+C$</p>
+  <p><strong>Compound Interest</strong> $A(t)$ is the amount of money in a savings account at time t, with interest rate r. $\Delta A\approx rA(t)\Delta t$, and $\frac { dA }{ dt } =rA$</p>
+  <p><strong>Radioactive Decay</strong> $N(t)$ is the number of atoms of an isotope at time t. $\Delta N\approx -kN(t)\Delta t$, and $\frac { dN }{ dt } =-kN$</p>
+  <p><strong>Heat Diffusion</strong> $T(t)$ is the temperature of the medium we are concerned with, A is the surrounding temperature. $\Delta N\approx -kN(t)\Delta t$, and $\frac { dT }{ dt } =-k(T-A)$</p>
+  <p><strong>Torricelli's Law</strong> If $V(t)$ is the volume of a vessel, and the fluid's depth is y, $\frac { dV }{ dt } =-k\sqrt{y}$. If the tank is cylindrical with vertical sides and cross sectional area A,  $\frac { dV }{ dt } =A(\frac { dy }{ dt })$ Then $h= \frac{k}{A}$ is a constant and $\frac { dy }{ dt } =-h\sqrt{y}$</p>
+  <p>Every equation of this form is solved by separating the function of x from the constant and integrating.  $\int { \frac { 1 }{ x } dx } \int { kdt } \Rightarrow ln\left| x \right| =kt+C \Rightarrow x={ e }^{ kt+C }\Rightarrow x={ Ae }^{ kt }$</p>
+  <p>An equation is <strong>separable</strong> if it is of the form $\frac{dy}{dx}=g(x)h(y)=\frac{g(x)}{f(y)}$ where $f(y)=\frac{1}{h(y)}$ Which is separable because it can be simplified to $g(x)dx=f(y)dy$, which can then be integrated $\int{f(y)dy}=\int{g(x)dx}+c$ and $F(y) = G(x)+C$</p>
+  <p><strong>First Order Linear Differential Equations</strong></p>
+  <p>Given a differential equation of the form $\frac{dy}{dx}+P(x)y=Q(x)$, the first step is to calculate the <strong>integrating factor</strong> $\rho (x)={ e }^{ \int { P(x)dx }  }$. Then multiply the integrating factor into both sides of the original equation, giving $\rho (x)\frac{dy}{dx}+\rho(x)P(x)y=\rho(x)Q(x)$ and ultimately, $y=\rho^{-1}\int{\rho(x)Q(x)dx}+C$</p>
+  <p><strong>Population Models</strong></p>
+  <p><strong>The Logistic Equation</strong> $k=b$ The limiting population $M= \frac{a}{b}$  $\frac{dP}{dt}= kP(M-P)$}
+  If birth and death are both a function of time, $\frac{dP}{dt}=(\beta_{0}-\beta_{1}P-\delta_{0})P$ if $a=\beta_{0}-\delta_{0}, b=\beta_{1}$, then $\frac{dP}{dt}=aP-bP^{2})$ <strong>Competition</strong> If $\beta$ is constant, $\delta$ is proportional to P $\delta=\alpha P$, this is also logistic. Just by changing the order of P and M,$\frac{dP}{dt}= kP(P-M)$ becomes an <strong>explosion/extinction</strong> equation, where M is the threshold. If P\&lt;M, the population will become extinct, and if P&gt;M, the population will explode</p>
+  <p><strong>Equilibrium Solutions \&amp; Stability</strong></p>
+  <p><strong>The Harvesting Equation</strong> $\frac{dx}{dt}=kx(M-x)-h$ where h is the amount harvested</p>
+  <p>To find an equilibrium solution curve, first find the explicit solution $x(t)$, for example, $\frac{dx}{dt}=-k(x-A)$, $k>0 \rightarrow x(t)=A +(x_{0}-A)e^{-kt}$ Then, take the limit as t goes to infinity. A critical point $x=c$ is called stable if for all $\epsilon>0$, there exists $\delta>0$ such that $\left| x_{ { 0 } }-c \right| <\delta \Rightarrow \left| x(t)-c \right| <\epsilon $ If it is not stable, it is unstable.</p>
+  <p><strong>Acceleration, Velocity, Position, and Time</strong>
+  <strong>Vertical Motion and Gravitation</strong> Given two forces, Resistance $F_{R}=-kv$ (if resistance is proportional to velocity, and Gravity $F_{G}=-mg$ (Or more generally, an attractive and repulsive force), $m\frac{dv}{dt}=F_{G}+F{R}=-kv-mg$. A more convenient notation uses  $\rho=\frac{k}{m}>0$, implying $\frac{dv}{dt}=\rho v-g$. Terminal speed is given by $\left| v_{ { T } } \right| =\frac { g }{ \rho  } =\frac { mg }{ k } $ Because actually calculating resistance is difficult, people use different approximations. Using that resistance is proportional to the square of velocity, $F_{R}=-kv\left|v\right|$ we get $\frac{dv}{dt}=-g-\rho v\left|v\right|$. In reality, gravitation is variable, and given by $F=\frac{GMm}{r^{2}}$ where $G\approx6.6726*10^{-11}N(\frac{m}{kg})^{2}$. Finally, escape velocity is given by the formula $v_{0}=\sqrt{\frac{2GM}{R}}$</p>
+  <p><strong>Higher Order Differential Equations</strong></p>
+  <p><strong>Spring-Dashpot System</strong>
+  There are two functions acting on the mass, which makes it a second order differential given by $mx''=F_{S}+F_{R}$, where $F_{S}=-kx$ and $F_{R}=-cv=-c\frac{dv}{dt}$ are the force of the spring and the dashpot, respectively. <strong>Free vibrations</strong> are given by  $m\frac{d^{2}x}{dt^{2}}+c\frac{dx}{dt}+kx=0$ <strong>Forced vibrations</strong> are given by  $m\frac{d^{2}x}{dt^{2}}+c\frac{dx}{dt}+kx=F(t)$}</p>
+  <p><strong>Second-Order Linear Differential Equations</strong>
+  <strong>Principle of Superposition</strong>  if $y_{1},y_{2}$ are solutions of a homogeneous second-order linear equation, $c_{1},c_{2}$ are constants,
+  the solution is $y=c_{1}y_{1}+c_{2}y_{2}$}</p>
+  <p>In general, to find the solution for a second order linear differential equation, first find the <strong>Wronskian</strong> of f and g $W=\begin{vmatrix} f & g  f' & g' \end{vmatrix}=fg'-f'g $. If the Wronskian is $0$, the functions are dependent. To find the actual solutions for a homogeneous equation, first find the characteristic equation, which converts each derivative of y into an power of r. $ay''+by'+cy=0\Rightarrow ar^{2}+br+c=0$. Next, find the roots to this equation $r_{1},r_{2}$, and plug them into $y(x)=c_{1}e^{r_{1}x}+c_{2}e^{r_{2}x}$. In the case you get the same root twice, $r_{1}=r_{2}$, the solution is $y(x)=(c_{1}+c_{2}x)e^{r_{1}x}$ <strong>Existence and Uniqueness</strong>  given that the functions $p_{i}$ are all continuous on I, and if we are given numbers $y(a)=b_{0}, y'(a)=b_{1},...,y^{(n-1)}(a)=b_{n-1}$ then the nth order linear equation has one and only one solution $y^{(n)}+p_{1}(x)y^{(n-1)}+...+p_{n-1}(x)y'+p_{n}(x)y=f(x) $}</p>
+  <p><strong>General Solutions of Linear Equations</strong>
+  An nth order differential equation is one of the form $P_{0}(x)y^{(n)}+P_{1}(x)y^{(n-1)}+...+P_{n-1}(x)y^{(1)}+P_{n}(x)y=F(x)$   dividing each term by $P_{0}(x)$ gives $y^{(n)}+p_{1}(x)y^{(n-1)}+...+p_{n-1}(x)y^{(1)}+P_{n}(x)y=f(x)$ Which has an <strong>associated homogeneous</strong>  equation $y^{(n)}+p_{1}(x)y^{(n-1)}+...+p_{n-1}(x)y^{(1)}+P_{n}(x)y=0$ For non-homogeneous equations, first we find the solution to the associated homogeneous, called the <strong>complementary function</strong>  $y_{c}$. Then, we find (sometimes are given) a particular solution of the original, non-homogeneous equation. Then if Y is all other solutions of the non-homogeneous, $Y=y_{c}+y_{p}$ and $Y(x)=c_{1}y_{1}(x)+...+c_{n}y_{n}(x)+y_{p}(x)$</p>
+  <p><strong>Homogeneous Equations with Constant Coefficients</strong></p>
+  <p>If $a_{0},...,a_{n}$ are real constants, and $a_{n}\neq0$, $a_{n}y^{(n)}+a_{n-1}y^{(n-1)}+...+a_{2}y''+a_{1}y'+a_{0}y=0$ because $\frac{d^{k}}{dx^{k}}(e^{rx})=r^{k}e^{rx}$, if we substitute $y=e^{rx}$ we end up with $e^{rx}(a_{n}r^{n}+a_{n-1}r^{n-1}+...+a_{2}r^{2}+a_{1}r+a_{0})=0$ The inner part of this $(a_{n}r^{n}+a_{n-1}r^{n-1}+...+a_{2}r^{2}+a_{1}r+a_{0})=0$ is called the <strong>characteristic equation</strong>.</p>
+  <p>There are three rules about the roots of a characteristic equation.</p>
+  <ul>
+  <li><p><strong>Distinct Real Roots</strong> $r_{1},...,r_{n}$ the solution is given by $y(x)=c_{1}e^{r_{1}x}+...+c_{n}e^{r_{n}x}$</p>
+  </li>
+  <li><p><strong>Repeated Roots</strong> $r_{1}=r_{i}=...$ for a root repeated with multiplicity k, $y(x)=(c_{1}+c_{2}x+...+c_{k}x^{k-1})e^{rx}$</p>
+  </li>
+  <li><p><strong>Complex Roots</strong> Recall that $e^{(a+bi)x}=e^{ax}(cosbx+isinbx)$ if the characteristic equation has an unrepeated pair of $a\pm bi$ roots,$y(x)=e^{ax}(c_{1}cosbx+c_{2}sinbx)$</p>
+  </li>
+  </ul>
+  <p><strong>Mechanical Vibrations</strong>
+  m - mass, x -distance from equilibrium, k - spring constant, c - damping constant, C - amplitude, $\omega_{0}$ - circular frequency, $\alpha$ - phase angle, $T=\frac{2\pi}{\omega_{0}}$ - period, $v=\frac{1}{T}$ - frequency, $\delta = \frac{\alpha}{\omega_{0}}$ - time lag</p>
+  <p><strong>Systems of Differential Equations</strong></p>
+  <p><strong>First Order Systems</strong></p>
+  <p><strong>First-Order Linear Systems</strong></p>
+  <p><strong>Eigenvalue Method for Homogenous Systems</strong>
+  <strong>The Wronskian</strong></p>
+  <p><strong>Multidimensional Mechanical Systems</strong></p>
+  <p><strong>Complete and Defective Multiple Eigenvalue Solutions</strong></p>
+
+</div>
+
+<div id ="number8">
+<h2>Statistics</h2>
+<h3>Tests about Population Mean</h3>
+<p>The <strong>standard normal CDF</strong> is written as $\Phi(z)$</p>
+<p>A <strong>p-value</strong> is the probability under $H_{0}$ of randomly getting such an extreme value, also called <strong>observed significance</strong>. The <strong>decision rule</strong> for a p-value is to reject $H_{0}$ if the p-value $\le \alpha$</p>
+<p>With $H_{o}:\mu_{\bar{x}}=\mu_{0}$, $z=\frac{x-\mu_{0}}{\sigma/\sqrt{n}}$. Another way to think about z is as a 'distance in $\sigma$ from $\mu$'.</p>
+<p>A <strong>cutoff c</strong> can be chosen to control $\alpha=P(TI)$. For $H_{0}:\mu=\mu_{0}$ vs $H_{a}:\mu > \mu_{0}$, reject $z \ge z_{\alpha}$</p>
+<p>$\text{P(TII)}=\beta$, $\beta(\mu')=\Phi(z_{\alpha}+\frac{\mu_{0}-\mu'}{\sigma/\sqrt{n}})$</p>
+<p>Sample size $n=(\frac{\sigma(z_{\alpha}+z_{\beta})}{\mu_{0}-\mu'})^{2}$</p>
+<p>To use a <strong>one-sample t-test</strong> to check $H_{0}:\mu=\mu_{0}$ vs $H_{a}:\mu>\mu_{0}$, use $t=\frac{\bar{x}-\mu_{0}}{s/\sqrt{n}}$, and reject $t \ge t_{\alpha,n-1}$</p>
+<p>To use a <strong>proportion test</strong> to check $H_{0}:p=p_{0}$ vs $H_{a}:p>p_{0}$, use $z=\frac{\hat{p}-p_{0}}{\sqrt{p_{0}(1-p_{0})/n}}$, and reject $z \ge z_{\alpha}$</p>
+<p>Use a proportion test if $np_{0} \ge 10$ and $n(1-p_{0}) \ge 10$. $E(Z)=z=\frac{\hat{p}-p'}{\sqrt{p'(1-p')/n}}$,$V(Z)=\frac{p'(1-p')/n}{p_{0}(1-p_{0})/n}$</p>
+<p>$\beta(p')=\Phi[\frac{p_{0}-p'+z_{\alpha}\sqrt{p_{0}(1-p_{0})/n}}{\sqrt{p'(1-p')/n}}]$</p>
+<p>$n=[\frac{z_{\alpha}\sqrt{p_{0}(1-p_{0})}+z_{\beta}\sqrt{p_{1}'(1-p')}}{p'-p_{0}}]$</p>
+<p>For a <strong>small sample</strong>, find a <strong>critical value c</strong> such that $P(TI)=\alpha=1-B(c-1;n,p_{0})$ and $\beta(p')=B(c-1;n,p')$ where B() is the <strong>Binomial CDF</strong></p>
+<h3>Difference between population means</h3>
+<ul>
+<li>If $X_{1}...X_{n}$ is a <strong>random sample</strong> $\sim N(\mu_{1},\sigma_{1}^{2})$</li>
+<li>$Y_{1}...Y_{n}$ is $\sim N(\mu_{2},\sigma_{2}^{2})$</li>
+<li>X and Y are independent</li>
+</ul>
+<p>Then $\mu_{\bar{X}-\bar{Y}}=\mu_{1}-\mu_{2}$ and $\sigma_{\bar{X}-\bar{Y}}=\sqrt{\frac{\sigma_{1}^{2}}{m}+\frac{\sigma_{2}^{2}}{n}}$</p>
+<p>The <strong>difference in means test</strong> uses $z=\frac{\bar{X}-\bar{Y}-(\Delta_{0})}{\sqrt{\frac{\sigma_{1}^{2}}{m}+\frac{\sigma_{2}^{2}}{n}}}$.</p>
+<ul>
+<li>For $H_{0}: \mu_{1}-\mu_{2}=\Delta_{0}$ vs $H_{a}: \mu_{1}-\mu_{2}>\Delta_{0}$, reject $z \ge z_{\alpha}$</li>
+<li>$\beta(\Delta')=\Phi(z_{\alpha}-\frac{\Delta'-\Delta_{0}}{\sigma})$</li>
+<li>a $100(1-\alpha)\%$ CI for $\mu_{1}-\mu_{2}$ is $\bar{x}-\bar{y} \pm z_{\alpha/2}\sqrt{\frac{x_{1}^{2}}{m}+\frac{x_{2}^{2}}{n}}$</li>
+<li>where <strong>w</strong> is the width of desired CI, $n=\frac{4z_{\alpha/2}(\sigma_{1}^{2}+\sigma_{2}^{2})}{w^{2}}$</li>
+</ul>
+<p>If you can assume equal variances, you can use the <strong>pooled estimator</strong> $S_{p}^{2}=\frac{m-1}{m+n-2}S_{1}^{2}+\frac{n-1}{m+n-2}S_{2}^{2}$. Replace $\sigma^{2}$ with $S_{p}^{2}$ and test using $t_{\alpha,m+n-2}$</p>
+<p>The <strong>two sample t-test</strong> uses $T=\frac{\bar{X}-\bar{Y}-(\mu_{1}-\mu_{2})}{\sqrt{\frac{s_{1}^{2}}{m}+\frac{s_{2}^{2}}{n}}}$ with v degrees of freedom</p>
+<ul>
+<li>$v=\lfloor \frac{(se_{1})^{2}+(se_{2})^{2}}{\frac{(se_{1})^{4}}{m-1}+\frac{(se_{2})^{4}}{n-1}}\rfloor$ </li>
+<li>$se_{1}=\frac{s_{1}}{\sqrt{m}}$, $se_{2}=\frac{s_{2}}{\sqrt{n}}$</li>
+<li>$s=\frac{1}{N-1}\sqrt{\sum_{i}(x_{i}-\bar{x})^{2}}$</li>
+<li>a $100(1-\alpha)\%$ CI for $\mu_{1}-\mu_{2}$ is $\bar{x}-\bar{y} \pm t_{\alpha/2, v}\cdot \sqrt{\frac{s_{1}^{2}}{m}+\frac{s_{2}^{2}}{n}}$</li>
+<li>for $H_{a}:\mu_{1}-\mu_{2}>\Delta_{0}$, reject $t \ge t_{\alpha,v}$</li>
+</ul>
+<h3>Single Factor ANOVA</h3>
+<p>In single factor ANOVA, <strong>I</strong> refers to the number of populations compared, and <strong>J</strong> refers to the number of measurements in each population. $X_{i,j}$ is a random variable denoting the jth measurement from the ith population. $x_{i,j}$ is an observed value of this random variable.</p>
+<p>ANOVA tests $H_{0}:\mu_{1}=...=\mu_{I}$ vs $H_{a}:$ at least 2 are different. $\mu_{i}$ refers to the mean of population i.</p>
+<p>$s_{i}^{2}=\frac{\sum_{j}(x_{ij}-\bar{x_{i.}})}{J-1}$</p>
+<p><strong>$X_{i.}=\sum_{j}X_{i,j}, \bar{X}_{i.}=\frac{\sum_{j}X_{i,j}}{J},X_{. j}=\sum_{i}X_{i,j}, \bar{X}_{. j}=\frac{\sum_{i}X_{i,j}}{I}$</strong></p>
+<p><strong>the grand sum</strong> $X_{..}=\sum_{i}\sum_{j}X_{i,j},\bar{X}_{..}=\frac{\sum_{i}\sum_{j}X_{i,j}}{IJ}$</p>
+<p><strong>MSTr</strong>=$\frac{J}{I-1}\sum_{i}(\bar{X}_{i.}-\bar{X}_{..})=\frac{SSTr}{I-1}$</p>
+<p>If $H_{0}$ is true, $E(MSTr)=E(MSE)=\sigma^{2}$, if not, $E(MSTr)>E(MSE)$</p>
+<p><strong>MSE</strong>=$\frac{S_{1}^{2}+...+S_{I}^{2}}{I}=\frac{SSE}{I(J-1)}$</p>
+<p><strong>test statistic for one factor ANOVA</strong> F=$\frac{MSTr}{MSE}$, with $v_{1}=m-1$, $ v_{2}=n-1$</p>
+<p>For $H_{0}:\sigma_{1}^{2}=\sigma_{2}^{2}$, use $f=\frac{s_{1}^{2}}{s_{2}^{2}}$, for $H_{a}:\sigma_{1}^{2}>\sigma_{2}^{2}$ reject $f \ge F_{\alpha,m-1,}$</p>
+<p><strong>SST</strong>=$\sum_{i}\sum_{j}x_{i,j}^{2}-\frac{1}{IJ}x_{..}$=SSTr+SSE</p>
+<p><strong>SSTr</strong>=$\frac{1}{J}\sum_{i}x_{i.}^{2}-\frac{1}{IJ}x_{..}$</p>
+<p><strong>SSE</strong>=$\sum_{i}\sum_{j}(x_{i,j}-x_{i.})$</p>
+<p><strong>Tukey's Procedure</strong>: With probability $1-\alpha$, $\bar{X_{i.}}-\bar{X_{j.}}-Q_{\alpha,I,I(J-1)}\sqrt{MSE/J} \le \mu_{i}-\mu_{j} \le \bar{X_{i.}}-\bar{X_{j.}}+Q_{\alpha,I,I(J-1)}\sqrt{MSE/J} \forall i,j$ s.t. $i<j$.</p>
+<p>Select $\alpha$, find $Q_{\alpha,I,I(J-1)}$ and $w=Q_{\alpha,I,I(J-1)}\cdot\sqrt{MSE/J}$. List the sample means and underline those with a difference $<w$. Those not underlined are significantly different.</p>
+<p>For other parametric equations such as $\Theta=\sum c_{i} \mu_{i}$ with $c_{i}$ constants, a CI can be constructed from $\sum c_{i}\bar{X_{i.}} \pm t_{\alpha/2, I(J-1)}\cdot \sqrt{\frac{MSE\sum c_{i}^{2}}{J}}$, $V(\hat{\Theta})=\frac{\sigma^{2}}{J}\sum c_{i}^{2}$</p>
+<p>An <strong>ANOVA Table</strong> has columns source of variation, df, ssq, msq, f and rows source of variation, treatment, error, and total.</p>
+<h3>Two Factor Anova $K_{i,j}=1$</h3>
+<p>In a two factor model, <strong>factor A</strong> has I levels and <strong>factor B</strong> has J levels. An <strong>additive model</strong> is one for which $\exists I \alpha_{1}...\alpha_{I}, J\beta_{1}...\beta_{J}$ such that $X_{ij}=\alpha_{i}+\beta_{j}+\epsilon_{ij}$. $\mu_{ij}=\alpha_{i}+\beta_{j}$.</p>
+<p><strong>Nonuniqueness</strong> occurs when two separate $\alpha_{i} \beta_{j}$ combinations lead to the same $\mu_{ij}$. In this case, use $X_{ij}=\mu+\alpha_{i}+\beta_{j}+\epsilon_{ij}$ where $\sum_{i}\alpha_{i}=0$, $\sum_{j}\beta_{j}=0$, $\epsilon_{ij} \sim iid N(0,\sigma^{2})$</p>
+<p>$H_{0A}: \alpha_{1}=...=\alpha_{i}=0$ is the hypothesis that the <strong>levels</strong> of factor A have no effect on true average vs $H_{aA}:$ at least one $\alpha_{i} \ne 0$</p>
+<p>$H_{0B}: \beta_{1}=...=\beta_{j}=0$ is the hypothesis that the <strong>levels</strong> of factor B have no effect on true average vs $H_{aB}:$ at least one $\beta_{i} \ne 0$</p>
+<ul>
+<li><p><strong>SST</strong>=$\sum_{i}\sum_{j}(x_{ij}-\bar{x}_{\cdot\cdot})^{2}=\sum_{i}\sum_{j}x_{i,j}^{2}-\frac{1}{IJ}x_{\cdot\cdot} = SSA+SSB+SSE$ with IJ-1 df</p>
+</li>
+<li><p><strong>SSA</strong>=$\sum_{i}\sum_{j}(\bar{x}_{i\cdot}-\bar{x}_{\cdot\cdot})^{2}= J\sum_{i}(\bar{x}_{i\cdot}-\bar{x}_{\cdot\cdot})^{2}$ with I-1 df</p>
+</li>
+<li><p><strong>SSB</strong>=$\sum_{i}\sum_{j}(\bar{x}_{\cdot j}-\bar{x}_{\cdot\cdot})^{2}= I\sum_{j}(\bar{x}_{\cdot j}-\bar{x}_{\cdot\cdot})^{2}$ with J-1 df</p>
+</li>
+<li><p><strong>SSE</strong>=$\sum_{i}\sum_{j}(x_{ij}-\bar{x}_{i\cdot}-\bar{x}_{\cdot j}+\bar{x}_{\cdot\cdot})^{2}$ with (I-1)(J-1) df</p>
+</li>
+</ul>
+<p>For $H_{0A}$ vs $H_{aA}$, use $f_{A}=\frac{MSA}{MSE}$, reject $f \ge F_{\alpha,I-1,(I-1)(J-1)}$</p>
+<p>For $H_{0B}$ vs $H_{aB}$, use $f_{B}=\frac{MSB}{MSE}$, reject $f \ge F_{\alpha,J-1,(I-1)(J-1)}$</p>
+<p>$E(MSE)=\sigma^{2}$,$E(MSA)=\sigma^{2}+\frac{J}{I-1}\sum_{i}\alpha_{i}^{2}$,$E(MSB)=\sigma^{2}+\frac{I}{J-1}\sum_{j}\beta_{j}^{2}$</p>
+<p>To perform <strong>multiple comparisons</strong>:</p>
+<ol>
+<li>To compare levels of factor A, get $Q_{\alpha,I,(I-1)(J-1)}$</li>
+<li>Compute $w=Q \cdot \sqrt{MSE/J}$ for factor A and $w=Q \cdot \sqrt{MSE/I}$ for factor B.</li>
+<li>Arrange in ascending order, undersocre those with difference less than w</li>
+</ol>
+<p>A <strong>randomized block</strong> is an analogy to a paired experiment with $I>2$. 'Blocks' are created randomly by dividing IJ units into J groups of I units. <strong>Blocking</strong> reduces variability by grouping and accounting for other sources of variability.</p>
+<h3>Two Factor Anova $K_{i,j}&gt;1$</h3>
+<p>If <strong>additivity</strong> does not hold, there is <strong>interaction</strong> between the variables. $\mu = \frac{1}{IJ} \sum_{i}\sum_{j} \mu_{ij}, \mu_{i\cdot}=\frac{1}{J}\sum_{j}\mu_{ij}, \mu_{\cdot j}=\frac{1}{I}\sum_{i}\mu_{ij}$</p>
+<p>$\alpha_{i}=\mu_{i\cdot}-\mu$= <strong>the effect of factor A at level i</strong></p>
+<p>$\beta_{j}=\mu_{\cdot j}-\mu$= <strong>the effect of factor B at level j</strong></p>
+<p>$\gamma_{ij}=\mu_{ij}-(\mu+\alpha_{i}+\beta_{j})$= <strong>the interaction between factor A at level i and factor B at level J</strong></p>
+<p>$\mu_{ij}=\mu+\alpha_{i}+\beta_{j}+\gamma_{ij}$. <strong>additive</strong> $\rightarrow$ all $\gamma_{ij}=0$</p>
+<p>$H_{OAB}:\gamma_{ij}=0 \forall i,j$ vs $H_{aAB}:$ at least one $\gamma_{ij} \ne 0$
+$H_{OA}:\alpha_{1}=...=\alpha_{I}=0$ vs $H_{aA}:$ at least one $\alpha_{i} \ne 0$
+$H_{OB}:\beta_{1}=...=\beta_{I}=0$ vs $H_{aB}:$ at least one $\beta_{j} \ne 0$</p>
+<p>The <strong>fixed effects model</strong> is $X_{ijk}=\mu+\alpha_{i}+\beta_{j}+\gamma_{ij}+\epsilon_{ijk}$ where $\epsilon_{ijk} \sim iid N(0,\sigma^{2})$</p>
+<p>$SST=\sum_{i}\sum_{j}\sum_{k}(X_{ijk}-\bar{X_{...}})^{2}SSA+SSB+SSAB+SSE$ with df = IJK-1</p>
+<p>$SSE=\sum_{i}\sum_{j}\sum_{k}(X_{ijk}-\bar{X_{ij.}})^{2}$ with df = IJ(K-1)</p>
+<p>$SSA=\sum_{i}\sum_{j}\sum_{k}(\bar{X_{i..}}-\bar{X_{...}})^{2}$ with df = I-1</p>
+<p>$SSB=\sum_{i}\sum_{j}\sum_{k}(\bar{X_{.j.}}-\bar{X_{...}})^{2}$ with df = J-1</p>
+<p>$SSAB=\sum_{i}\sum_{j}\sum_{k}(\bar{X_{ik.}}-\bar{X_{i..}}-\bar{X_{.j.}}+\bar{X_{...}})^{2}$ is called the <strong>interaction sum of squares</strong> with df = (I-1)(J-1)</p>
+<p>For $H_{0A}$ vs $H_{aA}$ use $f=\frac{MSA}{MSE}$, reject $f_{A} \ge F_{\alpha,I-1,IJ(K-1)}$</p>
+<p>For $H_{0B}$ vs $H_{aB}$ use $f=\frac{MSB}{MSE}$, reject $f_{B} \ge F_{\alpha,J-1,IJ(K-1)}$</p>
+<p>For $H_{0AB}$ vs $H_{aAB}$ use $f=\frac{MSAB}{MSE}$, reject $f_{AB} \ge F_{\alpha,(I-1)(J-1),IJ(K-1)}$</p>
+<p>When $H_{0AB}$ is not rejected and at least one of $H_{0A}$ or $H_{0B}$ is rejected, to identify differenes among $\alpha_{i}$s when $H_{0A}$ is rejected,</p>
+<ol>
+<li>Find $Q_{\alpha,I,IJ(K-1)}$ </li>
+<li>Compute $w=Q\sqrt{MSE/(JK)}$</li>
+<li>Order $\bar{x}_{i..}$s from smallest to largest and underline all pairs which differ by less than w. Pairs not underscored are significantly different levels.</li>
+</ol>
+<p>To do this for factor B when $H_{0B}$ is rejected, use $Q_{\alpha,J,IJ(K-1)}$ , $wQ\sqrt{MSE/(IK)}$, $\bar{x}_{.j.}$</p>
+<h3>Simple Linear Regression</h3>
+<p><strong>x</strong> is the <strong>independent/predictor/explanatory variable</strong> and <strong>y</strong> is the <strong>dependent/response variable</strong></p>
+<p>$\mu_{Yx*}=\beta_{0} \beta_{1}x*$ when $x=x*$ and $\sigma_{Yx*}^{2}=\sigma^{2}$</p>
+<p>The <strong>model equation</strong> is $y=\beta_{0}+\beta_{1}x+\epsilon$ where $\epsilon \sim N(0,\sigma^{2})$ is called <strong>random error/deviation</strong></p>
+<p>$y=\beta_{0}+\beta_{1}x$ is called the <strong>population regression line</strong></p>
+<p>The <strong>least squares estimates</strong> for $\beta_{0}$ and $\beta_{1}$:</p>
+<ul>
+<li>$b_{0}=\hat{
+\beta_{0}}=\frac{\sum y_{i}-\hat{\beta_{1}}\sum x_{i}}{n} = \bar{y}-\hat{\beta_{1}}\bar{x}$</li>
+<li>$S_{XY}=\sum x_{i}y_{i}-\frac{\sum x_{i} \sum y_{i}}{n}$</li>
+<li>$S_{XX}=\sum x_{i}^{2}-\frac{\sum x_{i}^{2}}{n}$</li>
+<li>$b_{1}=\hat{\beta_{1}}=\frac{S_{XY}}{S_{XX}}$</li>
+</ul>
+<p>The <strong>sum of squared deviations</strong> is $f(b_{0},b_{1})= \sum[y_{i}-(b_{0}+b_{1}x_{i})]^{2}$</p>
+<p>The <strong>estimated regression line</strong> $y=\hat{\beta_{0}}+\hat{\beta_{1}}x$</p>
+<p>The <strong>sum of squared errors(SSE)</strong>=$\sum (y_{i}-\hat{y_{i}})^{2}=[y_{i}-(\hat\beta_{0}+\hat{\beta_{1}}x_{i})]^{2}$, is also confusingly refered to as the Residual Sum of Squares(SSR or RSS)</p>
+<p>$\hat{\sigma^{2}}=s^{2}=\frac{\sum(y_{i}-\hat{y_{i}})^{2}}{n-2}$</p>
+<p>The <strong>sum of squares total(SST)=$S_{YY}=\sum(y_{i}-\bar{y})^{2}=\sum y_{i}^{2}-\frac{\sum y_{i}^{2}}{n}$</strong></p>
+<p>The <strong>coefficient of determination</strong> $r^{2}=1-\frac{SSE}{SST}$ is the proportion of observered y variation attributable to simple linear regression.</p>
+<p>The <strong>sum of squares due to regression(SSR)=SST-SSE=$\sum(y_{i}-\bar{y})^{2}$</strong></p>
+<p><strong>Fitted values</strong> $\hat{y_{1}}...\hat{y_{n}}$ are $x_{1}...x_{n}$ in $\hat{y_{i}}=\hat{\beta_{0}}+\hat{\beta_{1}}x_{i}$. The <strong>residuals</strong> are $y_{i}-\hat{y_{i}}$.</p>
+<p>$E(\beta_{1})=\mu_{\hat{\beta_{1}}}=\beta_{1}$ and $V(\beta_{1})=\sigma_{\hat{\beta_{1}}}^{2}=\frac{\sigma^{2}}{S_{xx}}$, so $\hat{\beta_{1}}\sim N(\mu_{\hat{\beta_{1}}},\sigma_{\hat{\beta_{1}}}^{2})$</p>
+<ul>
+<li><p>$T = \frac{\hat{\beta_{1}}-\beta_{1}}{s_{\hat{\beta_{1}}}^{2}} \sim t$ with n-2 df</p>
+</li>
+<li><p>a $100(1-\alpha)\%$ CI for the slope $\beta_{1}$ is $\hat{\beta_{1}} \pm t_{\alpha/2,n-2}\cdot s_{\hat{\beta_{1}}}$</p>
+</li>
+<li><p>Test $H_{0}:\beta_{1}=\beta_{10}$ 'beta one nought' using $T = \frac{\hat{\beta_{1}}-\beta_{10}}{s_{\hat{\beta_{1}}}^{2}} \sim t$ with n-2 df. For $H_{a}:\beta_{1}>\beta_{10}$, reject $t \ge t_{\alpha,n-2}$</p>
+</li>
+<li><p>The <strong>model utility test</strong> checks $H_{0}:\beta_{1}=0$ vs $H_{0}:\beta_{1} \ne 0$</p>
+</li>
+</ul>
+<h3>Multiple Regression</h3><p>involves $k \ge 2$ <strong>predictor variables</strong> $x_{1}...x_{k}$</p>
+<p>The <strong>general additive multiple regression model equation</strong> $Y=\beta_{0}+...+\beta_{k}x_{k}+\epsilon$ where $\epsilon \sim N(0,\sigma^{2})$</p>
+<p>$x_{1}*...x_{k}*$ are <strong>particular values</strong> of $x_{1}...x_{k}$, $\mu_{Y \cdot x_{i}*+...+x_{k}*}=\beta_{0}+\beta_{1}x_{1}*+...+\beta_{k}x_{k}*$</p>
+<p>$\beta_{i}$s are <strong>population/true regression coefficients</strong>: the expected change in Y from one unit increase in $x_{i}$ while the rest $x_{1}...x_{k}$ are held fixed.</p>
+<p><strong>Interaction</strong> refers to the fact that change in Y expected from changing one variable depends on the values of other variables.</p>
+<p>A <strong>dummy/indicator variable</strong> is a variable $x_{i}$ which is 1 if a given condition is true, or 0 if it is false.</p>
+<p>For <strong>$f(b_{0}...b_{k})=\sum_{j}[y_{j}-(b_{0}+b_{1}x_{1j}+...+b_{k}x_{kj})]^{2}$</strong>, the partial derivatives $\frac{\partial}{\partial i}= b_{1}\sum X_{ij}+b_{1}\sum X_{ij}^{2}+b_{2}\sum X_{ij}+x_{i+1,j}+...+b_{k}\sum x_{kj} = \sum x_{ij}y_{j}$ make up a <strong>system of normal equations</strong></p>
+<p>The <strong>coefficient of multiple determination</strong> $R^{2} = 1- \frac{SSE}{SST}$ <strong>adjusted</strong> $R_{a}^{2}=1-\frac{n-1}{n-(k+1)}\cdot \frac{SSE}{SST}$</p>
+<p>$\hat{\sigma^{2}}=s^{2}=\frac{SSE}{n-(k+1)}=MSE$</p>
+<p>The <strong>model utility test</strong> checks to see if any of the k predictor variables are useful for the dependent variable. $H_{0}:\beta_{1}=...=\beta_{k}=0$ vs $H_{a}:$ at least one $\ne 0$ using $f=\frac{R^{2}/k}{(1-R^{2})/[n-(k+1)]}=\frac{MSR}{MSE}$</p>
+<p>$100(1-\alpha)\%$ CI for $\beta_{i}$ is $\beta_{i} \pm t_{\alpha/2,n-(k+1)}\cdot s_{\hat{\beta_{1}}}$</p>
+<p>The test $H_{0}:\beta_{i}=\beta_{i0}$ uses $t= \frac{\hat{\beta_{i}-\beta_{i0}}}{s_{\hat{\beta_{1}}}}$ with n-(k+1) df</p>
+<p>$100(1-\alpha)\%$ CI for $\mu_{Y\cdot x_{1}*...x_{k}*}$ is $\hat{y} \pm t_{\alpha/2,n-(k+1)}\cdot s_{\hat{y}}$ where $\hat{Y}=\hat{\beta_{0}}+\hat{\beta_{1}}x_{1}*+...+\hat{\beta_{k}}x_{k}*$ and $\hat{y}$ is the calculated value of $\hat{Y}$</p>
+<p>A <strong>reduced model</strong> is a model constructed with a subset $x_{l}...x_{k}$ removed from $x_{1}...x_{k}$. For $H_{0}:\beta_{l+1}=...=\beta_{k}=0$, $Y=\beta_{0}+\beta_{1}x_{1}+...+\beta_{l}x_{l}+\epsilon$ is the correct model. With $H_{a}:$ at least one of $\beta_{l+1}...\beta_{k}\ne 0$</p>
+<p>$SSE_{k}$ is a measure of unexplained variation in the full model, and $SSE_{l}$ is unexplained variation in the reduced model.</p>
+<p>$f=\frac{(SSE_{l}-SSE_{k})/(k-l)}{SSE_{k}/[n-(k+1)]}$, reject $f \ge F_{\alpha,k-l,n-(k+1)}$</p>
+<p>Use a plot of standardized residuals to see if the normality assumption is valid.</p>
+
+</div>
+
+<div id ="number9">
+<h2>Statistical Inference</h2>
+<p>A <strong>statistic</strong> is any function of observable random variables $T = t(X_{1}...X_{n})$ which does not depend on unknown parameters</p>
+<p>$\sum _{ i=1 }^{ n }{ \frac { { X }_{ i } }{ n }  }  = \overline{X}$</p>
+<p>If $X_{1}...X_{n}$ is random sample from $f(x)$ with $E(X)=\mu$ and $Var(X)=\sigma^{2}$ we know that $E(\overline{X})=\mu$ and $Var(\overline{X})=\frac{\sigma^{2}}{n}$</p>
+<p>The <strong>Sample Proportion</strong> $\hat{p}=\frac{Y}{n}$ has $E(\hat{p})=p$,$Var(\hat{p})=\frac{pq}{n}$  $\hat{p}$}</p>
+<p>The <strong>Sample Variance</strong> ${ S }^{ 2 }=\frac { \sum _{ i=1 }^{ n }{ { ({ X }_{ i }-\overline { X }  })^{ 2 } }  }{ n-1 } =\frac { \sum _{ i=1 }^{ n }{ { { X }_{ i } }^{ 2 } } -\frac { \sum _{ i=1 }^{ n }{ { X }_{ i } }  }{ n }  }{ n-1 } =\frac { \sum _{ i=1 }^{ n }{ { X }_{ i }^{ 2 }-n{ \overline { X }  }^{ 2 } }  }{ n-1 }$</p>
+<p>If $X_{1}...X_{n}$ is random sample from $f(x)$ with $E(X)=\mu$ and $Var(X)=\sigma^{2}$， $E(S^{2})=\sigma^{2}$,$Var(S^{2})=\frac{\mu_{4}-\frac{n-3}{n-4}\sigma^{4}}{n}$</p>
+<h3>8.3 Sampling Distributions</h3>
+<p>If $X_{i}\sim N(\mu_{i},\sigma_{i}^{2})$ and $Y=\sum _{ i=1 }^{ n }{ { a }_{ i }{ X }_{ i } } \sim N(\sum _{ i=1 }^{ n }{ { a }_{ i }{ \mu  }_{ i } } \sum _{ i=1 }^{ n }{ { a }_{ i }^{ 2 }{ \sigma  }_{ i }^{ 2 } } )$</p>
+<p>If $X_{1}...X_{n}$ is random sample from $X\sim N(\mu,\sigma^{2})$  $\overline { X } \sim N(\mu ,\frac { \sigma ^{ 2 } }{ n })$</p>
+<p>If  $ Y  \sim \chi^{2}(v)$, ${ M }_{ Y }(t)={ (1-2t) }^{ \frac { -v }{ 2 }  },\quad E({ Y }^{ r })={ 2 }^{ r }\frac { \Gamma (\frac { v }{ 2 } +r) }{ \Gamma (\frac { v }{ 2 } ) } ,\quad E(Y)=v,\quad Var(Y)=2v$</p>
+<p>If $X \sim Gam(\theta,\kappa)$, $Y=\frac{2X}{\theta}\sim \chi^{2}(2\kappa)$</p>
+<p>If ${ Y }_{ i }\sim { \chi  }^{ 2 }({ v }_{ i })$, $V=\sum _{ i=1 }^{ n }{ { Y }_{ i } } \sim { \chi  }^{ 2 }(\sum _{ i=1 }^{ n }{ { v }_{ i } } )$</p>
+<p>If $Z \sim N(0,1)$, $Z^{2} \sim \chi^{2}(1)$</p>
+<p>If $X_{1}...X_{n}$ is random sample from $ N(\mu,\sigma^{2})$, $\sum _{ i=1 }^{ n }{ \frac { { ({ X }_{ i }-\mu ) }^{ 2 } }{ { \sigma  }^{ 2 } }  } \sim { \chi  }^{ 2 }(n)$, $\frac { n{ (\overline { { X } } -\mu ) }^{ 2 } }{ { \sigma  }^{ 2 } } \sim { \chi  }^{ 2 }(1)$</p>
+<p>If $X_{1}...X_{n}$ is random sample from $ N(\mu,\sigma^{2})$</p>
+<ol>
+<li>$\overline{X}$ and the terms $X_{i}-\overline{X}$ are independent</li>
+<li>$\overline{X}$ and $S^{2}$ are independent </li>
+<li>$\frac{(n-1)X^{2}}{\sigma^{2}}\sim \chi^{2}(n-1)$</li>
+</ol>
+<h3>8.4 t, F, Beta</h3>
+<p>The <strong>Student's t Distribution</strong> $T=\frac{Z}{\sqrt{\frac{V}{v}}}$ Z, V independent, $Z \sim N(0,1)$, $V \sim \chi^{2}(v)$</p>
+<p><strong>t PDF</strong> $f(t;v)=\frac{\Gamma(\frac{v+1}{2})}{\Gamma(\frac{v}{2})}\frac{1}{\sqrt{v\pi}}(1+\frac{t^{2}}{v})^{\frac{-(v+1)}{2}}$</p>
+<p>If $T \sim t(v), v>2r$ - $E(t^{2r}), E(T^{2r-1}), Var(T)$, $E(t^{ 2r })=\frac { \Gamma (\frac { 2r+1 }{ 2 } )\Gamma (\frac { v-2r }{ 2 } ) }{ \Gamma (\frac { 1 }{ 2 } )\Gamma (\frac { v }{ 2 } ) } { v }^{ r }$, $E(T^{ 2r-1 })=0$, $Var(T)=\frac{v}{v-2}, 2<v$</p>
+<p>If $X_{1}...X_{n}$ is random sample from $ N(\mu,\sigma^{2})$, $\frac{\overline{X}-\mu}{\frac{S}{\sqrt{n}}}\sim t(n-1)$</p>
+<p>Where $V_{1} \sim \chi^{2}(v_{1})$, $V_{2} \sim \chi^{2}(v_{2})$ independent $X=\frac{\frac{V_{1}}{v_{1}}}{\frac{V_{2}}{v_{2}}}$, the <strong>F PDF</strong> $g(x;v_{1},v_{2})=\frac{\Gamma(\frac{(v_{1}+v_{2})}{2})}{\Gamma(\frac{v_{1}}{2})\Gamma(\frac{v_{2}}{2})}(\frac{v_{1}}{v_{2}}^{\frac{v_{1}}{2}})x^{(\frac{v_{1}}{2})-1}(1+\frac{v_{1}}{v_{2}}x)^{\frac{-(v_{1}+v_{2})}{2}}$</p>
+<p>If $X \sim F(v_{1},v_{2})$ - $E(X^{r})$,$E(X)$,$Var(X)$,  $E{ (X }^{ r })=\frac { (\frac { v_{ 1 } }{ v_{ 2 } } )^{ r }\Gamma (\frac { v_{ 1 } }{ 2 } +r)\Gamma (\frac { v_{ 2 } }{ 2 } -r) }{ \Gamma (\frac { v_{ 1 } }{ 2 } )\Gamma (\frac { v_{ 2 } }{ 2 } ) } ), v_{ 2 }>2r$; $E (X)=\frac { { v }_{ 2 } }{ { v }_{ 2 }-2 }, v_{ 2 }>2$ $Var(X) =\frac { { 2v }_{ 2 }^{ 2 }({ v }_{ 1 }+{ v }_{ 2 }-2) }{ { v }_{ 1 }{ (v }_{ 2 }{ 2) }^{ 2 }({ v }_{ 2 }-4) }, 4<{ v }_{ 2 }$</p>
+<p>For $Y_{v} \sim \chi^{2}(v)$, $Z_{v}=\frac{Y_{v}-v}{\sqrt{2v}}\underrightarrow { d } Z \sim N(0,1) $ as $v\rightarrow \infty$</p>
+<p>An <strong>estimator</strong> is a statistic used to estimate  $\tau(\theta)$. An observed value of the statistic $t=t({ x }_{ 1 }...{ x }_{ n })$ of $\tau(\theta)$ is an <strong>estimate</strong>.</p>
+<p>The <strong>first k sample moments</strong> are observed values of the statistic ${ M }_{ j }^{ ' }=\frac { \sum _{ i=1 }^{ n }{ { x }_{ i }^{ j } }  }{ n } ,j=1,2,...\quad ={ \mu  }_{ j }$</p>
+<p>$\sigma^{2} = \mu_{2}^{'}-(\mu_{1}^{'})$
+ The <strong>Likelihood Function</strong> is $L(\theta)=\prod _{ i=1 }^{ n }{ f({ x }_{ i };\theta ) } $</p>
+<p>The <strong>maximum likelihood estimator</strong> (MLE) $\hat{\theta}$ is given by $\text{maxL}(\theta)=f({ x }_{ 1 }...{ x }_{ n };\hat { \theta  } )=\frac { d }{ d\theta  } lnL(\theta )=0$</p>
+<p>The <strong>invariance Property</strong> says that if $\hat{\theta}$ is MLE $u(\theta)$ is a function of $\theta$, $u(\hat{\theta})$ is an MLE of $u(\theta)$</p>
+<p>The term <strong>unbiased</strong> means $E(T)=\tau(\theta)$</p>
+<p>$T_{1}$ is <strong>more concentrated</strong> than $T_{2}$ about $\tau(\theta)$ if $P[\tau (\theta )-\epsilon <{ T }_{ 2 }<\tau (\theta )+\epsilon ]\ge P[\tau (\theta )-\epsilon <{ T }_{ 2 }<\tau (\theta )+\epsilon ]$</p>
+<p>A <strong>UMVUE</strong> is some value which fulfils</p>
+<ol>
+<li><p>Unbiased for $\tau(\theta)$</p>
+</li>
+<li><p>$Var(T^{*})\le Var(T)$ for all $\theta \in \Omega $</p>
+</li>
+</ol>
+<p>The <strong>Cramer Rao Lower Bound</strong> (CRLB) is $nE[\frac{d}{d\theta}lnf(x;\theta)]^{2}$</p>
+<p><strong>Bias</strong> is $b(T)=E(T)-\tau(\theta)$</p>
+<p><strong>Mean Squared Error</strong> $MSE(T)=E[T-\tau(\theta)]^{2}=Var(T)+[b(T)]^{2}$</p>
+<p><strong>Relative Efficiency</strong> $re(T,T^{*})=\frac{Var(T^{*})}{Var(T)}$  <strong>Efficiency</strong> $e(T)\rightarrow T^{*}$</p>
+<p>Only a linear function of $\tau(\theta)$ will admit an unbiased estimator that achieves the CRLB T is estimator $\tau(\theta)$, unbiased, meets CRLB.</p>
+<p>$\{T_{n}\}$ is a seq of estimators for $\tau(\theta)$. The estimators are <strong>consistent</strong> if $(\forall \epsilon >0)$, $\lim _{ n\rightarrow \infty  }{ P[\left| { T }_{ n }-\tau (\theta ) \right| <\epsilon ] } =1$ for all $\theta \in \Omega$</p>
+<p>$\{T_{n}\}$ is a seq of estimators for $\tau(\theta)$. The estimators are <strong>MSE consistent</strong> if  $\lim _{ n\rightarrow \infty  }{ E[ { T }_{ n }-\tau (\theta )]^{2} =0}$</p>
+<p>$\{T_{n}\}$ is <strong>unbiased</strong> for $\tau(\theta)$ if $\lim _{ n\rightarrow \infty  }{ E({ T }_{ n }) =\tau(\theta)}$ for all $\theta \in \Omega$</p>
+<ol>
+<li>Asymptotically unbiased and
+2.$\lim _{ n\rightarrow \infty  }{ Var({ T }_{ n }) =\tau(\theta)}$$\{ T_{n}\}$ of estimators of $\tau(\theta)$ is MSE Consistent $\iff$</li>
+</ol>
+<p>MSE Consistent $\rightarrow$ simply consistent</p>
+<p>$\{T_{n}\}$ is simply consistent for $ \tau(\theta)$ and g(t) is continuous for each value of $\tau(\theta)$$g(T_{n})$ is simply consistent for $g(\tau(\theta))$</p>
+<p>Let $\{T_{n}\}$ and $\{T_{n}^{*}\}$ be two asymptotically unbiased seq of estimators for $\tau(\theta)$. <strong>Asymptotic Relative Efficiency</strong> $\text{are}(T_{n},T_{n}^{*})=\lim _{n \rightarrow \infty} \frac{Var(T_{n}^{*})}{Var(T_{n})}$</p>
+<p>$\{T_{n}\}$ is <strong>asymptotically efficient</strong> if $are(T_{n},T_{n}^{*}\le 1)$. $ae(T_{n})=are(T_{n},T_{n}^{*})$ if $\{T_{n}^{*}\}$ is asymptotically efficient.</p>
+<ol>
+<li>$\hat{\theta}_{n}$ exists, is unique</li>
+<li>$\hat{\theta}_{n}$ is a consistent estimator of $\theta$</li>
+<li>$\hat{\theta}_{n}$ is asymptotically normal with mean $\theta$, variance $\frac{1}{nE[\frac{d}{d\theta}f(X;\theta)]^{2}}$</li>
+<li>$\hat{\theta}_{n}$ is asymptotically efficient Asymptotic Properties of MLEs $\hat{\theta} \sim N(\theta,CRLB)$}</li>
+</ol>
+<p>If T is estimator for $\tau(\theta)$, the <strong>Loss Function</strong> $L(t;\theta) \ge 0$ for all $t$, $L(t;\theta)=0$ when $t=\tau(\theta)$</p>
+<p>The <strong>Risk Function</strong> $R_{T}(\theta)=E[L(T;\theta)]$</p>
+<p>$T_{1}$ is a <strong>better estimator</strong> if $R_{T_{1}}(\theta) \le R_{T_{2}}$ for all $\theta \in \Omega$ and $R_{T_{1}}(\theta) < R_{T_{2}}$ for at least one $\theta$. T is <strong>admissible</strong> iff there is not better estimator.</p>
+<p>An estimator $T_{1}$ is a <strong>minimax estimator</strong> if $\max _{ \theta  }{ { R }_{ { T }_{ 1 } } } (\theta ) \le \max _{ \theta  }{ { R }_{ { T } } } (\theta )$ for every T</p>
+<p>For a random sample from $f(x;\theta)$, the <strong>Bayes Risk</strong> of T $A_{T}=E_{\theta}[R_{T}(\theta)]=\int _{ \Omega }R_{T}(\theta)p(\theta)d\theta$</p>
+<p>For a random sample from $f(x;\theta)$, the <strong>Bayes estimator</strong> is $E_{\theta}[R_{T^{*}}]\le E_{\theta}[R_{T}(\theta)]$ for every T</p>
+<p>The <strong>Posterior Distribution</strong> $f(x;\theta)=\frac{f(x_{1}...x_{n}|\theta)p(\theta)}{\int { f(x_{1}...x_{n}|\theta)p(\theta)d\theta } }$</p>
+<p>$E_{\theta|x}[L(T;\theta)]$ the <strong>Bayes Estimator</strong></p>
+<p>$L(T;\theta) = [T-\tau(\theta)]^{2}$, $T=E_{\theta|x}[\tau(\theta)]=\int{\tau(\theta)f_{\theta|x}(\theta)d\theta}$ Bayes Estimator of $\tau(\theta)$ under squared error loss function</p>
+<p>$L(\hat{\theta};\theta)=|(\hat{\theta})-\theta|$ is the median of the posterior distribution Bayes Estimator of $\hat{\theta}$ of $\theta$ under absolute error loss</p>
+<p>$T^{*}$ is a minimax estimator$T^{*}$ is Bayes Estimator, $R_{T}^{*}(\theta)=c$}</p>
+<p>If the vector of RVs X has joint pdf $f(x;\theta)$ and S is a k-dimenstional Statistic, then $S_{1}...S_{k}$ is a set of jointly sufficient statistics for $\theta$ if for any other vector of statistics, T $F_{T|s}(t)$ does not depend on $\theta$ Jointly Sufficient Statistics}</p>
+<p>Members of the set are minimal sufficient if the members of the set are jointly sufficient for the parameters and a function of every other set of jointly sufficient statisticsMinimal Sufficient Set}</p>
+<p>If $X_{1}...X_{n}$ have joint pdf $f(x_{1}...x_{n};\theta)$ and if $S=(S_{1}...S_{k})$, $(S_{1}...S_{k})$ are jointly sufficient for $\theta$ iff $f(x_{1}...x_{n};\theta)=g(s;\theta)h(x_{1}...x_{n})$ where $g(x;\theta)$ does not depend on $x_{1}...x_{n}$ except through s and $h(x_{1}...x_{n})$ does not involve $\theta$Factorization Criterion}</p>
+<p>An <strong>Indicator Function</strong> ${ I }_{ A }(x)=\begin{cases} 1\quad if\quad x\in A \\ 0\quad if\quad x\notin A \end{cases}$</p>
+<p>If $S_{1}...S_{k}$ are jointly sufficient for $\theta$ and $\hat{\theta}$ is a unique MLE $\hat{\theta}$ is a function of $S=(S_{1}...S_{k})$</p>
+<p>If S is sufficient for $\theta$ , any Bayes estimator will be a function of S</p>
+<p>If $X_{1}...X_{n}$ is a random sample from a continuous distribution with pdf $f(x,\theta)$ The order statistics form a jointly sufficient set for $\theta$</p>
+<p>If T is any unbiased estimator of $\tau(\theta)$, and if $T^{*}=E(T|S)$ THEN,</p>
+<ol>
+<li><p>$T^{*}$ is an unbiased estimator of $\tau(\theta)$</p>
+</li>
+<li><p>$T^{*}$ is a function of S\3.$Var(T^{*}) \le Var(T)$ for every $\theta$ and $Var(T^{*}) \le  Var(T)$ for some $\theta$ unless $T^{*}=T$ with probability</p>
+</li>
+</ol>
+<p><strong> Rao-Blackwell </strong> $X_{1}...X_{n}$ has jpdf $f(x_{1}...x_{n};\theta)$, and S is a vector of Jointly Sufficient statistics for $\theta$</p>
+<p>A family of density functions $f_{T}(t;\theta);\theta\in\Omega$ is <strong>complete</strong> if $E[u(T)]=0$ for all $\theta\in\Omega$ implies $u(T)=0$ with probability 1 for all $\theta\in\Omega$</p>
+<p>If $T^{*}=t^{*}(S)$ is an <strong>unbiased statistic</strong> for $\tau(\theta)$ that is a function of S</p>
+<p><strong>Lehmann-Scheffe</strong> - $X_{1}...X_{n}$ has jpdf $f(x_{1}...x_{n};\theta)$, and S is a vector of Jointly Sufficient statistics for $\theta$</p>
+<p>$f(x;\theta) = c(\theta)h(x)e^{\sum _{ j=1 }^{ k }{ q_{j}(\theta)t_{j}(x) }} x\in A$, zero otherwise, where $\theta$ is a vector with k dimensions\1. the set A does not depend on $\theta$\2. The functions $q_{j}$ are nontrivial, functionally independent, continuous\ 3a.For a continuous RV derivatives $t_{j}$ are linearly independent continuous functions\3b. For a discrete RV, $t_{j}$ are nontrivial functions of x on A, none is a linear function of another <strong>Exponential Class</strong></p>
+<p>If $X_{1}...X_{n}$ is a random sample from the regular exponential class, ${ S }_{ 1 }=\sum _{ i=1 }^{ n }{ { t }_{ 1 }({ X }_{ i })... } { S }_{ k }=\sum _{ i=1 }^{ n }{ { t }_{ k }({ X }_{ i }) } $ <strong>Minimal set of Complete Sufficient Statistics</strong> for $\theta_{1}...\theta_{n}$}</p>
+<p>A single sufficient statistic exists and T is a function of the sufficient statistic. If a CRLB estimator T exists for $\tau(\theta)$</p>
+<p>A CRLB estimator will exist for some function $\tau(\theta)$ iff the density function is a member of the regular exponential class. The CRLB estimator for $\tau(\theta)$ will be $\tau(\hat{\theta})$ where $\hat{\theta}$ is the MLE of $\theta$.</p>
+<p>Satisfies conditions 2 and 3 of exponential class and has the form $f(x;\theta)=c(\theta)h(x)e^{\sum _{ j=3 }^{ k }{ q_{j}(\theta_{3}...\theta_{k})t_{j}(x) }} x\in A$ <strong>Range Dependent Exponential Class</strong></p>
+<p>If $S=(S_{1}...S_{k})$ where $S_{1}...S_{k}$ are jointly complete sufficient statistics for $\theta$, and suppose T is any other statistic. If the distribution of T does not involve $\theta$, then S and T are stochastically independent</p>
+<p>Basu - for $X_{1}...X_{n}$ with jpdf $f(x_{1}...x_{n};\theta)$}</p>
+</div>
+
+<div id ="number10">
+<h2>Probability</h2>
+<h3>Sample Space</h3>
+<p>sets, proabilistic models, total probability theorem, bayes rule, independence, counting</p>
+
+<h3>Discrete Random Variables</h3>
+<p>PMF, functions of RVs, expectation, mean, variance, joint PMFs, conditional probability, independence</p>
+
+<h3>General Random Variables</h3>
+<p>continuous RVs, PDFs, CDF, normal RVs, joint PDFs, conditional probability, continuous bayes rule, binomial identity, derived distributions, covariance, correlation, conditional expectation, transforms</p>
+
+<h3>Limit Theorems</h3>
+<p>markov inequality, chebyshev inequality, weak LLN, convergence in probability, CLT, strong LLN</p>
+
+<h3>Bernoulli and Poisson Proccesses</h3>
+<p>bernoulli process, poisson process</p>
+
+<h3>Markov Chains</h3>
+<p>discrete-time markov chain, classification of states, steady-state behavior, absorption probabilities, expected time to absorption, continuous-time markov chains</p>
+
+<h3>Bayesian Inference</h3>
+<p>prior distribution, posterior distribution, point estimation, hypotheis testing, MAP rule, bayesian least mean squares, bayesian linear least mean squares</p>
+
+<h3>Ch 3 - Probability (Goodfellow, Bengio, Courville)</h3>
+
+<p>inherent stochastity, incomplete observability, incomplete modeling, degrees of belief, frequentist/bayesian, random variable, probability distributions, pmf, jpdf, pdf, discrete/continuous, uniform distribution, marginal probability, conditional probability, intervention query, causal modeling, chain rule of probability, independence, conditional independence, expectation, variance, standard deviation, correlation, covariance matrix, bernoulli distribution, multinomial, gaussian, central limit theorem, multivariate normal distribution, precision matrix, isotropic, exponential distribution, laplace distribution, dirac delta function, empirical distribution, mixture distribution, latent variable, gaussian mixture, logistic sigmoid, saturates, softplus function, positive part function, bayes rule, measure theory, measure zero, almost everywhere, jacobian matrix, information theory, nats, bits, shannons, self information, differential entroy, kullback-leiber divergence, cross-entropy, graphical model, directed model, proportionality</p>
+
+</div>
+
+<div id ="number11">
+<h2>Practice Problems</h2>
+<h3>Primitive Types</h3>
+<p>A <strong>type</strong> is a classification of data.</p>
+<ul>
+<li><p>some types include <strong>character</strong>, <strong>boolean</strong>, <strong>integer</strong>, <strong>float</strong></p>
+</li>
+<li><p>variants include long, unsigned, etc</p>
+</li>
+<li><p>properties of these which can vary are size, range, signedness properties, operators</p>
+</li>
+</ul>
+<p><strong>masks</strong> and <strong>machine independence</strong></p>
+<p><strong>signedness</strong> and <strong>shifting</strong></p>
+<p><strong>cache</strong></p>
+<p><strong>commutativity</strong> and <strong>associativity</strong></p>
+<p><strong>parallel</strong> and <strong>reorder</strong></p>
+<p><strong>parity</strong> of a binary word is 1 when the number of 1s in the word is odd, and 0 otherwise</p>
+<h3>Arrays</h3>
+<p><strong>array</strong> maps <code>[0,n-1]</code> to a sequence. <code>A[i]</code> denotes the $(i+1)$th object.</p>
+<ul>
+<li><p>retrieving and updating takes $O(1)$ time</p>
+</li>
+<li><p>deleting requires moving all the elements, so deleting at index i from an array with n objects is $O(n-1)$</p>
+</li>
+<li><p>subtle solutions to array problems include writing from the back, overwriting, processing from the back, reversing, operating on subarrays</p>
+</li>
+<li><p>off-by-1 errors are a common mistake in array problems</p>
+</li>
+</ul>
+<h3>Strings</h3>
+<p>a <strong>string</strong> is a special type of array storing characters. Some common operations on strings include <strong>splitting</strong>, <strong>searching</strong> for <strong>substrings</strong>, <strong>replacing</strong>, <strong>parsing</strong></p>
+<h3>Lists</h3>
+<p>A <strong>singly linked list</strong> is a sequence of nodes such that each contains an object and a reference to the next node. A <strong>doubly linked list</strong> includes references to predecessors. The first node in a list is called the <strong>head</strong> and the last node is called the <strong>tail</strong>. The tails next field is null, but this can be replaced with a <strong>sentinel node</strong>  (<strong>dummy head</strong>) or a <strong>self-loop</strong>.</p>
+<p>List problems are often simple, so focus on clean implementation. Some tricks to consider include using two iterators,</p>
+<p>The basic functions for lists include <strong>search </strong> - $O(n)$ time, <strong>insert</strong> - $O(1)$ time, and <strong>delete</strong> - $O(1)$ time.</p>
+<h3>Stacks and Queues</h3>
+<p>A <strong>stack</strong> or <strong>queue</strong> is a data structure similar to a list designed for easy insertion, deletion, and accesses to values at the first or last node.</p>
+<p>Elements in a stack are <strong>push</strong>ed and <strong>pop</strong>ped in a <strong>last-in, first-out</strong>.</p>
+<p>Elements in a queue are <strong>enqueue</strong>d and <strong>dequeue</strong>d in a <strong>first-in, first-out</strong> order. The most recently inserted element is called the <strong>tail</strong> or <strong>back</strong> and the least recently inserted element is the <strong>head</strong> or <strong>front</strong>.</p>
+<p>A <strong>deque</strong> (double ended queue) is a doubly linked list where all insertions and deletions are from one end. An insertion to the front is a <strong>push</strong>, and an insertion to the back is an <strong>inject</strong>. A deletion from the front is a <strong>pop</strong> and a deletion from the back is an <strong>eject</strong>.</p>
+<h3>Binary Trees</h3>
+<p>A <strong>binary tree</strong> is a data structure used to represent a set of hierarchical relationships. Binary trees are empty unless they consist of a <strong>root</strong> node r, a <strong>left</strong> binary tree (left subtree) and a <strong>right</strong> binary tree (right subtree). Each node has a unique parent except for the root.</p>
+<ul>
+<li>The <strong>search path</strong> of a node is a unique sequence from the root to that node.</li>
+<li>A node that lies on the search path is an <strong>ancestor</strong>. </li>
+<li>Any node with a given ancestor in its search path is a <strong>descendant</strong> of that ancestor.</li>
+<li>A node with no descendants is a <strong>leaf</strong>.</li>
+<li>the <strong>depth</strong> of a node is the number of nodes on the search path from the root to that node</li>
+<li>The <strong>height</strong> of a binary tree is the maximum depth of any leaf</li>
+<li>A <strong>level</strong> is a set of nodes at some given depth</li>
+<li>a <strong>full</strong> binary tree is one in which every node except the leaves has two children</li>
+<li>a <strong>perfect</strong> binary tree is a full binary tree in which all leaves have the same depth and every parent has two children</li>
+<li>a <strong>complete</strong> binary tree is one for which every level except the last is filled</li>
+<li>a <strong>right skewed</strong> binary tree is one for which no node has a left child, and a <strong>left skewed</strong> binary tree is one for which no node has a right child.</li>
+</ul>
+<p><strong>Traversing</strong> (walking) all the nodes in a binary tree is a key computation. For a binary tree T of n nodes, with height h, each of the following has $O(n)$ time complexity and $O(h)$ space complexity.</p>
+<ul>
+<li>Left subtree, root, right subtree traversal is called <strong>inorder</strong></li>
+<li>Root, left subtree, right subtree traversal is called <strong>preorder</strong></li>
+<li>Left subtree, right subtree, root traversal is called <strong>postorder</strong></li>
+</ul>
+<h3>Heaps</h3>
+<p>A <strong>heap</strong> (priority queue) is a complete binary tree for which keys satisfy the
+<strong>heap property</strong>, which is that each node is at least as great as the keys stored in its ancestors. Heaps are convenient when the largest or smallest elements are important and there is no need for fast lookup, delete or search operations. Heaps are also good for computing the k largest or k smallest elements</p>
+<p>In a <strong>max-heap</strong>, the root stores the maximum element. The max-heap supports $O(logn)$ insertions and deletions, $O(1)$ lookup, The extract-max operation deletes and returns the maximum element. A <strong>min-heap</strong> is completely symmetric and supports $O(1)$ lookups for the minimum.</p>
+<h3>Searching</h3>
+<p>Search algorithms can be based on an underlying collection which is <strong>static</strong> or <strong>dynamic</strong> (are inserts and deletes interleaved with searching). Some considerations are preprocessing, and various transformations which can be exploited to reduce the data. EPI focuses on static data in sorted order in an array. Heaps, hash tables, and binary search trees are used in dynamic updates.</p>
+<p>Questions about binary search are tricky because they can be implemented simply, but there are a number of common pitfalls.</p>
+<p>If a solution uses sorting and the computation performed after the sort is faster, consider solutions which do not perform acomplete sort.</p>
+<h3>Hash Tables</h3>
+<p>A <strong>hash table</strong> stores objects according to a <strong>key</strong> field in an array. Objects are stored in <strong>slots</strong> based on the <strong>hash code</strong>, which is an integer computed from the key by a hash function. For a well chosen hash function, objects are uniformly distributed across array locations.</p>
+<ul>
+<li>When two keys map to the same location it is called a <strong>collision</strong>.</li>
+<li>With n objects and m length of array, $n/m$ is called the <strong>load</strong>. On average, lookups, insertions, and deletions have $O(1+n/m)$ time complexity. </li>
+<li>When the load grows large, you can <strong>rehash</strong> the hash table by allocating a new array with a larger number of locations. Rehashing takes $O(n+m)$ time, but if it is done infrequently the <strong>amortized</strong> cost is low. </li>
+<li>The hard requirement of a hash function is that equal keys must have equal hash codes. Hash functions should also spread keys evenly. </li>
+<li>If you have to update a key, you must remove it update it, and add it back to ensure it is moved to the correct array location. </li>
+<li>Avoid using mutable objects as keys.</li>
+</ul>
+<p>A <strong>trie</strong> is a tree data structure used to store a dynamic set of strings.</p>
+<p>The key idea of hash tables is to map strings to representatives. A hash table is a good choice whenever you need to store a set of strings.</p>
+<h3>Sorting</h3>
+<p>To <strong>sort</strong> is to rearrange a collection of items into increasing or decreasing order. Sorting is often used as a method of preprocessing to make searching faster and identify similar items.</p>
+<p><strong>Heapsort</strong> is in-place, meaning that it uses $O(1)$ space, but not <strong>stable</strong>. A stable sort is one which keeps equal entries in their original order.</p>
+<p><strong>Merge sort</strong> is not in-place, but it is stable.</p>
+<p><strong>Quicksort</strong> runs in $O(n^2)$ in worst case, but the authors of EPI say a well implemented quicksort is usually the best choice.</p>
+<p>Each of these has time complexity $O(nlogn)$</p>
+<h3>Binary Search Trees</h3>
+<p>A <strong>binary search tree</strong> is a binary tree in which the nodes store keys of a certain type. Each key is subject to the <strong>BST property</strong> which states that the key stored at a node is greater than or equal to the keys stored in the nodes of its left subtree and less than or equal to the keys stored in the nodes of its right subtree.</p>
+<p>Key lookup, insertion, and deletion take time proportional to the height of the tree , in the worst case $O(n)$.</p>
+<p>A <strong>red-black tree</strong> is a type of height-balanced BST widely used in data structure libraries.</p>
+<p>When a mutable object from a BST must be updated, remove it, update it, and add it back. Try to avoid putting mutable objects in BSTs.</p>
+<p>BSTs offer the ability to find the min and max, next largest and smallest elements easily. These operations, lookup, delete, and find take $O(logn)$ time in library implementations.</p>
+<h3>Recursion</h3>
+<p><strong>Recursion</strong> is a method of solving problems that relies on breaking the problem into smaller instances of similar problems. To use recursion succesfully, you must first identify and solve the base cases, and then ensure progress which will converge to the solution. In recursion, all subproblems might be the same (binary search), they may not be independent (dynamic programming), and they may not be of the same type as the original.</p>
+<p><strong>Divide-and-conquer</strong> algorithms decompose problems into two or more smaller independent subproblems of the same kind until the instances can be solved directly.</p>
+<h3>Dynamic Programming</h3>
+<p><strong>Dynamic programming</strong> is a general technique for solving optimization, search, and counting problems that can be decomposed into subproblems. Dynamic programming is useful when you have to make choices in order to arrive at a solution. It is similar to divide-and-conquer because it combines solutions of smaller problems, but in dynamic programming the same problem may reoccur. Therefore, caching is neccesary to make dynamic programming efficient.</p>
+<p>To solve dynamic programming problems, break the problem into subproblems whose solutions would make the original problem easy to solve, and cache the results.</p>
+<h3>Greedy Algorithms and Invariants</h3>
+<p>A <strong>greedy algorithm</strong> is an algorithm which makes a locally optimum decision at each step, and never changes that decision.</p>
+<p>Greedy algorithms are often useful for optimization problems with a natural set of choices.</p>
+<p>There are often multiple greedy algorithms, sometimes the best choice is not obvious.</p>
+<p>An <strong>invariant</strong> is a condition that remains true throughout the execution of a program. Often you have to work with small samples to hypothesize a good invariant.</p>
+<h3>Graphs</h3>
+<p>A <strong>directed graph</strong> is a set $V$ of vertices connected by a set $E \in V \times V$ of edges. For an edge $e=(u,v)$, $u$ is its <strong>source</strong> and $v$ is its <strong>sink</strong>. A <strong>path</strong> from $u$ to $v$ is a sequence of vertices and edges. If there exists a path from $u$ to $v$, v is <strong>reachable</strong> from u. A <strong>directed acyclic graph</strong> is a directed graph with no cycles. In a directed acyclic graph, vertices with no incoming edges are called <strong>sources</strong> and vertices with no outgoing edges are called <strong>sinks</strong>. A <strong>topological ordering</strong> of the vertices in a directed acyclic graph is an ordering of vertices</p>
+<p>An undirected graph is also a <strong>tuple</strong> $(V,E)$, where E is a set of unordered pairs of vertices.</p>
+<p>For an undirected graph, $u$ and $v$ are <strong>connected</strong> if G contains a path from $u$ to $v$, otherwise they are disconnected.</p>
+<p>A <strong>connected component</strong> is a maximal set of vertices C such that each pair is connected in G. Every vertex belongs to exactly one connected component.</p>
+<p>A directed graph is <strong>weakly connected</strong> if replacting all edges with undirected edges produces an undirected graph that is connected. It is <strong>connected</strong> if it contains a directed path from $u$ to $v$ or a directed path from $v$ to $u$ for every pair of vertices. It is <strong>strongly connected</strong> if it contains a directed path from $u$ to $v$ and a directed path from $v$ to $u$ for every pair of vertices.</p>
+<p>Graphs can be implemented</p>
+<ul>
+<li>using <strong>adjacency lists</strong>, in which each vertex $v$ has a list of connected vertices</li>
+<li>using an <strong>adjacency matrix</strong> which uses a $|V|\times|V|$ boolean-valued matrix indexed by vertices, with 1 indicating an edge</li>
+</ul>
+<p>A <strong>tree</strong> (free tree) is a special sort of graph which is undirected and has no cycles. A <strong>rooted</strong> tree is one where a designated vertex is called the root, leading to a parent-child relationship in the nodes. An <strong>ordered</strong> tree is a rooted tree in which each vertex has an ordering on its children.</p>
+<p>In binary trees, a node may only have one child, left or right.</p>
+<p>Given a graph $G=(V,E)$, if $G'=(V,E')$ where $E' \subset E$ is a tree, G' is a <strong>spanning tree</strong> of G.</p>
+<p>Graphs are good for modeling and analyzing relationships. Computing which vertices are reachable from others is done using <strong>breadth-first</strong> search or <strong>depth-first</strong> search. Each has linear time complexity $O(|V|+|E|)$ where V matrix entries.</p>
+<p>The space complexity of both depth-first and breadth-first search is $O(|V|)$.</p>
+<p>Key ideas in depth-first search include <strong>discovery time</strong> and <strong>finishing time</strong></p>
+<h3>Additional Topics</h3>
+<p><strong>Parallel computing</strong> offers the benefits of high performance, efficient use of computing resources, and improved fault tolerance. Concrete applications include graphical user interface, java virtual machines, web servers, scientific computing, and web search.</p>
+<p>Primary models of parallel computing:</p>
+<ul>
+<li><strong>shared memory model</strong> where each processor can access any location in memory, which is appropriate for multicore processors.</li>
+<li><strong>distributed memory model</strong>, where each processor must explicity send a message to another to access its memory, which is more accurate for a cluster.</li>
+</ul>
+<p>Challenges to writing parallel programs include races, starvation, deadlock, and livelock.</p>
+
+</div>
+
+<div id ="number12">
+<h2>Algorithms</h2>
+
+<h3>Models of Computation</h3>
+<p>complexity, random access machines, stored program model, turing machine, RAM models</p>
+
+<h3>Design of Efficient Algorithms</h3>
+<p>lists, queues, stacks, set representations, graphs, trees, recursion, divide and conquer, balancing, dynamic programming</p>
+
+<h3>Data Structures for Set Manipulation</h3>
+<p>fundamental operations, hashing, binary search, binary search trees, optimal, disjoint-set union algorithm, tree structures, union-find, balanced trees, dictionaries, priority queues, mergeable heaps, concatenable queues, partitioning</p>
+
+<h3>Sorting and Trees</h3>
+<p>radix, comparison, heapsort, quicksort, order statistics, expected time for order statistics, Algorithmic thinking, peak finding, Models of computation, document distance, Insertion sort, merge sort, 	Heaps and heap sort, 	Binary search trees, BST sort, AVL trees, AVL sort, Counting sort, radix sort, lower bounds for sorting and searching, </p>
+
+<h3>Hashing</h3>
+<p>Hashing with chaining,	Table doubling, Karp-Rabin, 	Open addressing, cryptographic hashing</p>
+
+<h3>Numerics</h3>
+<p>integers, polynomials, division, polynomial multiplication and division, modular arithmetic, chinese remainder theorem, greatest common divisor, euclid's algorithm, Integer arithmetic, Karatsuba multiplication,Square roots, Newton's method</p>
+
+<h3>Graphs</h3>
+<p>minimum-cost spanning trees, biconnectivity, strong connectivity, path-finding problems, transitive closure algorithm, shortest-path algorithm, path problems and matrix multiplication, single-source problems, dominators in DAG, BFS, DFS, topological sorting</p>
+
+<h3>Shortest Paths</h3>
+<p>single-source shortest paths, dijkstra, bellman-ford</p>
+
+<h3>Dynamic Programming</h3>
+<p>Memoization, subproblems, guessing, bottom-up; Fibonacci, shortest paths, Parent pointers; text justification, perfect-information blackjack, 21	String subproblems, psuedopolynomial time; parenthesization, edit distance, knapsack, Two kinds of guessing</p>
+
+</div>
+
+<div id ="number13">
+<h2>Hardware</h2>
+
+
+<p>boolean logic,  logic gates,  AND, OR, and MUX, single-bit inputs,  multi-bit inputs, binary addition, two's complement, adder chip, ALU, value comparisons, logic operations, combinational chips, NAND gates, Data Flip Flop, memory, maintaining values, Bit, Register, RAM chips, program counter, delayed recursion, Hack machine language,  CPU, assembly language ,hardware-software interface,multiplexors, flip flops,registers, RAM units, counters, hardware description language (HDL), chip simulation, testing</p>
+
+
+
+</div>
+
+<div id ="number14">
+<h2>Software Design</h2>
+
+<h3>Architecture</h3>
+<p>ALU/CPU design and implementation
+machine code
+assembly language programming
+addressing modes
+memory-mapped input/output</p>
+<h3>Data Structures and Algorithms</h3>
+<p>stacks
+hash tables
+lists
+recursion
+arithmetic algorithms
+geometric algorithms
+running time considerations</p>
+<h3>Software Engineering</h3>
+<p>modular design
+the interface/implementation paradigm
+API design and documentation
+proactive test planning
+programming at the large
+quality assurance</p>
+
+<h3>Design Considerations (EPI)</h3>
+<p>Creating a set of services or a larger system is a more complex problem than just implementing a program. Consider the design trade-offs, sketch data structures, consider algorithms and technology stack (programming languages, libraries, OS, hardware, and services)</p>
+<p>Key considerations include implementation time, extensibility, scalability, testability, security, internationalization, IP issues.</p>
+<p>Design principles include algorithms, data structures , decomposition (front-end (user management, web page design, reporting functionality), back-end (middleware, storage, database, cron services, algorithms for ranking),  scalability (independently solvable subproblems, efficient construction of solution to original problem from subproblems, consider RAM, network bandwidth, memory and databases, caching for repeated computations)</p>
+<h3>Object Oriented Design</h3>
+<p>A class is an encapsulation of data and methods operating on that data. Classes provide encapsulation, which reduces the conceptual burden of writing code. A design pattern is any general repeatable solution to a commonly occuring problem.</p>
+<h3>Tools</h3><p>Tools to consider include version control systems, scripting languages, build systems, databases, and the networking stack.</p>
+
+</div>
+
+
+<div id ="number15">
+<h2>OS</h2>
+<h3>Operating Systems</h3>
+<p>memory management
+math library
+basic I/O drivers
+screen management
+file I/O
+high level language support</p>
+<h3>Programming Languages</h3>
+<p>object-based design
+abstract data types
+scoping rules
+syntax and semantics
+references</p>
+<h3>Compilers</h3>
+<p>lexical analysis
+top-down parsing
+symbol tables
+virtual stack-based machine
+code generation
+implementation of arrays and objects</p>
+</div>
+
+<div id ="number16">
+<h2>Computer Languages</h2>
+
+
+<h4>C++/Python</h4>
+<ul>
+<li>Elements of Programming Interviews in Python and C++ - Adnan Aziz, Tsung-Hsien Lee, Amit Prakash</li>
+</ul>
+
+<h4>Linux</h4>
+<ul>
+<li>How Linux Works - Brian Ward</li>
+</ul>
+
+<h4>Javascript</h4>
+<ul>
+<li><a href = "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">Javascript Reference</a></li>
+</ul>
+
+</div>
+
+<div id ="number17">
+<h2>AI</h2>
+
+<h3>References/Resources</h3>
+
+<ul>
+<li><a href = "https://github.com/songrotek/Deep-Learning-Papers-Reading-Roadmap">Deep Learning Papers Reading Roadmap</a></li>
+<li><a href = "http://colah.github.io/">Christoper Olah's Blog</a></li>
+<li><a href = "https://github.com/ChristosChristofidis/awesome-deep-learning">Christos Christofidis - Awesome Deep Learning</a></li>
+
+<li><a href = "http://people.idsia.ch/~juergen/">Juergen Schmidhuber's Home Page</a></li>
+<li><a href="https://unsupervisedmethods.com/my-curated-list-of-ai-and-machine-learning-resources-from-around-the-web-9a97823b8524">Robbie Allen - My Curated List of AI and Machine Learning Resources From Around the Web</a></li>
+<li><a href="https://unsupervisedmethods.com/learning-machine-learning-and-nlp-from-185-quora-questions-cebe42e47da8">Robbie Allen - Learning Machine Learning and NLP from 187 Quora Questions</a></li>
+</ul>
+
+
+
+<h4>History/Theory/Philosophy</h4>
+<ul>
+<li><a href = "http://www.nickbostrom.com/">Superintelligence - Nick Bostrom</a></li>
+<li><a href = "https://futureoflife.org/background/benefits-risks-of-artificial-intelligence/">Benefits and Risks of Artificial Intelligence (many links)</a></li>
+
+</ul>
+
+<h4>Deep Learning</h4>
+<ul>
+<li><a href = "http://www.deeplearningbook.org/">Deep Learning - Ian Goodfellow, Yoshua Bengio, Aaron Courville</a></li>
+<li>Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems - Aurelien Geron</li>
+</ul>
+<h4>Machine Learning</h4>
+<ul>
+<li><a href = "https://work.caltech.edu/telecourse.html">Learning From Data - Yaser S, Abu-Mostafa, Malik Magdon-Ismail, Hsuan-Tien Lin</a></li>
+<li><a href = "https://github.com/rasbt/python-machine-learning-book">Python Machine Learning - Sebastian Raschka</a></li>
+
+</ul>
+
+</div>
+
+<div id ="number18">
+<h2>Number Theory/Cryptography</h2>
+<p>$\mathbb{Z}/p\mathbb{Z}$ is the field of natural numbers less than p.</p>
+<p>$\varphi(n)=\#\{a \in N : a \le n, \text{gcd}(a,n)=1\}$</p>
+<p>To compute $a^{b}$, use the method of <strong>Successive Squaring</strong>. First, let $b = \sum 2^{i} 1(i < b)$. Then we know $a^{b} \text{mod} p = \prod_{i} a^{\sum 2^{i}} \text{mod} p$</p>
+<p>The <strong>discrete log</strong> is some k such that $b^{k} \equiv$ g mod p, where p is prime and g is the primitive root</p>
+<p>A number g is a <strong>Primitive Root Mod p</strong> if $\forall x \in (\mathbb{Z}/p\mathbb{Z})^X$, x can be written as $x \equiv g^{I(x)}$ mod p. Recall $I(xy)=I(x)+I(y)$</p>
+<p>The <strong>Chinese Remainder Theorem</strong> allows us to solve for x given two equations $ax \equiv b$ mod n and $cx \equiv d$ mod m. Begin by setting first equation $ax-b=nk$, solve for x. Replace x in second equation, find gcd(n,m), solve for k, solve for x.</p>
+<p><strong>Euclid's Algorithm</strong> is a simple method for finding the <strong>greatest common divisor</strong> of two numbers $a=b \cdot k +c$. Set $b=c \cdot k +d$,$c=d \cdot k +e$
+, continue until for example $d = e\cdot k$, which implies $\text{gcd}(a,b)=e$. If $\text{gcd}(a,b)=e$, that means $\exists p,s$ such that $p \cdot a + s \cdot b = e$. The <strong>extended</strong> algorithm back-substitutes e=c-d, d=b-c, c=a-b to find these values of p and s.</p>
+<p><strong>El-Gamal</strong></p>
+<ol>
+<li>Begin with prime p, integer g, secret x. Compute $X \equiv g^{x}$ mod p, and make p, g and X public</li>
+<li>Compute $Y \equiv g^{y}$ mod p.</li>
+<li>Compute $k \equiv X^{y} \equiv Y^{x}$ mod p.</li>
+<li>To decrypt, find multiplicative inverse of k, use it to calculate the message piece by piece.</li>
+</ol>
+<p><strong>RSA</strong></p>
+<ol>
+<li>e is public key, d is decryption key, p,q are primes, $p \cdot q = m$</li>
+<li>Begin by calculating $\varphi(m)=(p-1)(q-1)$, pick e relatively prime to $\varphi(m)$.</li>
+<li>Change each subsequence $a \rightarrow a^{e}$ mod m.</li>
+<li>Decrypt by solving $x^{e} \equiv$ ? mod m using $ed=1+k \varphi(m)$ from $(x^{e})^{d}=x \cdot x^{l\varphi(m)}$.</li>
+<li>Calculate d from the known factorization.</li>
+<li>Find gcd($\varphi(m),e)$</li>
+</ol>
+<p>The <strong>Theorem of Lagrange</strong> states that for $a \in (\mathbb{Z}/n\mathbb{Z})^{X}$, the divisors of n are the possible orders of each element.</p>
+<p>The <strong>Legendre Symbol</strong> is a function of a and p defined as $(\frac { a }{ p } )=\begin{cases} 1\qquad  \text{ if a is a quadratic residue mod p and a} \not \equiv 0 \text{mod} p\\ -1\qquad \text{ if a is a non-quadratic residue mod p}\\ 0\qquad \text{if} a \equiv 0 \text{mod} p\end{cases}$</p>
+<ul>
+<li>for p odd prime, $a \in (\mathbb{Z}/p\mathbb{Z})^{X}$,</li>
+<li>$(\frac{a}{p})$ only depends on a mod p.</li>
+<li>if $a,b \in (\mathbb{Z}/n\mathbb{Z})^{X} $, $(\frac{ab}{p})=(\frac{a}{p})(\frac{b}{p})$.</li>
+<li>$(\frac{-1}{p}) \iff p \equiv 1$ mod 4</li>
+<li>$(\frac{2}{p}) \iff p \equiv \pm 1$ mod 8</li>
+<li>p,q odd primes $\rightarrow (\frac{p}{q})(\frac{q}{p})=(-1)^{(\frac{p-1}{2})(\frac{q-1}{2})}$</li>
+<li>$a^{\frac{p-1}{2}} \equiv a$ mod p (Euler criterion)</li>
+<li>Jacobi symbol is the same, except lacks the property of Euler's Criterion and has $(\frac{q}{n})=\prod _{ p }{ (\frac{q}{p})^{e_{p}} } $</li>
+</ul>
+<p><strong>p-1 method</strong></p>
+<ul>
+<li>works if n has prime factor p such that p-1 is composed of small primes $\rightarrow p-1 | B!$</li>
+<li>factor p-1, find smallest factorial divisible by p-1</li>
+<li>pick small a, if a|n, it is a factor, otherwise recursively calculate $a_{i}=a^{i!}$ mod n</li>
+<li>check d = gcd($a_{i}-1,n) \ne 1$. If so, if $d \ne n$ it is a factor, if d=n, restart with a new a.</li>
+</ul>
+<p><strong>p+1 lemma</strong></p>
+<ul>
+<li>for p odd prime, d integer not square modulo p</li>
+<li>$z=x+y\sqrt{d} \ne 0$, $x,y \in \mathbb{Z}$ and $B \in \mathbb{Z}$ s.t. $p+1|B! \rightarrow \Im(z^{B!})\equiv 0$ mod p</li>
+</ul>
+<p><strong>p+1 procedure</strong></p>
+<ol>
+<li><p>pick $z=x+y\sqrt{d}$. If $z\bar{z}=(x+y\sqrt{d})(x-y\sqrt{d})$ is not relatively prime to n, it is a factor, otherwise recursively compute from $z_{1}=z$ through $z_{i}=z^{i!}$ mod n</p>
+</li>
+<li><p>stop when D=gcd$(\Im(z_{i},n) \ne 1$. If $D \ne n$ it is a factor. if $D=n$, restart with next z.</p>
+</li>
+</ol>
+<p><strong>Rabin-Miller</strong></p>
+<ul>
+<li>For odd n, write $n-1=2^{k} \cdot q$, with q odd. </li>
+<li>if $\exists a <n$ s.t. $a^{q}\not\equiv 1$ mod n, $a^{2^{i}q} \not \equiv -1$
+mod n $\forall i \le k-1$, n is a strong witness</li>
+</ul>
+<p><strong>Korselt's Criterion</strong></p>
+<ul>
+<li>n is carmichael if it is odd and square free $\rightarrow p^{2} \not| n$ for any p which is a prime factor of n.</li>
+<li>$\forall p$ prime factors of n, $(p-1)|(n-1)$</li>
+</ul>
+<p><strong>Carmichael Numbers</strong></p>
+<ul>
+<li>composite, positive $\mathbb{Z}$ such that $a^{n} \equiv a$ mod n. Also , $a^{n} \equiv a$ for each $\mathbb{Z}/f\mathbb{Z}$ where f are factors of n.</li>
+</ul>
+<p><strong>Solovay-Strassen</strong></p>
+<ol>
+<li>For n odd, choose a random a.</li>
+<li>Check $(\frac{a}{n})$, check $a^{\frac{n-1}{2}}$ mod n. </li>
+<li>If $(\frac{a}{n}) \not \equiv a^{\frac{n-1}{2}}$ mod n, n is composite $\in (\mathbb{Z}/n\mathbb{Z})^{X}$, a is witness. For composite n, at least $\frac{1}{2}$ of a values will be witnesses.</li>
+</ol>
+<p><strong>Fermat Little Theorem</strong></p>
+<ul>
+<li>For n prime $\rightarrow a^{n} \equiv a$ mod n. If not, a is a witness to n being composite.</li>
+</ul>
+<p><strong>Quadratic Sieve</strong></p>
+<ol>
+<li>Compute $(\lfloor \sqrt{n} \rfloor+i)^{2}$ mod n, and factor for each i. </li>
+<li>Collect to find congruences $x^{2} \equiv y^{2}$ mod n.</li>
+<li>Compute gcd(x-y,n), factor as $x^{2}-y^{2}=(y+x)(y-x)$</li>
+<li>If $\exists k$ s.t. $y^{2}_{1} \cdot k=y^{2}_{2}\cdot k$, $(x_{1}\cdot x_{2})^{2} \equiv (k \cdot y_{1} \cdot y_{2})^{2}$ mod n</li>
+</ol>
+<p><strong>Elliptic Curves</strong></p>
+<ul>
+<li>Compute $(\lfloor \sqrt{n} \rfloor+i)^{2}$ mod n, and factor for each i. </li>
+<li>Collect to find congruences $x^{2} \equiv y^{2}$ mod n.</li>
+<li>Compute gcd(x-y,n), factor as $x^{2}-y^{2}=(y+x)(y-x)$</li>
+<li>If $\exists k$ s.t. $y^{2}_{1} \cdot k=y^{2}_{2}\cdot k$, $(x_{1}\cdot x_{2})^{2} \equiv (k \cdot y_{1} \cdot y_{2})^{2}$ mod n</li>
+</ul>
+</div>
+
+<div id ="number19">
+<h2>Functional Programming</h2>
+
+<h3>Chapter 1 - Introduction</h3>
+<p>von Neumann computing, functional programming, theory of computing, denotational approach, program specification, program verification, implementation techniques, SECD machine implementations,combinators, graph reduction, verification, program transformation, abstract interpretation, verification, transformation,SASL </p>
+
+<h3>Chapter 2 - $\lambda$ calculus</h3>
+<p>$\lambda$ calculus, Pair functions </p>
+
+<h3>Chapter 3 - Conditions, booleans and integers</h3>
+<p>conditional expressions, booleans, representing numbers, variants, Church's representation </p>
+
+<h3>Chapter 4 - Recursion</h3>
+<p>derivation of the 'recursion' function, construction of arithmetic, recursive function theory</p>
+
+<h3>Chapter 5 - Types</h3>
+<p>run-time typing, tags, manifest types, implementations of typing, type checking</p>
+
+<h3>Chapter 6 - Lists and strings</h3>
+<p>lists, list processing, mapping functions</p>
+
+<h3>Chapter 7 - Composite values and trees</h3>
+<p>composite values, accumulation variables, list representation of binary trees</p>
+
+<h3>Chapter 8 - Evaluation</h3>
+<p>reduction, Church-Rosser theorem, evaluation models, time efficiency, space efficiency, halting problem, lazy evaluation, infinite lists</p>
+
+<h3>Chapter 9 - Functional programming in Standard ML</h3>
+<p>SML programming, I/O, modules, concrete types, abstract types</p>
+
+</div>
+
+<div id ="number20">
+<h2>Information Theory</h2>
+<h3>Discrete Noiseless Systems</h3>
+<p>Theorem 1: If $b_{ij}^{(s)}$ is the duration of the sth symbol allowable in state i which leads to state j. The channel capacity is $C = \text{log}W$ where $W$ is the largest real root of $|\sum_{s}W_{b_{ij}^{(s)}}-\delta_{ij}|=0$ where $\delta_{ij}=1$ if $i=j$ and 0 o/w.</p>
+<p>Theorem 2: The only $H$ which satisfies:</p>
+<ol>
+<li>$H$ is continuous in the $p_{i}$ </li>
+<li>If all $p_{i}$ are equal, $H$ is a monotonically increasing function of n. When events are equally likely, there is more choice and uncertainty with more possible events.</li>
+<li>If a choice is broken into two successive choices, the original $H$ should be the weighted sum of individual values in $H$.</li>
+</ol>
+<p>is of the form $H = -K \sum_{i=1}^{n}p_{i}\text{log}p_{i}$ where K is a positive constant.</p>
+<p>Theorem 3: For any $\epsilon > 0$ and $\delta > 0$, we can find an $N_{0}$ such that the sequences of any length $N \ge N_{0}$ fall into two clases:</p>
+<ol>
+<li>sets whose total probability is less than $\epsilon$</li>
+<li>The remainder, in which each member has a probability satisfying $|\frac{\text{log}p^{-1}}{N} - H| < \delta$</li>
+</ol>
+<p>Theorem 4: $\lim_{N \rightarrow \infty} \frac{\text{log}n(q)}{N}=H$ when $q$ does not equal 0 or 1</p>
+<p>Theorem 5: If $p(B_{i})$ is the probability of the sequence $B_{i}$ of symbols from the source, $G_{N}=-\frac{1}{N} \sum_{i} p (B_{i})\text{log}p(B_{i})$ is the sum over all sequences $B_{i}$ containing $N$ symbols. $G_{N}$ is a monotonic decreasing function of $N$ and $\lim_{N \rightarrow \infty} G_{N} = H$</p>
+<p>Theorem 6: If $P(B_{i},S_{j})$ is the probability of the sequence $B_{i}$ followed by the symbol $S_{j}$, and $p_{B_{i}}(S_{j})=p(B_{i},S_{j})/p(B_{i})$ is the conditional probability of $S_{j}$ after $B_{i}$</p>
+<p>$F_{N}=-\sum_{i,j}p(B_{i},S_{j})\text{log}p_{B_{i}}(S_{j})$ is the sum over all blocks $B_{i}$ of $N-1$ symbols and over all symbols $S_{j}$. Then $F_{N}$ is a monotonic decreasing function of $N$, $F_{N}=NG_{N}-(N-1)G_{N-1}$, $G_{N}= \frac{1}{N} \sum_{i}^{N}F_{N}$, $F_{N} \le G_{N}$, and $\lim_{N \rightarrow \infty} F_{N}=H$</p>
+<p>Theorem 7: The output of a finite state transducer driven by a finite state statistical source is a finite state statistical source with entropy (per unit time) less than or equal to that of the input. If the transducer is nonsingular, they are equal.</p>
+<p>Theorem 8: Let the system of constraints considered as a channel have a capacity $C = \text{log}W$. If we assign $p_{ij}^{(s)}=\frac{B_{j}}{B_{i}}W^{-l_{ij}^{(s)}}$ where $l_{ij}^{(s)}$ is the duration of the sth symbol leading from state i to state j and the $B_{i}=\sum_{s,j}B_{j}W^{-l_{ij}^{(s)}}$ then $H=C$ and is maximized.</p>
+<p>Theorem 9: Let a source have entropy $H$ bits per symbol and a channel have capacity $C$ bits per second. Then it is possible to encode the output of the source in such a way as to transmit at the average rate $\frac{C}{H}-\epsilon$ symbols per second over the channel where $\epsilon$ is arbitrarily small. It is not possible to transmit at an average rate greater than $\frac{C}{H}$.</p>
+<h3>The Discrete Channel with Noise</h3>
+<p>Theorem 10: If the correction channel has a capacity equal to $H_{y}(x)$ it is possible to so encode the correction data as to send it over this channel and correct all but an arbitrarily small fraction $\epsilon$ of the errors. This is not possible if the channel capacity is less than $H_{y}(x)$</p>
+<p>Theorem 11: Let a discrete channel have the capacity $C$ and a discrete source the entropy per second $H$. If $H \le C$ there exists a coding system such that the output of the source can be transmitted over the channel with an arbitrarily small frequency of errors. If $H>C$ it is possible to encode the source so that the equivocation is less than $H-C+\epsilon$ where $\epsilon$ is arbitrarily small. There is no method of encoding which provides an equivocation less than $H-C$</p>
+<p>Theorem 12: $\lim_{T\rightarrow \infty}\frac{\text{log}N(T,q)}{T}=C$, where $C$ is the channel capacity, provided that $q \ne 0,1$</p>
+<h3>Continuous Information</h3>
+<p>Theorem 13: Let $f(t)$ contain no frequencies over $W$. Then $f(t)=\sum_{-\infty}^{\infty}X_{n}\frac{\text{sin}\pi(2Wt-n)}{\pi(2Wt-n)}$ where $X_{n}=f(\frac{n}{2W})$</p>
+<p>Theorem 14: If an ensemble having an entropy $H_{1}$ per degree of freedom in band $W$ is passed through a filter with characteristic $Y(f)$ the output ensemble has an entropy $H_{2}=H_{1}+\frac{1}{W} \int_{W}\text{log}|Y(f)|^{2}df$</p>
+<p>Theorem 15: Let the average power of two ensembles be $N_{1}$ and $N_{2}$ and let their entropy powers be $\bar{N_{1}}$ and $\bar{N_{2}}$. Then the entropy power of the sum $\bar{N_{3}}$ is bounded by $\bar{N_{1}}+\bar{N_{2}}\le \bar{N_{3}}\le N_{1} + N_{2}$</p>
+<h3>The Continuous Channel</h3>
+<p>Theorem 16: If the signal and the noise are independent and the received signal is the sum of the transmitted signal and the noise then the rate of transmission is $R=H(y)-H(n)$, i.e. the entropy of the received signal less the entropy of the noise. The channel capacity is $C=\max_{P(x)}H(y)-H(n)$</p>
+<p>Theorem 17: The capacity of a channel of band $W$ perturbed by white thermal noise of power $N$ when the average transmitter power is limited to $P$ is given by $C=W\text{log}\frac{P+N}{N}$</p>
+<p>Theorem 18: The capacity of a channel of band $W$ perturbed by an arbitrary noise is bounded by the inequalities $W\text{log}\frac{P+N_{1}}{N_{1}}\le C \le W\text{log}\frac{P+N}{N_{1}}$ where $P$ is average transmitter power, $N$ is the average noise power, and $N_{1}$ is entropy power of the noise.</p>
+<p>Theorem 19: If we set the capacity for a given transmitter power $P$ equal to $C=W\text{log}\frac{P+N+\eta}{N_{1}}$ then $\eta$ is monotonic decreasing as P increases and approaches 0 as a limit. \</p>
+<p>Theorem 20: The channel capacity $C$ for a band $W$ perturbed by white thermal noise of power $N$ is bounded by $C \ge W \text{log} \frac{2}{\pi e^{3}}\frac{S}{N}$ where $S$ is the peak allowed transmitter power. For sufficiently large $\frac{S}{N}$, $C \le W \text{log}\frac{\frac{2}{\pi e}S+N}{N}(1+\epsilon)$ where $\epsilon$ is arbitrarily small. As $\frac{S}{N}\rightarrow0$ (and provided the band $W$ starts at 0), $C/W \text{log}(1+\frac{S}{N})\rightarrow 1$</p>
+<h3>The Rate for a Continuous Source</h3>
+<p>Theorem 21: If a source has a rate $R_{1}$ for a valuation $v_{1}$ it is possible to encode the output of the source and transmit it over a channel of capacity $C$ with fidelity as near $v_{1}$ as desired provided $R_{1}\le C$. This is not possible if $R_{1}>C$</p>
+<p>Theorem 22: The rate for a white noise source of power $Q$ and band $W_{1}$ relative to a root mean square measure of fidelity is $R=W_{1}\text{log}\frac{Q}{N}$ where $N$ is the allowed mean square error between original and recovered messages</p>
+<p>Theroem 23: The rate for any source of band $W_{1}$ is bounded by $W_{1}\text{log}\frac{Q_{1}}{N} \le R \le W_{1}\text{log}\frac{Q}{N}$ where $Q$ is the averave power of the source, $Q_{1}$ is the entropy power of the source, and $N$ is allowed mean square error.</p>
+
+</div>
+
+<div id ="number21">
+<h2>Complexity</h2>
+<p>Chaos theory, Command and Control Research Program, Complex systems, Complexity theory (disambiguation page), Constructal law, Cyclomatic complexity, Digital morphogenesis, Dual-phase evolution, Emergence, Evolution of complexity, Game complexity, Holism in science, Interconnectedness, Law of Complexity/Consciousness, Model of hierarchical complexity, Names of large numbers, Network science, Network theory, Novelty theory, Occam's razor, Process architecture, Programming Complexity, Sociology and complexity science, Systems theory, Thorngate's postulate of commensurate complexity, Variety (cybernetics), Volatility, uncertainty, complexity and ambiguity, Computational irreducibility</p>
+
+</div>
+
+<div id ="number22">
+<h2>Python</h2>
+<p>inner functions, lambdas, variable scoping rules for inner functions and lambdas</p>
+<p>For structured data <code>collections.namedtuples</code> are more readable than dictionaries, lists and tuples, and less verbose than classes</p>
+<p>Constructs to help write simpler code include <code>all()</code>, <code>any()</code>, list comprehension, <code>map()</code>, <code>functools.reduce()</code>, <code>zip()</code>, and <code>enumerate()</code></p>
+<p>Useful functions from the <code>itertools</code> module include <code>groupby()</code>, <code>accumulate()</code>, <code>product()</code>, and <code>combinations()</code></p>
+<p>A common style guide used in EPI is PEP 8. The authors also suggest using 'Python for Informatics' at <a href="http://www.pythonlearn.com/book_007.pdf">http://www.pythonlearn.com/book_007.pdf</a>.</p>
+<p>The authors also suggest effective python and head first design patterns.</p>
+<p>In Python, everything is an object.</p>
+<p>'Language Questions' Chapter in EPI Python</p>
+<p><strong>Garbage collection</strong> refers to finding data objects which cannot be accessed in the future and reclaiming the resources of these unusable objects such as memory. Garbage-collected languages include Java, C#, Python, and most scripting languages. C is non-garbage-collected. Garbage collected languages use <strong>reference counting</strong> or <strong>tracing</strong> to find relevant objects, and discard the rest as garbage. Python uses reference counting, which can immediately reclaim objects when their reference count is 0. The tradeoff is that you need to store an additional integer-value per object. Tracing can be performed in a separate thread, but it pauses all threads which leads to <strong>nondeterministic</strong> performance.</p>
+<p><strong>Reference cycles</strong> occur when objects $A$ and $B$ reference each other, for example $A.u=B$ and $B.v=A$, which leads the reference count to never drop below 1. Garbage collectors should look for these, and remove them. Garbage collectors also make use of heuristics for speed - for example, objects are assigned generations, and younger generations are examined first for removal.</p>
+<p>In Python, assignment does not copy, it only assigns a variable to a target. For mutable objects, a copy is needed to change values without changing the original.</p>
+<p>A <strong>compound</strong> object is an object made of objects.</p>
+<p>A <strong>shallow</strong> copy (<code>copy.copy()</code>) constructs a new compound object of references to the objects found in the original. A <strong>deep</strong> copy (<code>copy.deepcopy()</code>) constructs a new compound object and then inserts copies of objects found in the original. This difference is only relevant for compound objects. Copying is defensive and may be avoided if the object will not be mutated. If an object is immutable, there is no need to copy it.</p>
+<p>An <strong>iterator</strong> is any object that has:</p>
+<ul>
+<li><code>__iter__()</code>, which returns the iterator object, and is used in <code>for</code> and <code>in</code> statements. The </li>
+<li><code>__next__()</code>, which returns the next value in the iteration, until there are no more</li>
+</ul>
+<p>A <strong>generator</strong> uses the function call stack to implicitly store the state of the iterator. Every generator is an iterator, but iterators can have additional functionality.</p>
+<p>A <strong>decorator</strong> ?????</p>
+<p>A <strong>list</strong> <code>[1,2,3]</code> is similar to a <strong>tuple</strong> <code>(1,2,3)</code> because both represent sequences and both use the <code>in</code> operator for membership checking. They are different because tuples are immutable. Immutable objects are more container-friendly (mutable objects might have a changed hashcode if they have been changed) and thread-safe. Tuples can be put in sets and used as map keys, while lists cannot.</p>
+<p><code>*args</code> is used to pass a variable length argument list. The parameter doesn't need to be called args, it just must be preceded by <code>*</code>. This argument must appear after all regular arguments.</p>
+<p><code>**kwargs</code> is used when passing a variable number of keyword arguments to a function. Keyword arguments are quite different from named arguments??</p>
+<p>When an attempt is made to execute a statement or expression and it results in an error, it is called an exception.</p>
+<ul>
+<li>a <code>try</code> block is used when a user might have to try several different inputs</li>
+<li>an <code>except</code> block is used for exceptions or special cases. There are a number of built-in exception types in Python which should be learned and used whenever possible</li>
+<li>a <code>finally</code> block is always executed, regardless of whether an exception was raised. This can be used to avoid duplicating code in try and except</li>
+<li>an <code>else</code> block is executed in the absence of exceptions</li>
+<li><code>raise</code> is used to create or propagate exceptions upward</li>
+</ul>
+<p>The rules for variable scope are as follows. A variable can appear in an expression and it can also be assigned to. When the variable appears in an expression, Python searches 1. the current function 2. enclosing scopes 3. the module containing code (global scope) 4. built-in scope (<code>open</code>)</p>
+<p>In Python 3, use <code>nonlocal</code> to have an assignment to a variable use an enclosing function's scope.</p>
+<p>When calling a function, some arguments must be specified by name. Functions which do not need to be specified by name are called <strong>keyword</strong> (positional) arguments. Keyword arguments make the function call cleaner and they also make it easier to refactor functions into having more arguments. When a function is defined, arguments can be given default values. Default arguments are only evaluated once, when a module is loaded, and they are shared across all callers.</p>
+<p>As a rule, mutable objects should have <code>None</code> as their default value</p>
+<h3>Primitive Types</h3>
+<p>The built-in types in python include numeric (float, int), sequences (list), mappings (dict), classes, instances, and exceptions</p>
+<ul>
+<li>bitwise operators include <code>&amp;,|,&gt;&gt;,&lt;&lt;,~,^</code></li>
+<li>key methods for numeric types include <code>abs()</code>,<code>math.ceil()</code>,<code>math.floor()</code>,<code>min(x,y)</code>,<code>max(x,y)</code>,<code>pow(x,y)</code> or <code>x ** y</code> and <code>math.sqrt()</code></li>
+<li>to compare floats, use <code>math.isclose()</code></li>
+<li>key mehtods in <code>random</code> include <code>random.randrange(x)</code>, <code>random.randint(x,y)</code>, <code>random.random()</code>, <code>random.shuffle(A)</code>, and <code>random.choice(A)</code></li>
+</ul>
+<h3>Arrays</h3>
+<p>In Python, arrays are provided by the <code>list</code> type. Lists are dynamically resized. The <code>tuple</code> type is similar, but immutable.</p>
+<ul>
+<li>a list is instantiated <code>[1,2,3,4]</code> or <code>list(range(100))</code></li>
+<li>a 2D array is instantiated <code>[[1,2,],[3,4,]]</code></li>
+<li>basic operations on lists include <code>len(A)</code>, <code>A.append()</code>, <code>A.remove()</code>, <code>A.insert(i,y)</code></li>
+<li>to check if a value is present in an array, use <code>a in A</code></li>
+<li>key methods for <code>list</code> include <code>min(A)</code>, <code>max(A)</code></li>
+<li>Slicing an array allows you to select all the indecies including and after index i and before j with <code>A[i:j]</code>, select including and after the ith index using <code>A[i:]</code>, select up to before the ith index using <code>A[:i]</code> select the last i using <code>A[-i:]</code>, select from -i to -j using <code>A[-i:-j]</code>, reverse a list using <code>A[::-1]</code>, rotate a list using <code>A[k:]</code> + <code>A[:k]</code>, skip by k using <code>A[i:j:k]</code>, and create a shallow copy using <code>B = A[:]</code></li>
+<li>list comprehension in Python consists of 1. an input sequence, 2. an iterator over the input sequence, 3. a logical condition over the operator, 4. an expression that yields elements of derived list. For example,<code>[x**2 for x in range(6) if x % 2 ==0]</code> yields <code>[0,4,16]</code></li>
+</ul>
+<h3>Strings</h3>
+<p>Strings are also stored as lists in python, so many of the key operators and functions are the same as those for arrays. Other key operators include +, , <code>s in t</code>, <code>s.strip()</code>, <code>s.startswith(prefix)</code>, <code>s.endswith(suffix)</code>, <code>'string'.split(',')</code> <code>','.join('strings', 'in' , 'here')</code>, <code>s.tolower()</code>. Strings are immutable</p>
+<h3>Lists</h3>
+<p>lists in python there is not much detail in EPI book</p>
+<h3>Stacks, Queues, Deques</h3>
+<p>Key methods in the <code>list</code> type for using stacks include</p>
+<ul>
+<li><code>s.append(e)</code> pushes an element onto the stack</li>
+<li><code>s[-1]</code> retrieves but does not remove the element at the top of the stack</li>
+<li><code>s.pop()</code> will remove and return the element at the top of the stack</li>
+<li><code>len(s) == 0</code> tests if the stack is empty</li>
+</ul>
+<p>Key methods in <code>collections.deque</code> include</p>
+<ul>
+<li><code>q.append(e)</code> pushes an element onto the queue</li>
+<li><code>q[0]</code> retrieves but does not remove the element at the front, <code>q[-1]</code> does the same to the back</li>
+<li><code>q.popleft()</code> removes and returns the element at the front of the queue</li>
+</ul>
+<h3>Heaps</h3>
+<p>In Python, heaps are implemented in the <code>heapq</code> module. The key functions for this module are:</p>
+<ul>
+<li><code>heapq.heapify()</code> transforms elements in L into a heap-in-place</li>
+<li><code>heapq.nlargest(k,L)</code> and <code>heapq.nsmallest(k,L)</code> return the k largest or smallest elements in L.</li>
+<li><code>heapq.heappush(h,e)</code> pushes a new element on the heap</li>
+<li><code>heapq.heappop(h)</code> pops the smallest element from the heap</li>
+<li><code>heapq.heappushpop(h,a)</code> pushes a on the heap and then pops and returns the smallest element</li>
+<li><code>e=h[0]</code> returns the smallest element without popping it</li>
+<li><code>heapq</code> provides a min-heap, so to use a max-heap, use negative values </li>
+</ul>
+<h3>Searching</h3>
+<p>In python, use the <code>bisect</code> module for binary search functions on a sorted list <code>a</code>.</p>
+<ul>
+<li>the index of the first element greater than or equal to a given value is given by <code>bisect_left(a,x)</code></li>
+<li>the index of the first element greater than a given value is given by <code>bisect_right(a,x)</code></li>
+<li>If all elements are less than x, these functions return <code>len(a)</code></li>
+</ul>
+<h3>Hash Tables</h3>
+<p>Commonly used hash table based data structures in Python include <code>set</code>, which simply stores keys, and <code>dict</code>, <code>collections.defaultdict</code> and <code>collections.Counter</code> which all store key-value pairs. All do not allow for duplicate keys, unlike list.</p>
+<ul>
+<li>In <code>set</code>, important operations include <code>s.add()</code>, <code>s.remove()</code>, <code>s.discard()</code>, <code>x in s</code>, <code>x &lt;= y</code> (is x a subset of y) and, <code>x - y</code> elements in x that are not in y</li>
+</ul>
+<p>Iteration over key-value pairs yields the keys. To iterate over key-value pairs, use <code>items()</code>, to iterate over values use <code>values()</code>, to return to iterating over keys use <code>keys()</code></p>
+<p>The builtin <code>hash</code> function can make implementing hash functions much easier</p>
+<h3>Sorting</h3>
+<p>Sort in-place in python using <code>sort()</code>, which only updates the calling list, and returns <code>None</code>. If the <code>key</code> is <code>none</code>, it is assumed to be a function which maps list elements to comparable objects.</p>
+<p>Sort iterables using <code>sorted()</code>. This takes an iterable and returns a new list containing all items from the iterable in ascending order</p>
+<h3>Binary Search Trees</h3>
+<p>In Python, use <code>sortedcontainers</code> for sorted sets and dictionaries. In EPI, the authors use <code>bintrees</code> for pedagogy? In <code>bintrees</code>:</p>
+<ul>
+<li><code>insert()</code> inserts a new element e into a binary search tree</li>
+<li><code>discard()</code> removes e from the binary search tree if it is present</li>
+<li><code>minitem()</code> yields the smallest key-value pair and <code>maxitem()</code> yields the largest </li>
+<li><code>minkey()</code> yields the smallest key and <code>maxkey()</code> yields the largest</li>
+<li><code>pop_min()</code> removes and returns the smallest key-value pair and <code>pop_max()</code> removes and returns the largest</li>
+</ul>
+</div>
+
+<div id ="number23">
+  <h2>C++</h3>
+  <p>A <strong>reference</strong> refers to another target object as an alias. A <strong>pointer</strong> is a separate variable that refers to a target object.</p>
+  <ul>
+  <li><code>ptr</code> refers to the <strong>address</strong>, and <code>*ptr</code> defererences it to obtain its <strong>value</strong></li>
+  <li><code>ref</code> automatically deferences to the value, and <code>&amp;ref</code> gives the address of <code>ref</code></li>
+  <li>a pointer can be assigned an address of a different target</li>
+  <li>if a pointer has <code>nullptr</code> value it doesnt point to any object</li>
+  <li>a pointer also has an address which can be assigned to a variable ie <code>**intPtrPtr = &amp;intPtr</code></li>
+  <li>references can be initialized but not reassigned because reassignment means assignment to the original object</li>
+  </ul>
+  <p><strong>Pass-by-reference</strong> passes the object itself, so the function receives the object's address. In this case, the function can modify the object, which might be the purpose of the function. This is preferable to <strong>pass-by-value</strong> because a new copy must be created and passed to the function when passing by value. It is sometimes expensive to copy large vectors of objects.</p>
+  <p>A <strong>smart pointer</strong> is a class which encapsulates a pointer to a dynamically allocated object, tracks usage, and ensures memory is deallocated when appropriate to avoid memory and resources leak. In C++, the standard library includes <code>unique_ptr</code> which destroys the object when variable goes out of scope, <code>shared_ptr</code> which is freely copyable so that many variables can refer to the same object, tracks reference count, destroys the object when it is no longer in use, and <code>weak_ptr</code> which refers to an object held by a <code>shared_ptr</code> but does not count references so the object can be destroyed even if a <code>weak_ptr</code> refers to it</p>
+  <p><strong>Iterators</strong> can be dereferenced for a value, just like pointers. While pointers just hold the address in memory, an iterator may hold a pointer or it may be something much more complex. An iterator is capable of iterating over data in a file system, many machines, or generated locally. Not all iterators allow imple arithmetic such as increment, decrement, and adding integers. A pointer of type <code>T*</code> can point to any type <code>T</code> object, while iterators are more restricted, i.e. <code>vector&lt;double&gt;::iterator</code> can only refer to doubles in a <code>vector&lt;double&gt;</code> container. Because an iterator refers to objects in a container, there is no concept of deletion for iterators.</p>
+  <p>A <strong>constructor</strong> in a class is a special type of subroutine used to create an object. It prepares the new object for use by accepting arguments that it uses to set fields. A <strong>default</strong> constructor may be called with no arguments. The <strong>copy</strong> constructor can be called with a reference to a class instance as an argument. The <strong>move</strong> constructor is a contructor which can be called with an rvalue reference to a class instance as an argument.</p>
+  <p>When you write a class with no methods and the class does not inherit from another class, the compiler will automatically give it four methods.</p>
+  <ul>
+  <li>The <strong>default constructor</strong> </li>
+  <li>The <strong>destructor</strong> </li>
+  <li>The <strong>copy constructor</strong> initializes every instance member with a corresponding member of the constructor's argument.</li>
+  <li>The <strong>copy assignment operator</strong> assigns every member of its argument to a corresponding member of this instance</li>
+  <li><p>In C++11, move semantics are used, resulting in every class having a move copy constructor and a move copy assignment.</p>
+  </li>
+  <li><p><code>malloc</code> is type-agnostic, allocates an uninitialized memory block of required size in bytes and returns a void pointer</p>
+  </li>
+  <li><code>new</code> allocates a memory block required to hold a specific type of object, initializes the object, and returns a type-safe pointer</li>
+  <li><code>delete</code> frees memory and ensures the object's destructor is called</li>
+  <li>it is common for <code>new</code> to use <code>malloc()</code> to allocate memory and <code>delete</code> to use <code>free()</code> to deallocate it</li>
+  </ul>
+  <p>In C, a string is an array of chars terminated with <code>\0</code>. In C++, a string is an object from the <code>string</code> class. C++ string methods include range-based looping, various ways to initialize, search, and update, the ability to use + operator and comparison operators</p>
+  <p><code>push_back()</code> copies a string into a vector by implicitly initializing with provided <code>char*</code>, copies into the vector and deletes the temporary object. <code>emplace_back()</code> constructs a string in place directly with <code>char*</code>, so no temporary string is created</p>
+  <p>A <strong>template function</strong>  <code>template &lt;typename T&gt;</code> can be used with any type that implements a given type of function.</p>
+  <p><strong>Dynamic linkage</strong> refers to a process by which a linker takes object code and library and assembles them into a single executable. It resolves all addresses to function calls and global variables. Linking is <strong>static</strong> if the output is a single program, or <strong>dynamic</strong> if library code is added to the program when the process starts. <strong>Dynamic loading</strong> refers to loading the library after the program has started executing. The benefits of using dynamic linkage are smaller executables and not having to update binary each time the library is updated. The key disadvantage is incompatibility when libraries are updated independently and theres nobody to check and enforce correct interaction. A program that worked today may stop working tomorrow although it has not been changed.</p>
+  <h3>Primitive Types</h3>
+  <p>There are a number of utility methods for primitive types in the <code>cmath</code> and <code>random</code> libraries. Numeric types have maximum and minimum values which are given by e.g. <code>numeric_limits&lt;int&gt;::min()</code></p>
+  <ul>
+  <li>bitwise operators include <code>&amp;,|,&gt;&gt;,&lt;&lt;,~,^</code></li>
+  <li>key methods in <code>cmath</code> include <code>abs()</code>,<code>fabs()</code>,<code>ceil()</code>,<code>floor()</code>,<code>min(x,y)</code>,<code>max(x,y)</code>,<code>pow(x,y)</code>,<code>log()</code>, and <code>sqrt()</code></li>
+  <li>ways to interconvert integers, characters, and strings include x - '0'</li>
+  <li>key methods in <code>random</code> include <code>uniform_int_distribution&lt;&gt; dis(1,10)</code> (random int from 1 to 10), <code>uniform_real_distribution&lt;double&gt; dis(0,1)</code> (random float in [0,1]), <code>generate_canonical&lt;double, 10&gt;</code> (value in [0,1)) </li>
+  </ul>
+  <h3>Arrays</h3>
+  <p>The <code>array</code> class is fixed-size, while the  <code>vector</code> class is dynamically-resized.</p>
+  <p>The <code>algorithm</code> library includes:</p>
+  <ul>
+  <li><code>binary_search(A.begin(), A.end(), 42)</code></li>
+  <li><code>lower_bound(A.begin(), A.end(), 42)</code></li>
+  <li><code>upper_bound(A.begin(), A.end(), 42)</code></li>
+  <li><code>fill(A.begin(), A.end(), 42)</code></li>
+  <li><code>rotate(A.begin(), A.begin() + shift)</code></li>
+  <li><code>min_element(A.begin(), A.end())</code></li>
+  <li><code>max_element(A.begin(), A.end())</code></li>
+  <li><code>reverse(A.begin(), A.end())</code></li>
+  <li><code>sort(A.begin(), A.end())</code></li>
+  <li><code>swap(x,y)</code></li>
+  </ul>
+  <h3>Strings</h3>
+  <p>uses the <code>string</code> class</p>
+  <ul>
+  <li><p>for <strong>comparison</strong>, use the comparison operators <code>&gt;,&gt;=,==,&lt;,&lt;=</code> and <code>compare("Gauss")</code></p>
+  </li>
+  <li><p>other common string functions include <code>append("Gauss")</code>, <code>push_back('c')</code>, <code>pop_back()</code>, <code>insert(s.begin() + shift, "Gauss")</code>, <code>substr(pos,len)</code></p>
+  </li>
+  </ul>
+  <h3>Lists</h3>
+  <p>uses the <code>list</code> and <code>forward_list</code> classes</p>
+  <ul>
+  <li><p>insertion and deletion functions include <code>push_front()</code>, <code>push_back()</code>, <code>emplace_front()</code>, <code>emplace_back()</code>, <code>pop_front()</code>, and <code>pop_back()</code></p>
+  </li>
+  <li><p>transfer elements from one list to another using <code>splice_after(L1.end,L2)</code>, reverse using <code>reverse()</code>, sort using <code>sort()</code></p>
+  </li>
+  </ul>
+  <h3>Stacks, Queues, Deques</h3>
+  <p>uses the <code>stack</code>, <code>queue</code>, and <code>deque</code> classes</p>
+  <ul>
+  <li><p>key functions in <code>stack</code> include <code>top()</code> which returns but does not remove top element, <code>push()</code> , <code>emplace()</code>, <code>pop()</code> which removes but does not return top element, and <code>empty()</code> which tests if the stack is empty</p>
+  </li>
+  <li><p>key functions in <code>queue</code> include <code>push()</code>, <code>front()</code> which retrieves but does not remove from the front, <code>back()</code> which retrieves but does not remove from the back, <code>pop()</code> which removes but does not return from the front</p>
+  </li>
+  <li><p>key functions in <code>deque</code> include <code>push_back()</code>, <code>push_front()</code>, <code>emplace_back()</code>, <code>emplace_front()</code>, <code>pop_back()</code>, <code>pop_front()</code>, <code>front()</code> and <code>back()</code></p>
+  </li>
+  </ul>
+  <h3>Heaps</h3>
+  <p>In C++, heaps are implemented in the <code>priority_queue</code> class. Key functions from this class include <code>push()</code>, <code>emplace()</code>, <code>top()</code>, and <code>pop()</code></p>
+  <h3>Searching</h3>
+  <p>The <code>find(A.begin(),A.end(), target)</code> in <code>algorithm</code> finds the first element in a STL container.</p>
+  <ul>
+  <li><code>binary_search(A.begin(),A.end(), target)</code>  returns boolean and can be used to check if the target value is present</li>
+  <li><code>lower_bound(A.begin(),A.end(), target)</code> finds the first element that is not less than the target value</li>
+  <li><code>upper_bound(A.begin(),A.end(), target)</code> finds the first element that is not greater than the target value</li>
+  </ul>
+  <p>Each of these has $O(logn)$ time complexity in a sorted STL container.</p>
+  <h3>Hash Tables</h3>
+  <p>The two common hash-table data structures in C++ are <code>unordered_set</code>, which just stores keys, and <code>unordered_map</code> which stores key-value pairs. Both do not allow for duplicate keys.</p>
+  <p>Key functions for <code>unordered_set</code>:</p>
+  <ul>
+  <li><code>insert()</code> inserts new element and returns pair of iterator(points to new element) and boolean(true if element added succesfully)</li>
+  <li><code>emplace()</code>, <code>erase()</code>, and <code>size()</code></li>
+  <li><code>find()</code> returns iterator to element if it was present, or returns the special iterator <code>end()</code></li>
+  </ul>
+  <p>Key functions for <code>unordered_map</code>:</p>
+  <ul>
+  <li><code>insert(key, "value")</code> </li>
+  <li><code>emplace(key, "value")</code>, <code>erase(key)</code>, and <code>size()</code></li>
+  <li><code>find()</code> returns iterator to element if it was present, or returns the special iterator <code>end(key)</code></li>
+  </ul>
+  <p>The <code>hash()</code> method from <code>functional</code> has convenient functions for hashing basic classes in C++.</p>
+  <h3>Sorting</h3>
+  <p>For arrays, use <code>sort()</code> in the <code>algorithm</code> header. To sort lists, use the function <code>list::sort()</code>.</p>
+  <h3>Binary Search Trees</h3>
+  <p>The two common BST-based data structures in C++ are <code>set</code>, which stores keys and <code>map</code>, which stores key-value pairs.</p>
+  <ul>
+  <li><code>set</code> has many of the functionalities of <code>unordered_set</code>, in addition to <code>begin()</code> which traverses keys in ascending order and <code>rbegin()</code> which traverses keys in descending order, </li>
+  <li><code>*begin()</code> gives smallest key and <code>*rbegin()</code> gives largest key in the BST</li>
+  </ul>
+
+</div>
+
+<div id ="number24">
+<h2>Javascript</h2>
+<p>grammar, types, loops, iteration, functions, expressions, operators, numbers, dates, text formatting, regex, indexed collections, keyed collections, objects, DOM, object model, iterators , generators, data structures, equality comparisons, closures, inheritance, prototype chain, strict mode, typed arrays, SIMD types, memory management, concurrency model, event loop</p>
+
+</div>
+
+<div id ="number25">
+<h2>Linux</h2>
+
+<h3>The Big Picture</h3>
+<p>abstraction, main memory, the kernel, process management, memory management, drivers, calls, support, user space, users</p>
+
+<h3>Basic Commands</h3>
+<p>/bin/sh, cat, ls, cp, mv, touch, rm, echo, cd, mkdir, rmdir, shell globbing, grep, less, pwd, diff, file, find, locate, head, tail, sort, gzip, tar, zcat, /usr, sudo, /etc/sudoers</p>
+
+<h3>Devices</h3>
+<p>device files, sysfs, dd, hard disks, cd, dvd, pata, terminals, serial ports, parallel ports, audio devices, udev, devtmpfs</p>
+
+<h3>Disks and Filesystems</h3>
+<p>partitioning, partition table, disk geometry, partition geometry, filesystems, UUID, buffering, caching, mount, remounting, /etc/fstab, swap space</p>
+
+<h3>How the Linux Kernel Boots</h3>
+<p>startup messages, kernel initialization, boot options, kernel parameters, boot loaders, GRUB, UEFI, chainloading</p>
+
+<h3>How User Space Starts</h3>
+<p>init, system V, systemd, units, unit types, upstart, system v init, shutting down, initial RAM</p>
+
+<h3>System Configuration, Logging, System Time, Batch Jobs, Users</h3>
+<p>/etc, system logging, user management files, getty, login, setting time, recurring tasks with cron, one-time tasks with atPAM, identification, authentication</p>
+
+<h3>Processes and Resource Utilization</h3>
+<p>tracking processes, lsof, strace, ltrace, threads, resource monitoring, measuring cpu time, process priorities, load averages, memory, vmstat, iostat, pidstat</p>
+
+<h3>Network and Configuration</h3>
+<p>network basics, packets, layers, internet layer, subnets, routes, ICMP, DNS, physical layer, kernel network interfaces, network interface configuration, resolving hostnames, localhost, TCP, UDP, Services, DHCP, linux as router, private networks, firewalls, ethernet, IP, ARP, iw</p>
+
+<h3>Network Applications and Services</h3>
+<p>SSH, inetd, xinetd, lsof, tcpdump, netcat, RPC, network security</p>
+
+<h3>Shell Scripts</h3>
+<p>basics, literals, single quotes, double quotes, special variables, individual arguments, number of arguments, all arguments, script name, process ID< exit code, conditionals, elif, loops, command substitution, temporary file management, here documents, basename, awk, sed, xargs, expr, exec, subshells</p>
+
+<h3>Moving Files across Network</h3>
+<p>rsync, file sharing, samba, nfs clients</p>
+
+<h3>User Environments</h3>
+<p>startup files, bash, tcsh, default user settings, pitfalls</p>
+
+
+</div>
+
+<div id ="number26">
+<h2>AI Theory, History, and Philosophy</h2>
+<p>AI Seasons, whole brain emulation, biological cognition, brain-computer interface, networks and organizations, speed superintelligence, collective superintelligence, quality superintelligence, direct reach, indirect reach, advantages of digital intelligence, timing and takeoff, recalcitrance, optimization power, explosivity, singleton, decisive strategic advantage, functionalities, superpowers, resource acquisition, technological perfection, self-preservation, perverse instantiation, infrastructure profusion, mind crime, control problem, boxing methods, incentive methods, stunting, tripwires, direct specification, domesticity, indirect normativity, augmentation, oracles, genies, sovereigns, value-loading problem, evolutionary selection, reinforcement learning, associative value accretion, motivational scaffolding, value learning, emulation modulation, institution design, morality models, do what i mean, indirect normativity, decision theory</p>
+
+</div>
+
+<div id ="number27">
+<h2>Machine Learning</h2>
+<h3>How to Learn</h3>
+<p>Perceptron Learning Algorithm, Learning, Models, Design, Supervised, Reinforcement, Unsupervised, Hoeffding Inequality, Feasability, Ein, Eout, Error/Noise</p>
+<h3>Training/Testing</h3>
+<p>Dichotomy, Growth function for Hoeffding, Generalization of Hoeffding, Shatter, Break Point, Vapnik Chervonenkis, VC general bound, Penalziing Complexity</p>
+<h3>Overfitting</h3>
+<p>Validation, Regularization</p>
+<h3>The Linear Model</h3>
+<p>Regression, Nonlinear Transformation, Classification</p>
+<h3>Three Learning Principles</h3>
+<p>Occam's Razor, Sampling Bias, Data Snooping</p>
+
+<h3>Ch 5 - ML Basics (Goodfellow, Bengio, Courville)</h3>
+
+<p>learning, example, features, classification, missing inputs, regression, transcription, translation, structured output, anomaly detection, synthesis/sampling, imputation of missing values, denoising, density estimation, accuracy, error rate, test set, unsupervised, supervised, dataset, data points, reinforcement learning, design matrix, linear regression, parameters, weights, mean squared error, normal equations, bias, generalization error, training error, statistical learning theory, iid assumptions, data generating distribution, under/overfitting, capacity, hypothesis space, input, parameters, representational capacity, effective capacity, occams razor, vapnik-chernovekis dimension, non-parametric models, nearest neighbor, under/over fitting regimes, opimal capacity, bayes error, no free lunch theorem, weight decay, regulizer, regularization, hyper parameters, validation set, cross-validation, estimates, bias, variance, point estimator, statistic, unbiased, asymptotically unbiased, standard error, consistency, almost sure convergence, maximum likelihood, log-likelihood, conditional, statistic efficiency, parametric case, CRLB, prior probability distribution, a priori, posterior distribution, MAP estimation, supervised, support vector machines, kernel trick, gaussian kernel, template matching, kernel methods, support vectors, simpler representations, k-means cluster, SGD, curse of dimensionality, local constancy prior, local kernels, composition of factors, manifold learning, manifold hypothesis</p>
+</div>
+
+<div id ="number28">
+  <h1>Deep Learning</h1>
+
+  <h3>Ch 1 - Intro</h3>
+
+  <p>logistic regression, encoder, decoder, representation learning, factors of variation, multilayer perceptron, hidden/visible layers, mccullough pitts neuron, stochastic gradient, connectionism, distributed representation, greedy layer wise preetraining, adaline</p>
+
+
+  <h3>Ch 4 - Numerical Computation</h3>
+
+  <p>underflow, overflow, multinoulli, condition number, objective function, criterion, cost function, loss function, error function, derivative, gradient descent, critical points, local min/max, saddle point , global min/max, directional derivative, learning rate, live search, hill climbing, curvature/2nd derivative, hessian matrix, first order optimization, second order, lipschitz continuous, lipschitz constant, convex optimization, constrained optimization, feasible, karush kuhn-tucker, generalized lagrangian, equality/inequality contraints, active contstraint, linear least squares</p>
+
+
+  <h3>Ch 6 - Deep Feedforward Networks</h3>
+
+  <p>deep feedforward network, multilayer perceptron, feedback, recurrent neural networks, output layer, hidden layers, width, phi nonlinear transformation, activation functions, back-propagation, rectified linear unit, cost function, calculus of variations, mean absolute error, sigmoid units, softmax units, winner take all, heteroskedastic, misture density networks, clip gradients, hidden units, rectified linear units, absolute value rectification, maxout units, leaky/parametric ReLU, catastrophic forgetting, radial basis function, softplus, hard/hidden units, architecture, universal approximation theorem, forward/back propagation, computational graph, recursive chain rule is backprop, symbolic representations, numeric value, tensor V, dynamic programming, automatic differentiation, reverse mode accumulation, forward mode accumulation, hessian, krylov methods, sparse activations</p>
+
+  <h3>Ch 7 - Regularization in Deep Learning</h3>
+
+  <p>parameter norm penalties, L2 parameter regularization, weight decay, tikhonov regularization, L1 regularization, ridge regression, feature selection, karush kuhn-tucker multiplier, under constrained, dropout, augmentation, noise robustness, label smoothing, semi-supervised, multi-task, early stopping, parameter sharing, convolutional neural nets, orthogonal, matching pursuit, bagging (bootstrap aggregating), model averaging, ensemble methods, boosting, weight scaling inference rule, dropout boosting, fast dropout, adversarial example, adversarial training, virtual adversarial example, tangent distance algorithm, tangent prop algorithm, double back prop, manifold tangent classifiers</p>
+
+  <h3>Ch 8 - Optimization for Deep Learning</h3>
+
+  <p>theta parameters, j of theta cost function, data generating distribution, risk, empirical risk, surragate loss function, batch/deterministc, stochastic/online, minibatch, minibatch stochastic, generalization error, stream, model identifiability, weight space symmetry, saddle free newton method, gradient clipping heuristic, cliffs, explaining gradients, vanishing gradients, power method, excess error, momentum, nesterov momentum, correction factor, normalized initialization, sparse initialization, adagrad, rmsprop, adam, conjugate directions, fletcher-reeves, polak-ribune, nonlinear conjugate dradients, bfgs algorithm, limitied memory bfgs, batch normalization, coordinate descent, polyak averaging, supervised pretraining, fine tuning, greedy, continuation methods, curriculum learning</p>
+
+  <h3>Ch 9 - Convolutional Neural Nets</h3>
+
+  <p>pooling, convolution, feature map, cross-correlation, toeplitz matrix, dobsky block circulant matrix, parameter sharing, equivariant representations, tied weights, equivariance, invariant, permutation invariant, stride, unshared convolution, tiled convolution, structured outputs, separable, primary visual center, simple/complex cells, fovea, saccades, time delay neural nets, reverse correlation, gabor functions, quadrature pair</p>
+
+  <h3>Ch 10 - Recurrent Neural Nets</h3>
+
+  <p>unfolding back propagation through time, teacher forcing, open-loop, stationary, optimizing, encoder, reader, input, decoder, writer, output, attention mechanisms, echo state networks, liquid state machines, reservoir computing, spectral radius, contractive, leaky units, gated RNNs, long short term memory, gated recurrent unit, forget-gate unit, external input gate, output gate, clipping the norm, explicit memory, working memory, memory networks, neural turing machine, content based addressing, location based addressing, attention mechanism</p>
+
+  <h3>Ch 11 - Practical Methodologies</h3>
+
+  <p>precision, recall, f-score, pr-curve integral, converge, hyperparameter optimization, grid search, finite differences, centered difference</p>
+
+  <h3>Ch 12 - Applications</h3>
+
+  <p>coalesced, gp-gpus, data parallelism, model parallelism, asynchronous stochastic gradient descent, parameter server, model compression, dynamic structure, conditional computation, cascade, gater, expert networks, mixture of experts, hard mixture, global contrast normalization, sphering, whitening, local contrast normalization, automatic speech recognition, natural language processing, n-grams, language model smoothing, back-off methods, neural language models, word embeddings, shortlist, hierarchical softmax, postive/negative phase, importance sampling, biased importance sampling, maximum entropy language models, read, memory, exploit, collaborative filtering, content based recommender systems, contextual bandits, relation, binary relation, relational databases, attributes, knowledge base, link prediction, word-sense disambiguation</p>
+
+  <h3>Ch 13 - Linear Factor Models</h3>
+
+  <p>factor analysis, conditionally independent, capture dependencies, probabilistic PCA, reconstruction error, nonlinear independent components estimation, independent subspace analysis, topographic ICA, slow feature analysis, sparse coding</p>
+
+  <h3>Ch 14 - Autoencoders</h3>
+
+  <p>recirculation, undercomplete, overcomplete, sparse, actual zeroes, denoising autoencoder, contractive autoencoder, encoding function, encoding distribution, reconstruction distribution, denoising score matching, tangent planes, nearest neighbor graph, contractive autoencoders, predictive sparse decomposition, learned approximate inference, information retrieval, semantic hashing</p>
+
+  <h3>Ch 15 - Representation Learning</h3>
+
+  <p>unsupervised pretraining, greedy algorithm, fine-tuning, transfer learning, domain adaptation, concept drift, one-shot learning, zero-data learning, multi-modal learning, generative adversarial networks, symbolic representation, sum product network</p>
+
+  <h3>Ch 16 - Structured Probabilistic Models</h3>
+
+  <p>probabilistic models, graphical models, directed graphical model, structured bayesian network, local conditional probability distributions, undirected models, markov random fields, clique potential, partition function, energy based model, boltzman distribution/machines, product of experts, free energy, separation, context-specific independencies, immorality, moralized graphs, chordal/triangulated, factor graphs, ancestral sampling, gibbs sampling, loopy belief propagation, harmonium, restricted boltzman machine</p>
+
+  <h3>Ch 17 - Monte Carlo Methods</h3>
+
+  <p>LLN, approximation by average, CLT, biased importance sampling, markov chain monte carlo, ancestral sampling, stationary/equilibrium distribution, stochastic matrices, burning in, mixing time, block gibbs sampling, tempered transitions, critical temperations, parralel tempering</p>
+
+  <h3>Ch 18 - Partition Function</h3>
+
+  <p>partition is integral or summation, positive/negative phase, hallucinations, fantasy particles, contrastive divergence, spurious modes, stochastic maximum likelihood, persistent contrastive divergence, fast PCD, pseudolikelihood noise contrastive estimation,  noise distribution, self contrastive estimation, bridge the gap, annealed importance sampling, bridge sampling, linked importance sampling</p>
+
+  <h3>Ch 19 - Approximate Inference</h3>
+
+  <p>evidence lower bound, variational, maximum a posteriori inference, mean field approach, structured variational inference, binary sparse coding, damping, calculus of variations, euler-lagrange equation</p>
+
+  <h3>Ch 20 - Deep Generative Models</h3>
+
+  <p>boltzmann machines, harmonium, deep belief networks, deep boltzmann machine, multi-prediction deep boltzmann machine, centered deep boltzmann, enhanced gradient, spike/slab restricted boltzmann, convolutional boltzmann, probablistic max pooling, reparameterization trick, stochastic back-propagation, perturbation analysis, REINFORCE algorithm, baseline, variance reduction, variance normalization, sigmoid belief networks, generator network, inverse transform sampling, variational autoencoder, importance weighted autoencoder, deep reccurent attention writer, discriminator network, self-supervised boosting, generative moment matching networks, maximum mean discrepancy, fully visible bayes networks, reuse of features, parameters, neural autoregressive density estimator, generalized denoising autoencoders, clamping, generative stochastic networks, detailed balance, walk-back training, diffusion inversion, approximate bayesian computation</p>
+</div>
+
+<script type="text/javascript" src="js/node_data.js"></script>
+
+</div>
+
+
+</body>
+</html>
