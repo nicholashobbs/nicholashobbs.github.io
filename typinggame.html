@@ -7,27 +7,64 @@ canvas {
     border: 1px solid #d3d3d3;
     background-color: #f1f1f1;
 }
+
 </style>
 </head>
 <body onload="myGameArea.load()">
 
-<button onclick="startGame()">Start Game</button>
-
-<input type="text" id="inputField" name="inputField"><br><br>
-<input oninput="updateNumber()", type="range" min="10" max="150" value="10" step="10" class="slider" id="numRange">
-<div id="showNumber"></div>
-
-<input oninput="updateSpeed()", type="range" min="20" max="150" value="10" step="10" class="slider" id="speedRange">
-<div id="showSpeed"></div>
-<p></p>
+<div id="controls">
+    <button onclick="startGame()">Start Game</button>
+    <input type="text" id="inputField" name="inputField"><br><br>
+    <input oninput="updateNumber()", type="range" min="10" max="150" value="10" step="10" class="slider" id="numRange">
+    <div id="showNumber"></div>
+    <input oninput="updateSpeed()", type="range" min="20" max="150" value="10" step="10" class="slider" id="speedRange">
+    <div id="showSpeed"></div>
+    <select id="levelSelect"></select>
+    <select id="typeSelect">
+        <option>across</option>
+        <option>fingers</option>
+    </select>
+</div>
 
 
 <script>
-var textItems = ["asdfasdf", "qwerqwer", "wutwutwut", "lalalalala"];
-var score = 0;
-var missed = 0;
+
+let score = 0;
+let missed = 0;
+
+// async function getData () {
+//     try {
+//         let response = await fetch("data.json");
+//         const data = await response.json();
+//         return data;
+//     }  
+//     catch (err) {
+//         console.log(err);
+//     } 
+// };
+
+// async function setLevels () {
+//     data = await getData();
+//     for (let i=0; i < Object.keys(data).length; i++) {
+//         document.getElementById('levelSelect').options[i] = new Option(Object.keys(data)[i]);
+//     }   
+// };
 
 
+
+var levels = { 1: {"across" :["asdfg", "qwert", "zxcvb", "yuiop", "hjkl;'", "nm,./"], 
+                "fingers": ["qaz", "wsx", "edc", "rfv", "tgb", "yhn", "ujm", "ik,", "ol.", "p;/"]},
+                2: {"across" :["12345", "67890-=","asdfg", "qwert", "zxcvb", "yuiop", "hjkl;", "nm,./"], 
+                "fingers": ["qaz", "wsx", "edc", "rfv", "tgb", "yhn", "ujm", "ik,", "ol.", "p;/"]},
+                3: {"across" :["`12345", "67890-=","asdfg", "qwert", "zxcvb", "yuiop[]\\", `hjkl;'`, "nm,./",
+                            "~!@#$%", "^&*()_+", "QWERT", "ASDFG", "ZXCVB", "YUIOP{}|", `"HJKL:"`, "NM<>?"], 
+                "fingers": ["`1qaz", "2wsx", "3edc", "4rfv", "5tgb", "6yhn", "7ujm", "8ik,", "9ol.", "0p;/", `-['`, `=]\\`,
+                            "~!QAZ" ,"@WSX", "#EDC", "$RFV", "%TGB", "^YHN", "&UJM", "*IK<", "(OL>", ")P:?", `_{"+}|`]}
+            };
+
+for (let i=0; i < Object.keys(levels).length; i++) {
+    document.getElementById('levelSelect').options[i] = new Option(Object.keys(levels)[i]);
+}
 
 function updateNumber () {
     document.getElementById("showNumber").innerText = `# Words: ${document.getElementById("numRange").value}`;
@@ -55,14 +92,16 @@ var myGameArea = {
 
         this.index = 0;
 
+        
+
         updateNumber();
         updateSpeed();
-
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
     },
     start : function() {
         document.getElementById('inputField').focus();
         document.getElementById('inputField').select();
+        this.wpmToPix = document.getElementById("speedRange").value/20;
         this.numItems = +document.getElementById("numRange").value;
         this.interval = setInterval(updateGameArea, 20);
         this.frameNo = 0; 
@@ -101,15 +140,15 @@ function drawGameOver() {
 }
 
 
-var myTextItems = [];
+let myTextItems = [];
 
 function updateGameArea() {
   myGameArea.clear();
   drawScore();
   myGameArea.frameNo += 1;
-  wpmToPix = document.getElementById("speedRange").value/20;
+  
 
-    if (myGameArea.frameNo == 1 || everyinterval(Math.floor(150/wpmToPix))) {
+    if (myGameArea.frameNo == 1 || everyinterval(100)) {
         if (myGameArea.drawn < myGameArea.numItems) {
             x = myGameArea.canvas.width;
             y = 30 + Math.floor(Math.random() * 950);
@@ -120,7 +159,7 @@ function updateGameArea() {
     for (i = 0; i < myTextItems.length; i += 1) {
         if (myTextItems[i].status === 1) {
             if (myTextItems[i].x > 10 ) {
-                myTextItems[i].x -= wpmToPix;
+                myTextItems[i].x -= myGameArea.wpmToPix;
             } 
             myTextItems[i].update();
         } 
@@ -130,34 +169,28 @@ function updateGameArea() {
     }
 }
 
-function removeTextItem(index, sm) { 
-    if (sm === -1) {
-        
-       
-    }
-    if (sm === 1) {
-        
-        
-    }
-
-    // myTextItems[index].status = 0;
-    
-    
-
-}
 
 function textComponent(index, x, y) {
+
     this.x = x;
     this.y = y;
     ctx = myGameArea.ctx;
+    this.text;
+
+    let selected = document.getElementById('levelSelect').value;
+    let af = document.getElementById('typeSelect').value;
+    let textItems = levels[selected][af];
     randomIndex = Math.floor(Math.random() * textItems.length);
+
     this.text = textItems[randomIndex];
+
     this.input = "";
     this.status = 1;
     this.index = index;
     this.deathCtr = 50;
     this.update = function(){
         texter(this.text, this.input, this.index, this.x, this.y)
+
         if (this.deathCtr === 0) {
             this.status = 0;
         }   
