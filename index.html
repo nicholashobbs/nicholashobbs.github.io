@@ -1,399 +1,196 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<style> /* set the CSS */
+<!doctype html>
+<html lang="en-US">
 
-body { font: 12px Arial;}
-
-path { 
-    stroke-width: 2;
-    fill: none;
-}
-
-.axis path,
-.axis line {
-    fill: none;
-    stroke: grey;
-    stroke-width: 1;
-    shape-rendering: crispEdges;
-}
-
-
-#areaabove { fill: rgb(219, 0, 0); }
-#areabelow { fill: rgb(0, 171, 0); }
-
-.grid line {
-  stroke: lightgrey;
-  stroke-opacity: 0.7;
-  shape-rendering: crispEdges;
-}
-
-.grid path {
-  stroke-width: 0;
-}
-
-</style>
 <body>
-<div id="choices"></div>
+<nav>
 
-<!-- load the d3.js library -->    
-<script src="https://d3js.org/d3.v5.min.js"></script>
+    <h1>Nicholas Hobbs</h1>
+    <ul>
+        
+        <li class="home active"><a href="#home">Home</a></li>
+        <li class="portfolio"><a href="#portfolio">Portfolio</a></li>
+        <li class="resume"><a href="#resume">Resume</a></li>
+        <li class="contact"><a href="#contact">Contact Me</a></li>
+    </ul>
+</nav>
+
+
+<section id="home">
+    <img src="./me.jpeg"style="width:350px;float:right;">
+
+    <p style="padding-top:350px;">Hi, I'm Nicholas Hobbs. I'm a Data Scientist, Software Engineer, and Security Enthusiast.</p>
+</section>
+
+
+<section id="portfolio">
+    <h1>Portfolio</h1>
+    <h2>Security Automation Tooling</h2>
+    <p>I am working on an attack surface monitoring framework as a way to teach myself AWS, as well as to refresh and sharpen my web app hacking skills.
+    </p>
+
+    <h2>Goal Tracking and Note Taking App</h2>
+    <p>I am building a custom web app and iOs to keep track of things I learn, as well as track my habits and set goals from the convenience of my phone. I have used a number of solutions for these in the past, but nothing compares to the design empowerment of building something from scratch. I am building an iOs app for my phone which connects to a SvelteKit web app.
+    </p>
+
+    <h2>Algorithmic Trading Backtesting Framework</h2>
+    <p>Years ago, I used Quantopian when I was startin to learn python. I found the platform very helpful for learning about data science and Quantitative Finance. Since the website was defunded and taken down two years ago, I have attempted to create my own replication of my favorite features, a simple framework which allows me to use a jupyter notebook to impelement a strategy and a d3 website to visualize the results.
+    </p>
+
+    <h2>Knowledge Graph and Flashcards</h2>
+    <p>I took many years of notes from college and other sources and combined them into a single graph of knowledge which I built in vis.js. This was one of my first web projects and is very hacky, with lots of workarounds and performance issues. I'm currently working on rebuilding this graph in d3 to allow me to have a custom framework for keeping my notes in the future.
+    </p>
+
+    <h2>Wikipedia Game</h2>
+    <p>I built a game which uses the Wikipedia API to present random knowledge within specific categories and generate quiz questions. I have long enjoyed the wikipedia random feature and I wanted something which I could randomly learn by pulling up pages within a specific domain of knowledge. I have ideas for other 'game modes' including speed-based memorization and social trivia challenges.
+    </p>
+</section>
+
+
+<section id="resume">
+    <h1>Resume</h1>
+    <p>For a copy of my one-page resume, <a href="/NHResume.pdf">click here</a>. </p>
+
+    <p> I have worked as a Data Scientist, Software Engineer, and Cybersecurity Consultant. I am also an experienced investor and entrepreneur. In all of my jobs and ventures, I have looked for projects and experiences which not only teach me technical skills but also contribute in some way to my idea of social good.</p>
+    <p>My most recent job in Data Science was at <b>OpenLattice</b>, where I worked on building a pipeline for data integrations, client interactions, and implementation of a deep learning data linking algorithm on a propriety graph database system. Prior to that, I was working at <b>Nightfall AI</b>, a Data Loss Prevention startup using state of the art NLP models to identify data leakages on corporate communication tools. My first job in Data Science was at <b>Sorenson Impact Center</b>, where I worked on a project for the innaguration of University of Utah's First Star program, seeking funding for education support and scholarships from the Utah State Legislature for youth who age out of foster care at age 18. I have also worked on a number of contract Data Science projects including consulting for Kleimann Communications processing large volumes of transcripts for a case involving student loans and the Consumer Protection Bureau, at Ample Insight working on ad targeting and processing ingredient purchasing data, and INRI examining satelite and ground level data to analyze and predict drought conditions.</p>
+    <p> I worked as a Software Engineer for a DeFi startup, <b>Off-Piste</b> writing smart contracts in Rust using the Anchor framework on Solana. Prior to that, I worked for my last few months at <b>OpenLattice</b> as an Intern on the Software Engineering team while working full time as a Data Scientist. There I worked on building new API endpoints, as well as debugging and simplifying existing endpoints and processes in response to feedback from clients I worked with in my Data Science role.</p>
+
+    <p> I have been self employed as an investor and entrepreneur since high school. Most recently, I bought, renovated, rented, and sold a house in Salt Lake City for a 25% return in a less than a year. I have worked for myself as a tutor for math and standardized tests, a cybersecurity consultant, and been a part of several online sales enterprises selling everything from unique artworks to white label products using FBA and sales through social media. Since 2012, I have managed my own investments, significantly outperforming the market every year.</p>
+</section>
+
+
+<section id="contact">
+    <h1>Contact Information</h1>
+    <ul>
+        <li><a href="https://www.linkedin.com/in/nrhobbs/">Linkedin</a></li>
+        <li><a href="https://github.com/nicholashobbs">Github</a></li>
+
+    </ul>
+<p>
+
+</p>
+    <img src="./capitol.jpeg"style="width:500px;float:center;">
+    <img src="./dunes.jpeg"style="width:500px;float:center;">
+</section>
+</body>
+
+
+
+
+
 
 <script>
-// Setup selection dropdowns and button
-
-const columns = ["Tencent", "Waison", "CKLife", "Cowell", "portfolio_value"]
-
-var strategyOptions = ''
-for(let i=0; i<columns.length; i++){
-	var strategyOptions = strategyOptions.concat(`<option value="${i}">${columns[i]}</option>`);
- }
-
-const strat = `<strong>Strategy: </strong><select id="strategySelect">${strategyOptions}</select>`;
-const bench = `<strong>Benchmark: </strong><select id="benchmarkSelect">${strategyOptions}</select>`;
-const update = `<button onclick="updateData()">Update</button>`;
-
-var choices = `${strat} ${bench} ${update}`;
-
-document.getElementById("choices").innerHTML = choices;
-document.getElementById("strategySelect").selectedIndex = "0";
-document.getElementById("benchmarkSelect").selectedIndex = "4";
 
 
-// Set the dimensions of the canvas / graph
-var margin = {top: 20, right: 20, bottom: 50, left: 50};
-var width = 800 - margin.left - margin.right;
-var priceChartHeight = 400 - margin.top;
-var tradeChartHeight = 300 - margin.bottom;
+    const sections = document.querySelectorAll("section");
+    const navLi = document.querySelectorAll("nav ul li");
+    window.onscroll = () => {
+      var current = "";
+    
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 60) {
+          current = section.getAttribute("id"); }
+      });
+    
+      navLi.forEach((li) => {
+        li.classList.remove("active");
+        if (li.classList.contains(current)) {
+          li.classList.add("active");
+        }
+      });
+    };
+    </script>
 
-// Add SVG and Charts
-var svg = d3.select("body").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", priceChartHeight + margin.top + tradeChartHeight + margin.bottom);
 
-var priceChart = svg.append("g")
-	.attr("id", "priceChart")
-    .attr("transform",
-    `translate(${margin.left} , ${margin.top})`);
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 
-var tradeChart = svg.append("g")
-		.attr("id", "tradeChart")
-		.attr("transform",
-        `translate( ${margin.left} , ${margin.top + priceChartHeight + 15})`);
-        
+* {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+html {
 
-// Parse the date / time
-var parseDate = d3.timeParse("%Y-%m-%d");
-
-// Set the ranges
-var x = d3.scaleTime().range([0, width]);
-var y = d3.scaleLinear().range([priceChartHeight, 0]);
-var yTrade = d3.scaleLinear().range([tradeChartHeight/2, 0]);
-
-// Define the axes
-var xAxis = d3.axisBottom().scale(x);
-
-var yAxis = d3.axisLeft().scale(y).tickFormat(d3.format(".0%"));
-
-var tradeYAxis = d3.axisLeft().scale(yTrade).tickFormat(y =>`\$${y/1000}K`);
-
-// Gridlines
-function make_y_gridlines(yvar) {		
-    return d3.axisLeft(yvar)
-        .ticks(5)
+font-family: "Ubuntu";
+font-size: 15px;
+scroll-behavior: smooth;
+background-color: #ffffff;
 }
 
-// Trade Tooltip
-
-var tradeTooltip = tradeChart.append('g')
-	.attr("id", "tradeTooltip")
-	.attr('visibility', 'hidden');
-
-tradeTooltip.append('rect')
-		.attr('width', 150)
-		.attr('height', 55)
-		.attr("fill", "black");
-
-var tradeTooltipText = tradeTooltip.append("text")
-	.attr("fill", "white")
-	.attr("font-size", "smaller")
-	.attr('x', 5)
-	.attr('y', 15);
-
-tradeTooltipText.append('tspan')
-	.attr("id", "line1")
-	.attr('x', 10);
-
-tradeTooltipText.append('tspan')
-	.attr('id', 'line2')
-	.attr('dy', 15)
-	.attr('x', 10);
-
-tradeTooltipText.append('tspan')
-	.attr('id', 'line3')
-	.attr('dy', 15)
-	.attr('x', 10);
-    
-// Get the data
-d3.csv("hk_stocks.csv").then(function(data) {
-    var strategy  = "Tencent";
-    var benchmark = "portfolio_value";
-
-    const strategyStart = +data[0][strategy];
-    const benchmarkStart = +data[0][benchmark];
-    
-    data.forEach(function(d) {
-        d.date = new Date(d.Date);
-        d.strategy = +d[strategy]/strategyStart;
-        d.benchmark = +d[benchmark]/benchmarkStart;
-    });
-
-    // Trade Data
-    var tradeData = data.filter(d => {
-        return d.asset != "";
-    });
-
-    // Scale the range of the data
-    x.domain(d3.extent(data, function(d) { return d.date; }));
-    y.domain([d3.min(data, d => Math.min(d.strategy, d.benchmark)), 
-                d3.max(data, d => Math.max(d.strategy, d.benchmark))]);
-    yTrade.domain(tradeDomain = [-d3.max(tradeData, row => Math.abs(row.trade_value)),
-                d3.max(tradeData, row => Math.abs(row.trade_value))]);
-
-    priceChart.datum(data);
-
-    // Area below strategy line and above bottom of graph
-    priceChart.append("clipPath")
-        .attr("id", "clipabove")
-      .append("path")
-      .attr("id", "clipabovepath")
-        .attr("d", d3.area()
-            .x(d => x(d.date))
-            .y0(0)
-            .y1(d => y(d.strategy)));
-
-    // Area above strategy line and below top of graph
-    priceChart.append("clipPath")
-        .attr("id", "clipbelow")
-      .append("path")
-      .attr("id", "clipbelowpath")
-        .attr("d", d3.area()
-            .x(d => x(d.date))
-            .y0(priceChartHeight)
-            .y1(d => y(d.strategy)));
-    
-    // Area above benchmark and below clipabove
-    priceChart.append("path")
-        .attr("id", "areaabove")
-        .attr("clip-path", "url(#clipabove)")
-			.attr("d", d3.area()
-            .x(d => x(d.date))
-            .y0(priceChartHeight)
-            .y1(d => y(d.benchmark)));
-
-    // Area below benchmark and above clipabove
-    priceChart.append("path")
-        .attr("id", "areabelow")    
-        .attr("clip-path", "url(#clipbelow)")
-            .attr("d", d3.area()
-            .x(d => x(d.date))
-            .y0(0)
-            .y1(d => y(d.benchmark)));
-
-    // Add the strategyLine path.
-    priceChart.append("path")
-        .attr("id", "strategyLine")
-        .style("stroke", "black")
-        .style("stroke-width", "1.8")
-        .attr("d", d3.line()	
-                .x(d => x(d.date))
-                .y(d => y(d.strategy)));
-
-    // Add the benchmarkLine path.
-    priceChart.append("path")
-        .attr("id", "benchmarkLine")
-        .style("stroke", "gray")
-        .style("stroke-width", "1.5")
-        .attr("d", d3.line()
-                .x(d => x(d.date))
-                .y(d => y(d.benchmark)));
-
-    // Add the X Axis
-    priceChart.append("g")
-        .attr("class", "x axis")
-        .attr("transform", "translate(0," + priceChartHeight + ")")
-        .call(xAxis);
-
-    // Add Price Y Axis
-    priceChart.append("g")
-        .attr("class", "y axis")
-        .call(yAxis);
-
-    // Add Trade Y axis
-    tradeChart.append("g")
-        .attr("class", "y axis")
-        .call(tradeYAxis);
-
-    tradeChart.append("g")
-    .attr("class", "grid")
-        .call(make_y_gridlines(yTrade)
-          .tickSize(-width)
-          .tickFormat(""));
-
-
-    // Trade Bars
-    tradeChart.selectAll('.bar').data(tradeData)
-	.enter()
-		.append('rect')
-		.attr('class', 'bar')
-		.attr('x', d => x(new Date(d.Date)))
-		.attr('y', d => yTrade(Math.max(0, d.trade_value)))
-		.attr('width', 5)
-		.attr('height', d => Math.abs(yTrade(d.trade_value)- yTrade(0)))
-		.attr('fill', 'black')
-		.attr('stroke', 'black')
-		.on('mouseover', d => {
-						d3.select(d3.event.target)
-							.attr("opacity", 0.6);
-						tradeTooltip
-							.attr('visibility', 'visible')
-							.select('#line1')
-								.text(`${d.quantity > 0 ? 'Bought': 'Sold'} ${Math.abs(d.quantity)} ${d.asset}`);
-						
-						
-						tradeTooltip
-							.select('#line2')
-								.text(`On ${d.Date} for ${d[d.asset]}`);
-						tradeTooltip
-							.select('#line3')
-								.text(`Total Cost: \$${d.trade_value}`)
-						tradeTooltip
-							.attr('transform', `translate(${x(new Date(d.Date)) -60}, -60)`);
-		})
-		.on('mousemove', d => {
-			tradeTooltip
-				.attr('visibility', 'visible');
-		})
-		.on('mouseleave', d => {
-						d3.select(d3.event.target)
-							.attr('opacity', 1);
-						tradeTooltip
-							.attr('visibility', 'hidden');
-		});
-
-
-
-
-
-
-
-
-
-
-
-
-});
-
-// Update strategy and benchmark data
-function updateData() {
-
-var strategyIndex = document.getElementById("strategySelect").selectedIndex;
-var strategy = strategySelect.options[strategyIndex].text;
-
-var benchmarkIndex = document.getElementById("benchmarkSelect").selectedIndex;
-var benchmark = benchmarkSelect.options[benchmarkIndex].text;
-    
-    // Update Data
-    d3.csv("hk_stocks.csv").then(function(data) {
-        var strategyStart = +data[0][strategy];
-	    var benchmarkStart = +data[0][benchmark];
-           
-        data.forEach(function(d) {
-	    	d.date = new Date(d.Date);
-            d.strategy = +d[strategy]/strategyStart;
-            d.benchmark = +d[benchmark]/benchmarkStart;
-	    });
-
-    	// Scale the range of the data again 
-    	x.domain(d3.extent(data, d => (d.date)));
-	    y.domain([d3.min(data, d => Math.min(d.strategy, d.benchmark)), 
-                                d3.max(data, d => Math.max(d.strategy, d.benchmark))]);
-
-    
-    priceChart.datum(data);
-    // Select price Chart
-    var pct = d3.select("#priceChart");
-
-    // Hacky way around the fact that I can't for the love of god find way to transition clippath
-    d3.select("#clipabove").remove();
-    d3.select("#clipbelow").remove();
-
-    // Change area below strategy line and above bottom of graph
-    priceChart.append("clipPath")
-        .attr("id", "clipabove")
-      .append("path")
-      .attr("id", "clipabovepath")
-
-        .attr("d", d3.area()
-            .x(d => x(d.date))
-            .y0(0)
-            .y1(d => y(d.strategy)));
-
-    // Change area above strategy line and below top of graph
-    priceChart.append("clipPath")
-        .attr("id", "clipbelow")
-      .append("path")
-      .attr("id", "clipbelowpath")
-
-        .attr("d", d3.area()
-            .x(d => x(d.date))
-            .y0(priceChartHeight)
-            .y1(d => y(d.strategy)));
-
-    
-    // Change area above benchmark and below clipabove
-    pct.select("#areaabove")
-        // .duration(100)
-        .attr("clip-path", "url(#clipabove)")
-		.attr("d", d3.area()
-            .x(d => x(d.date))
-            .y0(priceChartHeight)
-            .y1(d => y(d.benchmark)));
-
-    // Change area below benchmark and above clipbelow
-    pct.select("#areabelow")
-        // .duration(100)
-        .attr("clip-path", "url(#clipbelow)")
-        .attr("d", d3.area()
-            .x(d => x(d.date))
-            .y0(0)
-            .y1(d => y(d.benchmark)));
-
-
-        // Update Strategy Line
-        pct.select("#strategyLine")
-            // .duration(100)
-            .attr("d", d3.line()	
-                .x(d => x(d.date))
-                .y(d => y(d.strategy)));
-
-        // Update Benchmark Line
-        pct.select("#benchmarkLine")
-            // .duration(100)
-            .attr("d", d3.line()	
-                .x(d => x(d.date))
-                .y(d => y(d.benchmark)));
-        
-        // change the x axis
-        pct.select(".x.axis") 
-            // .duration(100)
-            .call(xAxis);
-        // change the y axis
-        pct.select(".y.axis") 
-            // .duration(100)
-            .call(yAxis);
-
-    });
+h1 {
+    font-size: 30px;
+    margin-bottom: 15px;
 }
 
-</script>
-</body>
+
+h2 {
+    font-size: 20px;
+    margin-top: 18px;
+}
+
+p {
+    margin-top: 18px;
+    font-size: 16px;
+}
+
+section {
+max-width: 900px;
+margin-left: 300px;
+margin-right: 50px;
+margin-top: 70px;
+margin-bottom: 100px;
+background-color: #ffffff;
+
+}
+
+#home {
+background-color: #ffffff;
+}
+
+#portfolio {
+background-color: #ffffff;
+}
+#resume {
+background-color: #ffffff;
+}
+
+#contact {
+background-color: #ffffff;
+}
+
+nav {
+margin-left: 80px;
+margin-top: 70px;
+position: fixed;
+height: 100%;
+width: 200px;
+top: 0px;
+left: 0px;
+float:left; 
+display:inline;
+background-color: #ffffff;
+
+}
+
+
+li {
+list-style-type: none;
+}
+
+nav  ul li a {
+text-decoration: none;
+padding: 10px 20px;
+color: black;
+}
+
+nav  ul li.active {
+background-color: #3b49df;
+transition: 0.3s;
+}
+
+nav  ul li.active a {
+color: #ffffff;
+}
+</style>
+</html>
