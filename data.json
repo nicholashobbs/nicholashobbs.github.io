@@ -1,12 +1,26 @@
 {
-    "nodes": [
-        {"id": "n1", "label": "Node 1"},
-        {"id": "n2", "label": "Node 2"},
-        {"id": "n3", "label": "Node 3"}
-    ],
-    "edges": [
-        {"id": "e1", "source": "n1", "target": "n2"},
-        {"id": "e2", "source": "n2", "target": "n3"}
-    ]
+  "nodes": [
+    {
+      "id": "node1",
+      "label": "Node 1",
+      "x": 0,
+      "y": 0,
+      "size": 1
+    },
+    {
+      "id": "node2",
+      "label": "Node 2",
+      "x": 1,
+      "y": 1,
+      "size": 2
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge1",
+      "source": "node1",
+      "target": "node2"
+    }
+  ]
 }
 
