@@ -28,7 +28,7 @@
         extraRenderers: [new CSS2DRenderer()]
       })
       (document.getElementById('3d-graph'))
-        .jsonUrl('../datasets/miserables.json')
+        .jsonUrl('miserables.json')
         .nodeAutoColorBy('group')
         .nodeThreeObject(node => {
           const nodeEl = document.createElement('div');
