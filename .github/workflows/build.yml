@@ -1,5 +1,5 @@
 name: Run Docker Compose
-
+on: push
 jobs:
   build:
     runs-on: ubuntu-latest
