@@ -1,71 +1,65 @@
 ## Compose sample application
 
-### Use with Docker Development Environments
-
-You can open this sample in the Dev Environments feature of Docker Desktop version 4.12 or later.
-
-[Open in Docker Dev Environments <img src="../open_in_new.svg" alt="Open in Docker Dev Environments" align="top"/>](https://open.docker.com/dashboard/dev-envs?url=https://github.com/docker/awesome-compose/tree/master/react-express-mongodb)
-
-### React application with a NodeJS backend and a MongoDB database
-
-Project structure:
 ```
-.
 ├── backend
-│   ├── Dockerfile
-│   ...
+│   ├── config
+│   │   ├── config.js
+│   │   ├── config.json
+│   │   └── messages.js
+│   ├── db
+│   │   └── index.js
+│   ├── Dockerfile
+│   ├── logs
+│   ├── models
+│   │   └── todos
+│   │       └── todo.js
+│   ├── node_modules
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── routes
+│   │   └── index.js
+│   ├── server.js
+│   └── utils
+│       └── helpers
+│           ├── logger.js
+│           └── responses.js
 ├── compose.yaml
+├── data
+│   ├── ...
 ├── frontend
-│   ├── ...
-│   └── Dockerfile
+│   ├── Dockerfile
+│   ├── node_modules
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── public
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   │   ├── logo192.png
+│   │   ├── logo512.png
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   └── src
+│       ├── App.js
+│       ├── App.scss
+│       ├── App.test.js
+│       ├── components
+│       │   ├── AddTodo.js
+│       │   └── TodoList.js
+│       ├── custom.scss
+│       ├── index.css
+│       ├── index.js
+│       ├── logo.svg
+│       └── serviceWorker.js
+├── output.png
 └── README.md
-```
 
-[_compose.yaml_](compose.yaml)
 ```
-services:
-  frontend:
-    build:
-      context: frontend
-    ...
-    ports:
-      - 3000:3000
-    ...
-  server:
-    container_name: server
-    restart: always
-    build:
-      context: server
-      args:
-        NODE_PORT: 3000
-    ports:
-      - 3000:3000
-    ...
-    depends_on:
-      - mongo
-  mongo:
-    container_name: mongo
-    restart: always
-    ...
-```
-The compose file defines an application with three services `frontend`, `backend` and `db`.
-When deploying the application, docker compose maps port 3000 of the frontend service container to port 3000 of the host as specified in the file.
-Make sure port 3000 on the host is not already being in use.
+compose.yml defines `frontend`, `backend` and `db`
 
-## Deploy with docker compose
+
 
 ```
 $ docker compose up -d
-Creating network "react-express-mongodb_default" with the default driver
-Building frontend
-Step 1/9 : FROM node:13.13.0-stretch-slim
- ---> aa6432763c11
-...
-Successfully tagged react-express-mongodb_app:latest
-WARNING: Image for service app was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
-Creating frontend        ... done
-Creating mongo           ... done
-Creating app             ... done
 ```
 
 ## Expected result
