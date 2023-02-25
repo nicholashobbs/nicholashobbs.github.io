@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+.todo-app {
+  background-color: #efefef;
+  padding: 1.2em;
+  .new-todo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    input{
+      width: 80% !important;
+    }
+  }
+}
