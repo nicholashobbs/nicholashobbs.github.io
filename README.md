@@ -168,22 +168,3 @@ RUN useradd -s /bin/bash -m vscode && groupadd docker && usermod -aG docker vsco
 COPY --from=gloursdocker/docker / /
 CMD [ "npm", "run", "dev" ]
 ```
-
-##### Explanation of backend(Node.js) `DockerFile`
-
-- The first line tells Docker to use another Node image from the [DockerHub](https://hub.docker.com/). We’re using the official Docker image for Node.js and it’s version 10 image.
-
-- On second line we declare argument `NODE_PORT` which we will pass it from `docker-compose`.
-
-- On third line we log to check argument is successfully read 
-
-- On fourth line we sets a working directory from where the app code will live inside the Docker container.
-
-- On fifth line, we are copying/bundling our code working directory into container working directory on line three.
-
-- On line seven, we run npm install for dependencies in container on line four.
-
-- On Line eight, we setup the port, that Docker will expose when the container is running. In our case it is the port which we define inside `.env` file, read it from `docker-compose` then passed as a argument to the (backend)`DockerFile`.
-
-- And in last, we tell docker to execute our app inside the container by using node to run `npm run dev. It is the command which I registered in __package.json__ in script section.
-###### :clipboard: `Note: For development purpose I used __nodemon__ , If you need to deploy at production you should change CMD from __npm run dev__ to __npm start__.`
