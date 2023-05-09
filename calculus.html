@@ -1,0 +1,286 @@
+<head>
+    <title>Personal Mindmap</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/vis.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+
+    <link href="css/vis-network.css" rel="stylesheet" type="text/css"/>
+
+
+</head>
+    
+<body>
+    
+    <h2>Calculus</h2>
+  
+    <h3>Foundations</h3>
+  
+    <p>
+    The most common <b>number systems</b> are written as $\mathbb{Z,N,Q,R,C}$: integers, natural, rational, real, and complex numbers. Each are defined by a number of properties.
+    </p>
+    <p>
+    A <b>function</b> is a mapping $x \rightarrow f(x)$ that transforms x values by some operation. The value $f(x)$ is f evaluated at x and refered to as <b>f at x</b>. <b>Linear functions</b> are those which are of the form $y=mx+b$.
+    </p>
+    <p>
+    <b>Closed intervals</b> $[a,b] \in \mathbb{R}$ and <b>open intervals</b> $(a,b) \in \mathbb{R}$ are the segments of $\mathbb{R}$ which contain and do not contain endpoints. By definition, if $\infty$ is on either side of an interval, that side is open. $(-\infty,\infty)$. * add <b>graphs</b>, 1-d and 2-d
+    </p>
+    <p>
+    <b>Limits</b> are the central concept that makes calculus work. A function $f(x)$ approaches the limit $l$ near $a$  if as $x \rightarrow a$, $f(x) \rightarrow l$. This is notated $\lim _{ x \rightarrow a }{  f(x)=l} $.
+    </p>
+    <p>
+     A function is <b>continuous</b> at a if $\lim _{ x \rightarrow a }{  f(x)= f(a)} $. It is <b>continuous on $\mathbb{R}$</b> if this is true from $-\infty$ to $\infty$.
+    </p>
+    <p>
+    A function is <b>one-to-one</b> if there is a unique mapping from each $a \rightarrow f(a)$. This also means that $f(a)$ <b>has an inverse</b> $f^{-1}(a)$. An <b>inverse function</b> $f^{-1}(a)$ is the mapping from $f(a)$ back to $a$. Inverse functions are mirrored over the diagonal line of the <b>identity function</b> $I(x)=x$.
+    </p>
+  
+    <h3> Derivatives </h3>
+  
+    <p>
+    A function is <b>differentiable</b> at h if $\lim _{ h \rightarrow 0 }{\frac{f(a+h)-f(a)}{h}}$, the <b>differential</b> or <b>derivative</b> exists.
+    </p>
+    <p>
+    <b>Differentiation</b> refers to the process of finding <b>derivatives</b>. Derivatives are notated multiple different ways such as $f'$, $\frac{d}{dx}$, etc. <b>Second order</b> derivatives are just the derivative of the derivative $f''(x)=f'(f'(x))$. <b>Higher order</b> derivatives are those which require more operations than 2.
+    </p>
+    <p>
+    The <b>mean value theorem</b> states that if f is continuous on $[a,b]$, and differentiable on $(a,b)$, $\exists x$ such that $f'(x)=\frac{f(b)-f(a)}{b-a}$ * add illustrtive graph that angle must = straight line between a and b anglel.
+    </p>
+    <p>
+    Functions have <b>min</b> points, which are those for which $f(x) \le f(y)$ and <b>max</b> points, where $f(x) \ge f(y) \forall y \in a$.
+    </p>
+    <p>
+    There is a <b>local max</b> if $\exists \delta > 0$ such that x is the max in $A \cap (x-\delta, x+\delta)$, or a <b>local min</b> if x is the min. A point is a <b>local max</b> if $f'(a)=0, f''(a)\le 0$ and a <b>local min</b> if $f'(a)=0, f''(a)\ge 0$
+    </p>
+    <p>
+    A <b>critical point</b> is any point where $f'(x)=0$. The value $f(x)$ at this point is a <b>critical value</b>.
+    </p>
+    <p>
+    A function is <b>increasing</b> if $ a < b \rightarrow f(a) < f(b) $ or <b>decreasing</b> if $ a < b  \rightarrow f(a) > f(b) $.
+    </p>
+    <p>
+    A function is <b>convex</b> if $\forall a,x,b$ such that $a<x<b$, $\frac{f(x)-f(a)}{x-a}<\frac{f(b)-f(a)}{b-a}$, or  <b>concave</b> if you replace the inequality with >.
+    </p>
+    <p>
+    <b>L'Hopital rule</b> is a set of 3 conditions which leads to a simple conclusion.
+    </p>
+  
+    <ol>
+    <li>  $\lim _{ x \rightarrow a }{f(x)}=0$</li>
+    <li>  $\lim _{ x \rightarrow a }{g(x)}=0$</li>
+    <li>  $\lim _{ x \rightarrow a }{\frac{f'(x)}{g'(x)}} \exists$</li>
+    </ol>
+  
+    <p>
+    $\rightarrow \lim _{ x \rightarrow a }{\frac{f(x)}{g(x)}} =\frac{f'(x)}{g'(x)}$
+    </p>
+  
+    <b>* parametric representation of curves</b>
+  
+    <h3> Integrals </h3>
+  
+    <p>
+    A <b>Riemann sum</b> is any sum of the form $\sum _{ i=1 }^{ n }{ f(x_{i})(t_{i}-t_{i-1}) }$.
+    </p>
+    <p>
+    An <b>upper sum</b> $U(f,P)=\sum _{ i=1 }^{ n }{ M_{i}(t_{i}-t_{i-1}) }$ is the approximation based on points above the line, while a <b>lower sum</b> $ L(f,P)=\sum_{ i=1 }^{ n }{ m_{i}(t_{i}-t_{i-1})}$ is based on points below the line. * graph to illustrate and explain this
+    </p>
+    <p>
+    The <b>sup</b> (short for supremum) is the least element $\ge$ all elements in its subset, while the <b>inf</b> (short for infimum) is the greatest element $\le$ all elements in its subset.
+    </p>
+    <p>
+    A function is <b>integrable</b> on $a,b$ if $\text{sup}\{L(f,P):P\} =\text{inf}\{U(f,P):P\}$. * write integral symbol, draw graphic with thin slices of integral adding up between a and b under the curve.
+    </p>
+    <p>
+    For $a < c < b$, $f$ integrable on $[a,b]$, $f$ is also integrable on $[a,c]$ and $[c,b]$. In addition, we have several important properties.
+    </p>
+  
+    <ul>
+    <li> $\int _{ a }^{ b }{ f }=\int _{ a }^{ c }{ f }+\int _{ b }^{ c }{ f }$ </li>
+    <li> $\int _{ a }^{ b }{ (f + g) }=\int _{ a }^{ b }{ f }+\int _{ a }^{ b }{ g }$ </li>
+    <li> $c$ constant, $\int _{ a }^{ b }{ cf } = c \cdot \int _{ a }^{ b }{ f }$ </li>
+    <li> $F(x)$ is often used to refer to some $\int _{ a }^{ b }{ f }$ </li>
+    <li> Integrals sometimes have a constant term +C which refers to a number by which the answer can vary and still be a valid antiderivative.</li>
+    </ul>
+  
+    <p>
+    The <b>Fundamental Theorem of Calculus:</b> $F'(c)=f(c)$ - the derivative of the integral is the original function.
+    </p>
+    <p>
+    The <b>2nd Fundamental Theorem of Calculus:</b> For $G(x)=\int _{ x }^{ b }{ g }$, $\int _{ a }^{ b }{ f }= g(b)-g(a)$
+    </p>
+    <p>
+    There are a number of interesting properties of the <b>trigonometric functions</b> in calculus, beginning with the fact that $\pi = 2 \cdot \sqrt{1-x^2}dx$  * draw chart of half circle integral
+    </p>
+    <ul>
+    <li> For $-1\le x \le 1$, $A(x)=\frac{x\sqrt{1-x^{2}}}{2}+\int _{ x }^{ 1 }{ \sqrt{1-t^2} }dt$ </li>
+  
+    <li> $1=\text{sin}^2x+\text{cos}^2x$ </li>
+  
+    <li> For $0\le x\le \pi$, cos(x) is a unique number in $[-1,1]$ such that $A(\text{cos}x) = \frac{x}{2}$ </li>
+  
+    <li> $\text{sin}(x)=\sqrt{1-(\text{cos}x)^{2}}$ </li>
+  
+    <li> To integrate $\text{sin}^{n}$, $\text{cos}^{n}$, n even, use $\text{sin}^2=\frac{1-\text{cos}2x}{2}$ and $\text{cos}^2=\frac{1+\text{cos}^{2}x}{2}$ </li>
+    </ul>
+  
+    <p>
+    The integral can also be used to calculate certain volumes easily using the <b>volume of a rotated disk</b>. In this case, $\pi m_{i}(t{i}-t_{i-1})$ is the volume inside V. $V = \pi \int_{a}^{b} f(x)^{2}dx$
+    </p>
+    <p>
+    The <b>log function</b> is extremely important in many applications of calculus, and it has several important properties. $\text{log}(x)= \int _{ 1 }^{ x }{ \frac{1}{t} }dt$.   * draw chart log x equalling integral of 1/t
+  
+    <ul>
+    <li> $a^{x} =e^{x \text{log}a}$</li>
+  
+    <li> $e = log^{-1}(1)$</li>
+  
+    <li> $\text{exp}(x)=\text{log}^{-1}(x) = e^{x}$</li>
+  
+    <li> $\text{log}(xy) = \text{log}x+\text{log}y$</li>
+  
+    <li> $\text{log}(x^{n})=n \text{log} x$</li>
+    </ul>
+  
+    <p>
+    <b>Integration by parts</b> (pg 366) is a common method for solving more advanced integrals. For $f',g'$ continuous, $\rightarrow \int fg' = fg- \int f'g$. * step by step, clarify
+    </p>
+    <p>
+    The <b>substitution formula</b> is an interesting way to reorganize and more easily solve certain integrals. For $f',g'$ continuous, $\rightarrow \int_{g(a)}^{g(b)}{f} = \int_{a}^{b}{f(g)\cdot g'}$. * draw example
+    </p>
+    <p>
+    <b>U substitution</b> allows you to replace a certain part of a function with a placeholder, integrate, and substitute back in to solve.
+    </p>
+    <ol>
+    <li> Let $u=g(x)$, so $du=g'(x)dx$ </li>
+    <li> Evaluate $\int f(u)du$ </li>
+    <li> Substitute $x$ back in for $u$ </li>
+    </ol>
+  
+  
+    <h3> Infinite Sequences and Series </h3>
+  
+    <p>
+    An <b>infinite sequence</b> is any infinitely long list of numbers from domain $\mathbb{N}$. A sequence $a_{n}$ converges to $l$, $\{a_{n}\}\rightarrow l$, or $\lim_{n\rightarrow \infty}{a_{n}}=l$ if $\forall \epsilon >0, \exists n \in N$ such that if $n>N$, $|a_{n}-l|<\epsilon$. * A sequence is summable ?
+    </p>
+    <p>
+    Where $a_{k}=\frac{f^{k}(a)}{k!}, 0 \le k \le n$, the <b>taylor polynomial of degree n for f at a</b> is written $P_{n,a}(x)=a_{0}+...+a_{n}(x-a)^{n}$.
+    </p>
+    <p>
+    A <b>cauchy sequence</b> is one for which if $n,m>N \rightarrow |a_{n}-a_{m}|<\epsilon$.
+    </p>
+    <p>
+    A value f is a <b>uniform limit</b> if $\forall \epsilon >0, \exists n \in N$ such that $\forall x \in A$, if $n>N \rightarrow |f(x)-f_{n}(x)|<\epsilon$. This also means that $f_{n}$ <b>converges uniformly</b> to f on A. If the condition is only true for each x individually rather than for all x, it <b>converges pointwise</b>. The <b>series converges</b> uniformly to f on A if $f_{1},f_{1}+f_{2},f_{1}+f_{2}+f_{3}+...$ converges uniformly to f on A.
+    </p>
+    <p>
+    $\mathbb{C}$ refers to the <b>complex numbers</b> $z=(a,b)=a+bi$ where a is real, b is imaginary.
+    <ul>
+    <li> i = (0,1) </li>
+  
+    <li> For two complex numbers given by the pairs $(a,b)$ and $(c,d)$, $(a,b)+(c,d)=(a+c,b+d)$ </li>
+  
+    <li> $(a,b)\cdot(c,d)=(a\cdot c - b \cdot d, a\cdot d+ b\cdot c)$ </li>
+  
+    <li> If $z = x+iy$, the <b>complex conjugate</b> $\bar{z}=x-iy$ </li>
+  
+    <li> $|z|=\sqrt{x^{2}+y^{2}}$ </li>
+  
+    <li> The <b>conjugate function</b> $f(z)=\bar{z}=\text{Re}(z)-i\text{Im}(z)$ </li>
+    </ul>
+  
+     <b>*complex power series</b>,<b>cauchy criterion</b>,<b>vanishing condition</b>,<b>boundedness criterion</b>, <b>comparison test</b>,<b>limit comparison test</b>, <b>ratio test</b>,<b>integral test</b>,<b>absolute convergence/summability</b>,<b>leibniz's theorem</b>,<b>weierstrass m test</b></p>
+  
+    <h3> Table of Common Integrals and Derivatives </h3>
+     <table>
+     <tbody>
+     <tr>
+       <td><strong>Derivative</strong></td>
+     <td><strong>Integral</strong></td>
+     </tr>
+     <tr>
+     <td> $\frac{d}{dx}n=0$</td>
+     <td>$\int 0 dx= C$</td>
+     </tr>
+     <tr>
+     <td> $\frac{d}{dx}x=1$</td>
+     <td>$\int 1 dx= x+C$</td>
+     </tr>
+     <tr>
+     <td>$\frac{d}{dx}x^{n}=nx^{n-1}$</td>
+     <td>$\int x^{n}dx=\frac{x^{n+1}}{n+1} +C$</td>
+     </tr>
+     <tr>
+     <td>$\frac{d}{dx}\text{ln}x=\frac{1}{x}$</td>
+     <td>$\int e^{x} dx= e^{x}+C$</td>
+     </tr>
+     <tr>
+     <td>$\frac{d}{dx}n^{x}=n^{x}\text{ln}x $</td>
+     <td>$\int n^{x} dx= \frac{n^{x}}{\text{ln}x}+C$</td>
+     </tr>
+     <tr>
+     <td>$\frac{d}{dx}\text{sin}x=\text{cos}x $</td>
+     <td>$\int \text{sin}x dx=-\text{cos}x +C$</td>
+     </tr>
+     <tr>
+     <td>$\frac{d}{dx}\text{cos}x=-\text{sin}x$</td>
+     <td>$\int \text{cos}x dx=\text{sin}x +C$</td>
+     </tr>
+     <tr>
+     <td>$\frac{d}{dx}\text{tan}x=\text{sec}^{2}x$</td>
+     <td>$\int \frac{1}{x} dx= \text{ln}\begin{vmatrix}x\end{vmatrix} +C$</td>
+     </tr>
+     </tbody>
+     </table>
+  
+     <p>Solution using rational functions, also known as <strong>partial fraction decomposition</strong>, uses the fact that for $n=m$, $p(x)=x^{n}+a_{n-1}x^{n-1}...+a_{0}$, $q(x)=x^{m}+b_{m-1}x^{m-1}...+b_{0}$, $\frac{p(x)}{q(x)}=[\frac{a_{1}}{(x-\alpha_{1})}+...+\frac{a_{k}r_{1}}{(x-\alpha_{1})^{r_{k}}}]+...+[\frac{a_{k}}{(x-\alpha_{1})}+...+\frac{a_{k}r_{1}}{(x-\alpha_{1})^{r_{k}}}]+[\frac{b_{1}}{(x-\alpha_{1})}+...+\frac{b_{k}c_{1}}{(x-\alpha_{1})^{r_{k}}}]$
+    * incomplete/wrong/clarify</p>
+     <p><strong>Tabular integration</strong> is a convenient technique for carrying out multiple layers of integration by parts at once. For example, $f(x)=x^{2}$ and $g(x)=e^{x}$, then we have:</p>
+  
+     <table>
+     <thead><tr>
+     <th>D</th>
+     <th>I</th>
+     </tr>
+     </thead>
+     <tbody>
+     <tr>
+     <td>$x^{2}$ (a)</td>
+     <td>$e^{x}$</td>
+     </tr>
+     <tr>
+     <td>$\frac{d}{dx}x^{2}=2x$ (b)</td>
+     <td>$e^{x}$ (a)</td>
+     </tr>
+     <tr>
+     <td>$\frac{d}{dx}2x=2$ (c)</td>
+     <td>$e^{x}$ (b)</td>
+     </tr>
+     <tr>
+     <td>$\frac{d}{dx}2=0$</td>
+     <td>$e^{x}$    (c)</td>
+     </tr>
+     </tbody>
+     </table>
+     <p>Multiply together values marked a, b, c, d etc to get these values. Finally, the answer is simply $\int f(x)g(x) = a-b+c-d+e-...+C$. In this case $\int f(x)g(x) = x^{2}e^{x}-2xe^{x}+2e^{x}+C$</p>
+    </body>
+  
