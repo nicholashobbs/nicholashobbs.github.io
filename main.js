@@ -28,8 +28,6 @@ scene.add(skySphere);
 // Rotate the sky sphere by 90 degrees around the X-axis
 skySphere.rotation.x = Math.PI / 2;
 
-
-
 // Camera setup
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000); // Increased far clipping plane
 camera.up.set(0, 1, 0); // Reset the camera's up vector to Y-up
@@ -53,9 +51,9 @@ controls.enablePan = true;
 controls.enableZoom = true;
 
 // Set the initial camera position and look-at point
-camera.position.set(230, 125, -440);
-controls.target.set(114,95, 207);
-controls.update();1
+camera.position.set(-17, 25.5, -188);
+controls.target.set(-10, 28, -188);
+controls.update();
 
 // Rotate the scene to make Z the up direction
 scene.rotation.x = -Math.PI / 2;
@@ -70,7 +68,7 @@ const landsatImageUrl = 'landsat.jpg'; // Path to your satellite image
 let zScale = 150;
 
 let terrainMesh;
-let heightmapData; // Store heightmap data for later use
+let heightmapData;
 
 // Load heightmap and satellite image
 textureLoader.load(heightmapImageUrl, function (heightmapTexture) {
@@ -122,44 +120,48 @@ function generateHeightmapFromImage(heightmapImage) {
 
         // Load the GLTF model after the terrain is generated
         loadGLTFModel();
+        loadGLBModel(); // Load the GLB model with animations
+        loadPatchModel(); // Load the patch model
+        loadChurchModel(); // Load the church model
     });
 }
 
-// Lighting setup (reduced intensity to avoid washing out the sky)
-scene.add(new THREE.AmbientLight(0x404040, 5.0)); // Reduced intensity from 3.1 to 1.0
+// Lighting setup
+scene.add(new THREE.AmbientLight(0x404040, 2.0));
 
-
-const directionalLight2 = new THREE.DirectionalLight(0xffffff, 4.0);
+const directionalLight2 = new THREE.DirectionalLight(0xffffff, 5.0);
 directionalLight2.position.set(0, -1000, 500);
-directionalLight2.target.position.set(0,-200,100);
+directionalLight2.target.position.set(0, -200, 100);
 scene.add(directionalLight2);
 scene.add(directionalLight2.target);
 
-// Add a helper to visualize the directional light
-//const directionalLightHelper = new THREE.DirectionalLightHelper(directionalLight2, 5); // Second argument is the size of the helper
-//scene.add(directionalLightHelper);
+const churchLight = new THREE.DirectionalLight(0xffffff, 1.0);
+churchLight.position.set(-15.5, 25, -187);
+churchLight.target.position.set(-13, 25, -187);
+scene.add(churchLight);
+scene.add(churchLight.target);
 
 // Viewpoints
 const viewpoints = [
     { 
-        position: new THREE.Vector3(-7, 28, -194), 
-        lookAt: new THREE.Vector3(140,135,-171)
+        position: new THREE.Vector3(-17, 25.5, -188), 
+        lookAt: new THREE.Vector3(-10, 28, -188)
     },
     { 
-        position: new THREE.Vector3(170,170,-225), 
-        lookAt: new THREE.Vector3(164,128,-146)
+        position: new THREE.Vector3(31.5,42.8,-179.4), 
+        lookAt: new THREE.Vector3(32.8,42.8,-179)
     },
     { 
-        position: new THREE.Vector3(210,215,-25), 
-        lookAt: new THREE.Vector3(6,-60,-120)
+        position: new THREE.Vector3(132.4, 126, -33.5), 
+        lookAt: new THREE.Vector3(165, 121, -49)
     },
     { 
-        position: new THREE.Vector3(-21, 128,-54), 
-        lookAt: new THREE.Vector3(-50,-50,-83)
+        position: new THREE.Vector3(-22, 117, -58), 
+        lookAt: new THREE.Vector3(-26.8, 113.6, -58.1)
     },
     { 
-        position: new THREE.Vector3(-89,173,51), 
-        lookAt: new THREE.Vector3(-21,60,-59)
+        position: new THREE.Vector3(-77, 154, 42), 
+        lookAt: new THREE.Vector3(-2, 78, -58)
     }
 ];
 
@@ -261,25 +263,17 @@ window.addEventListener('keydown', (event) => {
     }
 });
 
-// Event listeners for viewpoint switching
-window.addEventListener('keydown', (event) => {
-    if (event.key === '1') {
-      startInterpolation(viewpoints[0]);
-    } else if (event.key === '2') {
-      startInterpolation(viewpoints[1]);
-    } else if (event.key === '3') {
-      startInterpolation(viewpoints[2]);
-    } else if (event.key === '4') {
-      startInterpolation(viewpoints[3]);
-    }
-});
-
 // Animation loop with flying controls
 const moveSpeed = 100; // Adjust the speed as needed
 
 function animate(currentTime) {
     const deltaTime = (currentTime - previousTime) / 1000; // Convert to seconds
     previousTime = currentTime;
+
+    // Update the animation mixer if it exists
+    if (mixer) {
+        mixer.update(deltaTime); // This is required for animations to play
+    }
 
     if (isFlying) {
         // Calculate movement direction in the camera's local space
@@ -338,9 +332,9 @@ const gltfLoader = new GLTFLoader();
 // Function to load and position the GLTF model
 function loadGLTFModel() {
     const modelUrl = 'scene.gltf'; // Replace with your GLTF file path
-    const modelPosition = new THREE.Vector3(226, 113, -358); // Adjust Y to place above terrain
-    const modelScale = new THREE.Vector3(.3, .3, .3); // Adjust scale as needed
-    const modelRotation = new THREE.Vector3(0, -1.5, 0); // Adjust rotation as needed
+    const modelPosition = new THREE.Vector3(-24.5, 57.5, 112.27); // Adjust Y to place above terrain
+    const modelScale = new THREE.Vector3(.5, .5, .5); // Adjust scale as needed
+    const modelRotation = new THREE.Vector3(0,  -Math.PI/2, -Math.PI/2); // Adjust rotation as needed
 
     gltfLoader.load(modelUrl, (gltf) => {
         const model = gltf.scene;
@@ -353,6 +347,138 @@ function loadGLTFModel() {
         console.error('An error occurred while loading the GLTF model:', error);
     });
 }
+
+// Function to load and position the patch model
+function loadPatchModel() {
+    const modelUrl = 'patch.glb'; // Replace with your GLTF file path
+    const modelPosition = new THREE.Vector3(32.5, 179, 42.95); // Adjust position as needed
+    const modelScale = new THREE.Vector3(0.2, 0.2, 0.2); // Adjust scale as needed
+    const modelRotation = new THREE.Vector3(Math.PI/2, Math.PI*0.8, 0); // Adjust rotation as needed
+
+    gltfLoader.load(modelUrl, (gltf) => {
+        const model = gltf.scene;
+        model.position.copy(modelPosition);
+        model.scale.set(modelScale.x, modelScale.y, modelScale.z);
+        model.rotation.set(modelRotation.x, modelRotation.y, modelRotation.z);
+        scene.add(model);
+        console.log('Patch model loaded successfully:', model);
+    }, undefined, (error) => {
+        console.error('An error occurred while loading the patch model:', error);
+    });
+}
+
+// Function to load and position the church model
+function loadChurchModel() {
+    const modelUrl = 'church.gltf'; // Replace with your GLTF file path
+    const modelPosition = new THREE.Vector3(0, 195, 24.7); // Adjust position as needed
+    const modelScale = new THREE.Vector3(0.2, 0.2, 0.2); // Adjust scale as needed
+    const modelRotation = new THREE.Vector3( Math.PI/2, Math.PI, 0); // Adjust rotation as needed
+
+    gltfLoader.load(modelUrl, (gltf) => {
+        const model = gltf.scene;
+        model.position.copy(modelPosition);
+        model.scale.set(modelScale.x, modelScale.y, modelScale.z);
+        model.rotation.set(modelRotation.x, modelRotation.y, modelRotation.z);
+        scene.add(model);
+        console.log('Church model loaded successfully:', model);
+
+        // Traverse the model's scene graph and modify materials
+        model.traverse((child) => {
+            if (child.isMesh) {
+                // Create a new dark matte black material
+                const MatteWhiteMaterial = new THREE.MeshStandardMaterial({
+                    color: 0xFFFFFF, // Black color
+                    roughness: 1.0,  // Fully rough for a matte finish
+                    metalness: 0.0   // Non-metallic
+                });
+
+                // Assign the new material to the mesh
+                child.material = MatteWhiteMaterial;
+            }
+        });
+
+    }, undefined, (error) => {
+        console.error('An error occurred while loading the church model:', error);
+    });
+}
+
+// Animation mixer and actions for the GLB model
+let mixer;
+let clipAction1; // First animation
+let clipAction2; // Second animation
+
+function loadGLBModel() {
+    const modelUrl = 'vulture.glb'; // Replace with your GLB file path
+    const modelPosition = new THREE.Vector3(172.7, 37.7, 130); // Adjust position as needed
+    const modelScale = new THREE.Vector3(.5, .5, .5); // Adjust scale as needed
+    const modelRotation = new THREE.Vector3(0.4 * Math.PI, -0.9 * Math.PI, 0 * Math.PI); // Adjust rotation as needed
+
+    gltfLoader.load(modelUrl, (gltf) => {
+        const model = gltf.scene;
+        model.position.copy(modelPosition);
+        model.scale.set(modelScale.x, modelScale.y, modelScale.z);
+        model.rotation.set(modelRotation.x, modelRotation.y, modelRotation.z);
+        scene.add(model);
+        console.log('GLB model loaded successfully:', model);
+
+        // Traverse the model's scene graph and modify materials
+        model.traverse((child) => {
+            if (child.isMesh) {
+                // Create a new dark matte black material
+                const darkMatteBlackMaterial = new THREE.MeshStandardMaterial({
+                    color: 0x000000, // Black color
+                    roughness: 1.0,  // Fully rough for a matte finish
+                    metalness: 0.0   // Non-metallic
+                });
+
+                // Assign the new material to the mesh
+                child.material = darkMatteBlackMaterial;
+            }
+        });
+
+        // Set up the animation mixer
+        mixer = new THREE.AnimationMixer(model);
+        if (gltf.animations.length > 0) {
+            clipAction1 = mixer.clipAction(gltf.animations[0]); // First animation
+            clipAction1.setLoop(THREE.LoopOnce); // Play the first animation once when toggled
+            clipAction1.clampWhenFinished = true; // Pause at the end of the animation
+
+            if (gltf.animations.length > 1) {
+                clipAction2 = mixer.clipAction(gltf.animations[1]); // Second animation
+                clipAction2.play(); // Start the second animation by default
+                clipAction2.setLoop(THREE.LoopRepeat); // Loop the second animation indefinitely
+            }
+        }
+    }, undefined, (error) => {
+        console.error('An error occurred while loading the GLB model:', error);
+    });
+}
+
+// Add key listener for toggling the first animation
+window.addEventListener('keydown', (event) => {
+    if (event.key === 'g' || event.key === 'G') {
+        if (clipAction1 && clipAction2) {
+            if (clipAction1.isRunning()) {
+                // If the first animation is running, stop it and resume the second animation
+                clipAction1.stop();
+                clipAction2.play();
+            } else {
+                // If the first animation is not running, reset its time to 0 and play it
+                clipAction1.stop(); // Stop the animation if it's already running
+                clipAction1.reset(); // Reset the animation to the beginning
+                clipAction1.play(); // Play the animation from the start
+                clipAction2.stop(); // Stop the second animation
+
+                // Listen for when clipAction1 finishes
+                clipAction1.getMixer().addEventListener('finished', () => {
+                    // When clipAction1 finishes, resume clipAction2
+                    clipAction2.play();
+                });
+            }
+        }
+    }
+});
+
 
 // Animation loop
 let previousTime = 0;
@@ -374,7 +500,7 @@ overlayDiv.style.color = 'white';
 overlayDiv.style.fontFamily = 'Arial, sans-serif';
 overlayDiv.style.fontSize = '14px';
 overlayDiv.style.zIndex = '1000';
-overlayDiv.innerHTML = 'Press 1, 2, 3, or 4 to switch viewpoints.<br>Press SPACE to toggle flying mode.<br>Use W, A, S, D, Q, Z to fly.';
+overlayDiv.innerHTML = 'Press 1, 2, 3, or 4 to switch viewpoints.<br>Press SPACE to toggle flying mode.<br>Use W, A, S, D, Q, Z to fly.<br>Press G to start the animation.';
 document.body.appendChild(overlayDiv);
 
 // Create buttons for viewpoints
@@ -383,7 +509,7 @@ buttonContainer.style.position = 'absolute';
 buttonContainer.style.top = '50px';
 buttonContainer.style.left = '10px';
 buttonContainer.style.zIndex = '1000';
-document.body.appendChild(buttonContainer);1
+document.body.appendChild(buttonContainer);
 
 viewpoints.forEach((viewpoint, index) => {
     const button = document.createElement('button');
