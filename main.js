@@ -51,8 +51,8 @@ controls.enablePan = true;
 controls.enableZoom = true;
 
 // Set the initial camera position and look-at point
-camera.position.set(-17, 25.5, -188);
-controls.target.set(-10, 28, -188);
+camera.position.set(-16.5, 25.4, -188.1);
+controls.target.set(-10, 25.6, -187.1);
 controls.update();
 
 // Rotate the scene to make Z the up direction
@@ -129,7 +129,7 @@ function generateHeightmapFromImage(heightmapImage) {
 // Lighting setup
 scene.add(new THREE.AmbientLight(0x404040, 2.0));
 
-const directionalLight2 = new THREE.DirectionalLight(0xffffff, 5.0);
+const directionalLight2 = new THREE.DirectionalLight(0xffffff, 3.0);
 directionalLight2.position.set(0, -1000, 500);
 directionalLight2.target.position.set(0, -200, 100);
 scene.add(directionalLight2);
@@ -144,20 +144,20 @@ scene.add(churchLight.target);
 // Viewpoints
 const viewpoints = [
     { 
-        position: new THREE.Vector3(-17, 25.5, -188), 
-        lookAt: new THREE.Vector3(-10, 28, -188)
+        position: new THREE.Vector3(-16.5, 25.4, -188.1), 
+        lookAt: new THREE.Vector3(-10, 25.6, -187.1)
     },
     { 
         position: new THREE.Vector3(31.5,42.8,-179.4), 
         lookAt: new THREE.Vector3(32.8,42.8,-179)
     },
     { 
-        position: new THREE.Vector3(132.4, 126, -33.5), 
-        lookAt: new THREE.Vector3(165, 121, -49)
+        position: new THREE.Vector3(152.3, 131.1,-8.0), 
+        lookAt: new THREE.Vector3(165.9,122.5,-49.8)
     },
     { 
-        position: new THREE.Vector3(-22, 117, -58), 
-        lookAt: new THREE.Vector3(-26.8, 113.6, -58.1)
+        position: new THREE.Vector3(-21.3, 115.6, -58.5), 
+        lookAt: new THREE.Vector3(-26.9, 113.9, -58.8)
     },
     { 
         position: new THREE.Vector3(-77, 154, 42), 
@@ -329,12 +329,12 @@ function updateCameraInfo() {
 // GLTF Loader setup
 const gltfLoader = new GLTFLoader();
 
-// Function to load and position the GLTF model
+// Function to load and position the GLB model (replacing scene.gltf with aiguille.glb)
 function loadGLTFModel() {
-    const modelUrl = 'scene.gltf'; // Replace with your GLTF file path
-    const modelPosition = new THREE.Vector3(-24.5, 57.5, 112.27); // Adjust Y to place above terrain
+    const modelUrl = 'aiguille.glb'; // Replace with your GLB file path
+    const modelPosition = new THREE.Vector3(-25.5, 57, 111.5); // Adjust Y to place above terrain
     const modelScale = new THREE.Vector3(.5, .5, .5); // Adjust scale as needed
-    const modelRotation = new THREE.Vector3(0,  -Math.PI/2, -Math.PI/2); // Adjust rotation as needed
+    const modelRotation = new THREE.Vector3(0, -Math.PI / 2,  -Math.PI / 2); // Adjust rotation as needed
 
     gltfLoader.load(modelUrl, (gltf) => {
         const model = gltf.scene;
@@ -342,9 +342,9 @@ function loadGLTFModel() {
         model.scale.set(modelScale.x, modelScale.y, modelScale.z);
         model.rotation.set(modelRotation.x, modelRotation.y, modelRotation.z);
         scene.add(model);
-        console.log('GLTF model loaded successfully:', model);
+        console.log('GLB model (aiguille.glb) loaded successfully:', model);
     }, undefined, (error) => {
-        console.error('An error occurred while loading the GLTF model:', error);
+        console.error('An error occurred while loading the GLB model (aiguille.glb):', error);
     });
 }
 
@@ -458,23 +458,18 @@ function loadGLBModel() {
 window.addEventListener('keydown', (event) => {
     if (event.key === 'g' || event.key === 'G') {
         if (clipAction1 && clipAction2) {
-            if (clipAction1.isRunning()) {
-                // If the first animation is running, stop it and resume the second animation
-                clipAction1.stop();
-                clipAction2.play();
-            } else {
-                // If the first animation is not running, reset its time to 0 and play it
-                clipAction1.stop(); // Stop the animation if it's already running
-                clipAction1.reset(); // Reset the animation to the beginning
-                clipAction1.play(); // Play the animation from the start
-                clipAction2.stop(); // Stop the second animation
+            // Stop the default animation (clipAction2)
+            clipAction2.stop();
 
-                // Listen for when clipAction1 finishes
-                clipAction1.getMixer().addEventListener('finished', () => {
-                    // When clipAction1 finishes, resume clipAction2
-                    clipAction2.play();
-                });
-            }
+            // Reset and play the first animation (clipAction1)
+            clipAction1.reset(); // Reset the animation to the beginning
+            clipAction1.play(); // Play the animation from the start
+
+            // Listen for when clipAction1 finishes
+            clipAction1.getMixer().addEventListener('finished', () => {
+                // When clipAction1 finishes, resume the default animation (clipAction2)
+                clipAction2.play();
+            });
         }
     }
 });
