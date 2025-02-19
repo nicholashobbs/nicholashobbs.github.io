@@ -651,52 +651,52 @@ viewpointOverlays[4].innerHTML = `
     <h2>Work Experience</h2>
     
     <div class="section">
-       <p class="job-title">Kitchen Operations Manager - Lefty's Bar and Grill <span class="date">(2023-2025)</span></p>
-        <ul>
-            <li>Oversaw daily kitchen operations, ensuring efficient workflow and high-quality food preparation.</li>
-            <li>Developed and implemented data tools to track inventory, streamline ordering processes, and analyze kitchen performance metrics.</li>
-            <li>Collaborated with staff to enhance productivity and maintain a positive work environment, contributing to overall restaurant success.</li>
-        </ul>
-    </div>
-    
-    <div class="section">
-        <p class="job-title">Sales Operations - Red Rock <span class="date">(2023)</span></p>
-        <ul>
-            <li>Managed customer relationships to ensure satisfaction and foster long-term partnerships, driving repeat business and referrals.</li>
-            <li>Collaborated with management to create data tools that organized and made client information easily accessible, enhancing sales operations efficiency.</li>
-            <li>Analyzed sales data to identify trends and opportunities, contributing to strategic decision-making and improved sales performance.</li>
-        </ul>
-    </div>
-    
-    <div class="section">
-        <p class="job-title">Software Engineer - Off Piste <span class="date">(2021-2022)</span></p>
-        <ul>
-            <li>Developed applications using Rust and Solana, leveraging the language's memory safety features to create efficient smart contracts.</li>
-            <li>Prototyped ideas using Python to explore and demonstrate the functionality of smart contracts, facilitating rapid iteration and testing.</li>
-            <li>Contributed to front-end design using D3 and React, enhancing user experience and ensuring seamless integration with back-end services.</li>
-        </ul>
-    </div>
-    
-    <div class="section">
-        <p class="job-title">Data Scientist - Openlattice <span class="date">(2019-2020)</span></p>
-        <ul>
-            <li>Created a graph database to integrate client data, enhancing data relationships and accessibility for analysis.</li>
-            <li>Built tools in Python to simplify data integration processes, ensuring seamless interaction with Kotlin scripts for efficient data handling.</li>
-            <li>Utilized the BERT algorithm to deduplicate data across multiple sources, improving data quality and consistency.</li>
-            <li>Developed custom visualizations using D3, providing insightful representations of data structures tailored to client needs.</li>
-            <li>Collaborated with clients to determine the design of data structures and visualizations, ensuring alignment with their requirements and expectations.</li>
-        </ul>
-    </div>
-    
-    <div class="section">
-        <p class="job-title">Data Analyst - Nightfall AI <span class="date">(2019)</span></p>
-        <ul>
-            <li>Built tools for tagging data that were integrated into models utilizing BERT to identify sensitive information such as PHI, PII, and API keys.</li>
-            <li>Developed and optimized data processing workflows to enhance the accuracy and efficiency of data loss prevention measures.</li>
-            <li>Collaborated with cross-functional teams to ensure the effective implementation of data tagging and identification processes, aligning with compliance requirements.</li>
-            <li>Conducted testing and validation of models to ensure high precision in identifying sensitive data, contributing to robust data protection strategies.</li>
-        </ul>
-    </div>
+    <p class="job-title">Operations Manager - Lefty's Bar and Grill <span class="date">(2023–2025)</span></p>
+    <ul>
+        <li>Worked toward optimization of daily operational workflows by implementing data-driven strategies, resulting in cost savings and efficiency gains.</li>
+        <li>Designed and deployed custom data tools to automate inventory tracking, streamline supply chain ordering, and analyze key performance metrics.</li>
+        <li>Implemented new POS systems and trained staff on their use, improving order accuracy and reducing lost revenue.</li>
+        <li>Utilized analytics platforms to monitor and report on operational KPIs, enabling data-backed decision-making and process refinement.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <p class="job-title">Sales Operations Manager - Red Rock <span class="date">(2023)</span></p>
+    <ul>
+        <li>Managed customer relationships to ensure satisfaction and foster long-term partnerships.</li>
+        <li>Created data tools to organize client information and contact for those clients, improving sales operations efficiency.</li>
+        <li>Analyzed sales data to identify trends and opportunities, supporting strategic choices for creating new, popular products.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <p class="job-title">Software Engineer - Off Piste <span class="date">(2021–2022)</span></p>
+    <ul>
+        <li>Developed applications using Rust and Solana, leveraging memory safety for efficient smart contracts.</li>
+        <li>Prototyped ideas in Python to implement pricing and determine smart contract functionality.</li>
+        <li>Contributed to front-end design using D3 and React, creating interactive visualizations for user engagement.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <p class="job-title">Data Scientist - Openlattice <span class="date">(2019–2020)</span></p>
+    <ul>
+        <li>Built a graph database to integrate client data, improving data relationships and accessibility.</li>
+        <li>Developed Python tools for seamless data integration, improving efficiency of integration process by 10x.</li>
+        <li>Built custom API endpoints in Kotlin for use by data scientists and clients.</li>
+        <li>Utilized BERT for deduplication, improving data quality and consistency.</li>
+        <li>Created custom D3 visualizations tailored to client needs.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <p class="job-title">Data Analyst - Nightfall AI <span class="date">(2019)</span></p>
+    <ul>
+        <li>Built data tagging tools integrated with BERT models to identify sensitive information (PHI, PII, API keys).</li>
+        <li>Optimized data processing workflows for accuracy and efficiency in data loss prevention.</li>
+        <li>Collaborated with cross-functional teams to ensure compliance with data protection standards.</li>
+    </ul>
+</div>
     
     <h2>Education</h2>
     <div class="section">
@@ -733,9 +733,11 @@ if (resume) {
     // Style the overlay for Viewpoint 5 specifically
     resume.style.position = 'fixed';
     resume.style.top = '5%';
-    resume.style.left = '25%';
-    resume.style.minWidth = '400px';
-    resume.style.maxWidth = '800px';
+    resume.style.left = '50%';
+    resume.style.transform = 'translateX(-50%)'; // Center horizontally
+    resume.style.minWidth = '200px';
+    resume.style.maxWidth = '90%'; // Adjust for mobile screens
+    resume.style.width = '800px'; // Default width for desktop
     resume.style.maxHeight = '80vh'; // Ensures it doesn't take the whole screen
     resume.style.overflowY = 'auto'; // Enables scrolling if content overflows
     resume.style.padding = '10px';
@@ -795,4 +797,113 @@ if (resume) {
     });
 
     resume.appendChild(closeButton);
+
+    // Add media query for mobile devices
+    const mobileMediaQuery = window.matchMedia('(max-width: 768px)');
+    const handleMobileResize = (e) => {
+        if (e.matches) {
+            // Mobile styles
+            resume.style.width = '90%'; // Take up most of the screen width
+            resume.style.left = '5%'; // Adjust left position
+            resume.style.transform = 'none'; // Remove centering transform
+            resume.style.overflowX = 'auto'; // Enable horizontal scrolling if needed
+        } else {
+            // Desktop styles
+            resume.style.width = '800px'; // Reset to default width
+            resume.style.left = '50%'; // Center horizontally
+            resume.style.transform = 'translateX(-50%)'; // Reapply centering transform
+            resume.style.overflowX = 'hidden'; // Disable horizontal scrolling
+        }
+    };
+
+    // Initial check
+    handleMobileResize(mobileMediaQuery);
+
+    // Listen for changes in screen size
+    mobileMediaQuery.addEventListener('change', handleMobileResize);
 }
+
+// Add the "Set LookAt Point" feature
+// const lookAtContainer = document.createElement('div');
+// lookAtContainer.style.position = 'absolute';
+// lookAtContainer.style.bottom = '10px';
+// lookAtContainer.style.right = '10px';
+// lookAtContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+// lookAtContainer.style.padding = '10px';
+// lookAtContainer.style.borderRadius = '5px';
+// lookAtContainer.style.color = 'white';
+// lookAtContainer.style.fontFamily = 'Arial, sans-serif';
+// lookAtContainer.style.fontSize = '14px';
+// lookAtContainer.style.zIndex = '1000';
+
+// const lookAtTitle = document.createElement('div');
+// lookAtTitle.innerText = 'Set LookAt Point';
+// lookAtTitle.style.fontWeight = 'bold';
+// lookAtTitle.style.marginBottom = '5px';
+// lookAtContainer.appendChild(lookAtTitle);
+
+// const xInput = document.createElement('input');
+// xInput.type = 'number';
+// xInput.placeholder = 'X';
+// xInput.style.width = '60px';
+// xInput.style.marginRight = '5px';
+
+// const yInput = document.createElement('input');
+// yInput.type = 'number';
+// yInput.placeholder = 'Y';
+// yInput.style.width = '60px';
+// yInput.style.marginRight = '5px';
+
+// const zInput = document.createElement('input');
+// zInput.type = 'number';
+// zInput.placeholder = 'Z';
+// zInput.style.width = '60px';
+// zInput.style.marginRight = '5px';
+
+// const setButton = document.createElement('button');
+// setButton.innerText = 'Set';
+// setButton.style.padding = '5px 10px';
+// setButton.style.borderRadius = '3px';
+// setButton.style.border = 'none';
+// setButton.style.cursor = 'pointer';
+
+// lookAtContainer.appendChild(xInput);
+// lookAtContainer.appendChild(yInput);
+// lookAtContainer.appendChild(zInput);
+// lookAtContainer.appendChild(setButton);
+
+// document.body.appendChild(lookAtContainer);
+
+// // Style the inputs and button
+// [xInput, yInput, zInput].forEach(input => {
+//     input.style.padding = '5px';
+//     input.style.border = '1px solid #ccc';
+//     input.style.borderRadius = '3px';
+//     input.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+//     input.style.color = '#000';
+// });
+
+// setButton.style.backgroundColor = '#4CAF50';
+// setButton.style.color = 'white';
+// setButton.style.transition = 'background-color 0.3s';
+
+// setButton.addEventListener('mouseenter', () => {
+//     setButton.style.backgroundColor = '#45a049';
+// });
+// setButton.addEventListener('mouseleave', () => {
+//     setButton.style.backgroundColor = '#4CAF50';
+// });
+
+// // Add event listener for the "Set" button
+// setButton.addEventListener('click', () => {
+//     const x = parseFloat(xInput.value);
+//     const y = parseFloat(yInput.value);
+//     const z = parseFloat(zInput.value);
+
+//     if (!isNaN(x) && !isNaN(y) && !isNaN(z)) {
+//         controls.target.set(x, y, z);
+//         controls.update();
+//     } else {
+//         alert('Please enter valid numbers for X, Y, and Z coordinates.');
+//     }
+// });
