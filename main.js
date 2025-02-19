@@ -1,9 +1,6 @@
 import * as THREE from "three";
 import { OrbitControls } from 'jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'jsm/loaders/GLTFLoader.js';
-import { FontLoader } from 'jsm/loaders/FontLoader.js';
-import { TextGeometry } from 'jsm/geometries/TextGeometry.js';
-
 
 // Scene setup
 const scene = new THREE.Scene();
@@ -165,64 +162,16 @@ const viewpoints = [
     },
     { 
         name: 'Aiguille du Midi (Photogrammetry) - 4',
-        position: new THREE.Vector3(-21.1, 114.8, -57.8), 
+        position: new THREE.Vector3(-21.4, 116.2, -58.5), 
         lookAt: new THREE.Vector3(-26.9, 113.9, -58.8)
     },
     { 
         name: 'Resume & Contact - 5',
-        position: new THREE.Vector3(-77, 154, 42), 
-        lookAt: new THREE.Vector3(-2, 78, -58)
+        position: new THREE.Vector3(-75.4, 152, 44), 
+        lookAt: new THREE.Vector3(-5, 72, -56)
     }
 ];
 
-// Load the font and create 3D text near Viewpoint 5
-const fontLoader = new FontLoader();
-fontLoader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', (font) => {
-    // Create the text geometry
-    const textGeometry = new TextGeometry('Hello, Viewpoint 5!', {
-        font: font,
-        size: 5, // Size of the text
-        height: 0.5, // Depth of the text
-        curveSegments: 12, // Smoothness of curves
-        bevelEnabled: true, // Add bevel to the text
-        bevelThickness: 0.1,
-        bevelSize: 0.1,
-        bevelOffset: 0,
-        bevelSegments: 5
-    });
-
-    // Center the text geometry
-    textGeometry.center();
-
-    // Create a material for the text
-    const textMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff });
-
-    // Create a mesh for the text
-    const textMesh = new THREE.Mesh(textGeometry, textMaterial);
-
-    // Create a plane geometry for the background
-    const planeGeometry = new THREE.PlaneGeometry(100, 10); // Adjust size as needed
-    const planeMaterial = new THREE.MeshBasicMaterial({ color: 0x000000, side: THREE.DoubleSide });
-    const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
-
-    // Position the text and plane near Viewpoint 5
-    textMesh.position.set(-77,-42,150); // Adjust position as needed
-    planeMesh.position.copy(textMesh.position); // Place the plane behind the text
-
-    // Rotate the plane and text to face the camera
-    planeMesh.rotation.x = 0; // Rotate the plane to face upwards
-    textMesh.rotation.x = 0; // Rotate the text to match the plane
-
-    planeMesh.rotation.y = 0; // Rotate the plane to face upwards
-    textMesh.rotation.y = 0; // Rotate the text to match the plane
-
-
-    // Add the text and plane to the scene
-    scene.add(textMesh);
-    scene.add(planeMesh);
-
-    console.log('3D text and plane added near Viewpoint 5');
-});
 
 // Event listeners for viewpoint switching
 window.addEventListener('keydown', (event) => {
@@ -596,17 +545,6 @@ window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }, false);
 
-// // Create a div for the text overlay
-// const overlayDiv = document.createElement('div');
-// overlayDiv.style.position = 'absolute';
-// overlayDiv.style.top = '10px';
-// overlayDiv.style.left = '10px';
-// overlayDiv.style.color = 'white';
-// overlayDiv.style.fontFamily = 'Arial, sans-serif';
-// overlayDiv.style.fontSize = '14px';
-// overlayDiv.style.zIndex = '1000';
-// overlayDiv.innerHTML = 'Press 1, 2, 3, 4, or 5 to switch viewpoints.<br>Press SPACE to toggle flying mode.<br>Use W, A, S, D, Q, Z to fly.<br>Press G to start the animation.';
-// document.body.appendChild(overlayDiv);
 
 
 
@@ -629,20 +567,21 @@ viewpoints.forEach((viewpoint, index) => {
 // Add detailed content to each viewpoint overlay div
 viewpointOverlays[0].innerHTML = `
     <h3>Chapelle Des Praz (Rhino) - 1</h3>
-    <p>This viewpoint showcases the Chapelle Des Praz model created in Rhino.</p>
+    <p>My first experiments in designing 3d objects were in parametric design using grasshopper and making 3d websites, like this one</p>
 `;
 
 viewpointOverlays[1].innerHTML = `
     <h3>Patch (Nomad Sculpt) - 2</h3>
-    <p>This viewpoint highlights the Patch model sculpted in Nomad Sculpt.</p>
+    <p>To add to my toolkit for creating shapes in three dimensions, I learned to sculpt on my Ipad with Nomad and Valence 3D</p>
+    <p>This is my dog Patch, who loves the mountains and snow</p>
 `;
 
 // Add detailed content to Viewpoint Overlay 3 with a button to start the animation
 viewpointOverlays[2].innerHTML = `
     <h3>Vulture (Blender) - 3</h3>
-    <p>This viewpoint features the Vulture model created in Blender.</p>
+    <p>To build on the models I've been sculpting and creating with parametric design, I learned to rig and animate</p>
     <button id="start-animation-button">Start Animation</button>
-    <p>Click the button or press <strong>G</strong> to start the animation.</p>
+    <p>Click the button or press <strong>G</strong> to start the animation</p>
 `;
 
 // Add an event listener to the button in Viewpoint Overlay 3
@@ -668,21 +607,192 @@ if (startAnimationButton) {
 
 viewpointOverlays[3].innerHTML = `
     <h3>Aiguille du Midi (Photogrammetry) - 4</h3>
-    <p>This viewpoint displays the Aiguille du Midi model generated using photogrammetry.</p>
+    <p>This is the Aiguille du Midi in Southern France. I got this model from<a href="https://sketchfab.com/archeomatique" target="_blank" 
+     style="text-decoration: none; color: white; margin-left: 10px;"
+        onmouseover="this.style.color='red'" 
+        onmouseout="this.style.color='white'"
+        onfocus="this.style.color='white'"
+        onmousedown="this.style.color='white'"
+        onmouseup="this.style.color='white'">Archéomatique</a> on Sketchfab</p>
+        <p> The surrounding landscape is shaped on an alpha map from NASA Earthdata, and the satelite images for coloration are from Google Earth Engine</p>
+        <p>The Region modeled in this landscape is the quadrangle:</p>
+        <p>46°12'N, 6°24'E - 46°12'N, 7°24'E - 45°30'N, 7°24'E - 45°30'N, 6°24'E</p>
 `;
+    // <p>This work is based on "Aiguille du midi, 3842 m" (https://sketchfab.com/3d-models/aiguille-du-midi-3842-m-97dcbae9d9d4449590049ea04f14e000)</p>
+    // <p>by Archéomatique (https://sketchfab.com/archeomatique)</p>
+    // <p>licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)</p>
+
 
 viewpointOverlays[4].innerHTML = `
-    <h3>Resume & Contact - 5</h3>
-    <p>This viewpoint provides information about the creator and contact details.</p>
+    <h1>Nicholas Hobbs</h1>
+    <p style="text-align: center;"><strong>Email:</strong> nicholas.r.hobbs (at) gmail.com - <strong>Phone:</strong> (801) 664-7021</p>
+    <p style="text-align: center;">
+    <a href="https://www.linkedin.com/in/nrhobbs/" target="_blank" 
+     style="text-decoration: none; color: white; margin-left: 10px;"
+        onmouseover="this.style.color='red'" 
+        onmouseout="this.style.color='white'"
+        onfocus="this.style.color='white'"
+        onmousedown="this.style.color='white'"
+        onmouseup="this.style.color='white'">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;">
+        LinkedIn
+    </a> - 
+    <a href="https://github.com/nicholashobbs" target="_blank" style="text-decoration: none; color: white; margin-left: 10px;"
+        onmouseover="this.style.color='red'" 
+        onmouseout="this.style.color='white'"
+        onfocus="this.style.color='white'"
+        onmousedown="this.style.color='white'"
+        onmouseup="this.style.color='white'">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;">
+        GitHub
+    </a>
+    </p>
+
+    <h2>Work Experience</h2>
+    
+    <div class="section">
+       <p class="job-title">Kitchen Operations Manager - Lefty's Bar and Grill <span class="date">(2023-2025)</span></p>
+        <ul>
+            <li>Oversaw daily kitchen operations, ensuring efficient workflow and high-quality food preparation.</li>
+            <li>Developed and implemented data tools to track inventory, streamline ordering processes, and analyze kitchen performance metrics.</li>
+            <li>Collaborated with staff to enhance productivity and maintain a positive work environment, contributing to overall restaurant success.</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <p class="job-title">Sales Operations - Red Rock <span class="date">(2023)</span></p>
+        <ul>
+            <li>Managed customer relationships to ensure satisfaction and foster long-term partnerships, driving repeat business and referrals.</li>
+            <li>Collaborated with management to create data tools that organized and made client information easily accessible, enhancing sales operations efficiency.</li>
+            <li>Analyzed sales data to identify trends and opportunities, contributing to strategic decision-making and improved sales performance.</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <p class="job-title">Software Engineer - Off Piste <span class="date">(2021-2022)</span></p>
+        <ul>
+            <li>Developed applications using Rust and Solana, leveraging the language's memory safety features to create efficient smart contracts.</li>
+            <li>Prototyped ideas using Python to explore and demonstrate the functionality of smart contracts, facilitating rapid iteration and testing.</li>
+            <li>Contributed to front-end design using D3 and React, enhancing user experience and ensuring seamless integration with back-end services.</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <p class="job-title">Data Scientist - Openlattice <span class="date">(2019-2020)</span></p>
+        <ul>
+            <li>Created a graph database to integrate client data, enhancing data relationships and accessibility for analysis.</li>
+            <li>Built tools in Python to simplify data integration processes, ensuring seamless interaction with Kotlin scripts for efficient data handling.</li>
+            <li>Utilized the BERT algorithm to deduplicate data across multiple sources, improving data quality and consistency.</li>
+            <li>Developed custom visualizations using D3, providing insightful representations of data structures tailored to client needs.</li>
+            <li>Collaborated with clients to determine the design of data structures and visualizations, ensuring alignment with their requirements and expectations.</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <p class="job-title">Data Analyst - Nightfall AI <span class="date">(2019)</span></p>
+        <ul>
+            <li>Built tools for tagging data that were integrated into models utilizing BERT to identify sensitive information such as PHI, PII, and API keys.</li>
+            <li>Developed and optimized data processing workflows to enhance the accuracy and efficiency of data loss prevention measures.</li>
+            <li>Collaborated with cross-functional teams to ensure the effective implementation of data tagging and identification processes, aligning with compliance requirements.</li>
+            <li>Conducted testing and validation of models to ensure high precision in identifying sensitive data, contributing to robust data protection strategies.</li>
+        </ul>
+    </div>
+    
+    <h2>Education</h2>
+    <div class="section">
+        <p><strong>BS Mathematics and Statistics</strong> - University of Utah <span class="date">(2012-2017)</span></p>
+        <p><strong>HKUST</strong> - Math Exchange Program, Hong Kong <span class="date">(2013)</span></p>
+        <p><strong>Nankai University</strong> - Chinese Language Immersion Program, Nankai, China <span class="date">(2013)</span></p>
+    </div>
+    
+    <h2>Skills</h2>
+    <div class="section">
+        <p><strong>Work:</strong> Python (pandas, matplotlib, numpy, sklearn, scipy, tensorflow, keras, spacy, nltk, transformer, gensim, librosa), Statistics, Rust, JavaScript, NLP, Kotlin</p>
+        <p><strong>Design:</strong> Projects in D3, p5, Blender, Valence 3D, Nomad Sculpt, Procreate, three.js, Rhino/Grasshopper, Sketchup</p>
+    </div>
+    
+    <h2>Statement</h2>
+    <p>I am looking for tech jobs that allow me to learn deeper computer science concepts while incorporating more elements of design. I am interested in architecture, video games, 3D modeling, and creative work. Having spent college and my early career analyzing data and optimizing computational processes, I aim to leverage organization, data visualization, design, and gamification to create interactive and engaging experiences.</p>
 `;
 
 // Add some basic styling to the overlay divs
 viewpointOverlays.forEach(div => {
     div.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-    div.style.padding = '10px';
+    div.style.marginTop = '30px';
+    div.style.padding = '5px';
     div.style.borderRadius = '5px';
     div.style.marginBottom = '10px';
     div.style.fontFamily = 'Arial, sans-serif';
     div.style.fontSize = '14px';
     div.style.color = 'white';
 });
+
+const resume = viewpointOverlays[4];
+
+if (resume) {
+    // Style the overlay for Viewpoint 5 specifically
+    resume.style.position = 'fixed';
+    resume.style.top = '5%';
+    resume.style.left = '25%';
+    resume.style.minWidth = '400px';
+    resume.style.maxWidth = '800px';
+    resume.style.maxHeight = '80vh'; // Ensures it doesn't take the whole screen
+    resume.style.overflowY = 'auto'; // Enables scrolling if content overflows
+    resume.style.padding = '10px';
+    resume.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+    resume.style.borderRadius = '10px';
+    resume.style.color = 'white';
+    resume.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
+
+    // Styling for h1, h2 inside viewpointOverlays[4]
+    const headings = resume.querySelectorAll('h1, h2');
+    headings.forEach(h => h.style.textAlign = 'center');
+
+    const h2s = resume.querySelectorAll('h2');
+    h2s.forEach(h2 => {
+        h2.style.borderBottom = '2px solid #333';
+        h2.style.paddingBottom = '5px';
+        h2.style.marginTop = '20px';
+    });
+
+    // Section styling
+    const sections = resume.querySelectorAll('.section');
+    sections.forEach(section => section.style.marginBottom = '20px');
+
+    // Job title styling
+    const jobTitles = resume.querySelectorAll('.job-title');
+    jobTitles.forEach(job => job.style.fontWeight = 'bold');
+
+    // Date styling
+    const dates = resume.querySelectorAll('.date');
+    dates.forEach(date => date.style.fontStyle = 'italic');
+
+    // Create the close button
+    const closeButton = document.createElement('button');
+    closeButton.innerText = '✖'; // Unicode 'X' symbol
+    closeButton.style.position = 'absolute';
+    closeButton.style.top = '10px';
+    closeButton.style.right = '10px';
+    closeButton.style.background = 'transparent';
+    closeButton.style.border = 'none';
+    closeButton.style.color = 'white';
+    closeButton.style.fontSize = '18px';
+    closeButton.style.cursor = 'pointer';
+    closeButton.style.padding = '5px';
+    closeButton.style.transition = '0.2s';
+    closeButton.style.fontWeight = 'bold';
+
+    // Add hover effect
+    closeButton.addEventListener('mouseenter', () => {
+        closeButton.style.color = 'red';
+    });
+    closeButton.addEventListener('mouseleave', () => {
+        closeButton.style.color = 'white';
+    });
+
+    closeButton.addEventListener('click', () => {
+        resume.style.display = 'none';
+    });
+
+    resume.appendChild(closeButton);
+}
