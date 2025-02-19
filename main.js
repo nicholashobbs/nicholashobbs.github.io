@@ -735,7 +735,7 @@ if (resume) {
     resume.style.top = '5%';
     resume.style.left = '50%';
     resume.style.transform = 'translateX(-50%)'; // Center horizontally
-    resume.style.minWidth = '200px';
+    resume.style.minWidth = '100px';
     resume.style.maxWidth = '90%'; // Adjust for mobile screens
     resume.style.width = '800px'; // Default width for desktop
     resume.style.maxHeight = '80vh'; // Ensures it doesn't take the whole screen
