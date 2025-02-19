@@ -1,6 +1,9 @@
 import * as THREE from "three";
 import { OrbitControls } from 'jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'jsm/loaders/GLTFLoader.js';
+import { FontLoader } from 'jsm/loaders/FontLoader.js';
+import { TextGeometry } from 'jsm/geometries/TextGeometry.js';
+
 
 // Scene setup
 const scene = new THREE.Scene();
@@ -171,6 +174,55 @@ const viewpoints = [
         lookAt: new THREE.Vector3(-2, 78, -58)
     }
 ];
+
+// Load the font and create 3D text near Viewpoint 5
+const fontLoader = new FontLoader();
+fontLoader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', (font) => {
+    // Create the text geometry
+    const textGeometry = new TextGeometry('Hello, Viewpoint 5!', {
+        font: font,
+        size: 5, // Size of the text
+        height: 0.5, // Depth of the text
+        curveSegments: 12, // Smoothness of curves
+        bevelEnabled: true, // Add bevel to the text
+        bevelThickness: 0.1,
+        bevelSize: 0.1,
+        bevelOffset: 0,
+        bevelSegments: 5
+    });
+
+    // Center the text geometry
+    textGeometry.center();
+
+    // Create a material for the text
+    const textMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff });
+
+    // Create a mesh for the text
+    const textMesh = new THREE.Mesh(textGeometry, textMaterial);
+
+    // Create a plane geometry for the background
+    const planeGeometry = new THREE.PlaneGeometry(100, 10); // Adjust size as needed
+    const planeMaterial = new THREE.MeshBasicMaterial({ color: 0x000000, side: THREE.DoubleSide });
+    const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
+
+    // Position the text and plane near Viewpoint 5
+    textMesh.position.set(-77,-42,150); // Adjust position as needed
+    planeMesh.position.copy(textMesh.position); // Place the plane behind the text
+
+    // Rotate the plane and text to face the camera
+    planeMesh.rotation.x = 0; // Rotate the plane to face upwards
+    textMesh.rotation.x = 0; // Rotate the text to match the plane
+
+    planeMesh.rotation.y = 0; // Rotate the plane to face upwards
+    textMesh.rotation.y = 0; // Rotate the text to match the plane
+
+
+    // Add the text and plane to the scene
+    scene.add(textMesh);
+    scene.add(planeMesh);
+
+    console.log('3D text and plane added near Viewpoint 5');
+});
 
 // Event listeners for viewpoint switching
 window.addEventListener('keydown', (event) => {
