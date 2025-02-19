@@ -55,6 +55,8 @@ camera.position.set(-16.5, 25.4, -188.1);
 controls.target.set(-10, 25.6, -187.1);
 controls.update();
 
+
+
 // Rotate the scene to make Z the up direction
 scene.rotation.x = -Math.PI / 2;
 
@@ -141,25 +143,30 @@ churchLight.target.position.set(-13, 25, -187);
 scene.add(churchLight);
 scene.add(churchLight.target);
 
-// Viewpoints
+// Viewpoints with names
 const viewpoints = [
     { 
+        name: 'Chapelle Des Praz (Rhino) - 1',
         position: new THREE.Vector3(-16.5, 25.4, -188.1), 
         lookAt: new THREE.Vector3(-10, 25.6, -187.1)
     },
     { 
-        position: new THREE.Vector3(31.5,42.8,-179.4), 
-        lookAt: new THREE.Vector3(32.8,42.8,-179)
+        name: 'Patch (Nomad Sculpt) - 2',
+        position: new THREE.Vector3(31.5, 42.8, -179.4), 
+        lookAt: new THREE.Vector3(32.8, 42.8, -179)
     },
     { 
-        position: new THREE.Vector3(152.3, 131.1,-8.0), 
-        lookAt: new THREE.Vector3(165.9,122.5,-49.8)
+        name: 'Vulture (Blender) - 3',
+        position: new THREE.Vector3(152.3, 131.1, -8.0), 
+        lookAt: new THREE.Vector3(165.9, 122.5, -49.8)
     },
     { 
-        position: new THREE.Vector3(-21.3, 115.6, -58.5), 
+        name: 'Aiguille du Midi (Photogrammetry) - 4',
+        position: new THREE.Vector3(-21.1, 114.8, -57.8), 
         lookAt: new THREE.Vector3(-26.9, 113.9, -58.8)
     },
     { 
+        name: 'Resume & Contact - 5',
         position: new THREE.Vector3(-77, 154, 42), 
         lookAt: new THREE.Vector3(-2, 78, -58)
     }
@@ -176,7 +183,7 @@ window.addEventListener('keydown', (event) => {
     } else if (event.key === '4') {
         startInterpolation(viewpoints[3]); // Move to viewpoint 4
     } else if (event.key === '5') {
-        startInterpolation(viewpoints[4]); // Move to viewpoint 4
+        startInterpolation(viewpoints[4]); // Move to viewpoint 5
     }
 });
 
@@ -188,6 +195,44 @@ let targetPosition = new THREE.Vector3();
 let targetLookAt = new THREE.Vector3();
 let animationProgress = 0;
 const animationDuration = 2; // Duration in seconds
+
+
+// Create a container for the viewpoint overlays
+const overlayContainer = document.createElement('div');
+overlayContainer.style.position = 'absolute';
+overlayContainer.style.top = '10px';
+overlayContainer.style.left = '10px';
+overlayContainer.style.color = 'white';
+overlayContainer.style.fontFamily = 'Arial, sans-serif';
+overlayContainer.style.fontSize = '14px';
+overlayContainer.style.zIndex = '1000';
+document.body.appendChild(overlayContainer);
+
+// Create a div for each viewpoint
+const viewpointOverlays = viewpoints.map((viewpoint, index) => {
+    const div = document.createElement('div');
+    div.id = `viewpoint-overlay-${index + 1}`;
+    div.style.display = 'none'; // Hide all divs initially
+    overlayContainer.appendChild(div);
+    return div;
+});
+
+// Create a new div for initial instructions
+const initialInstructionsDiv = document.createElement('div');
+initialInstructionsDiv.id = 'initial-instructions';
+initialInstructionsDiv.style.position = 'absolute';
+initialInstructionsDiv.style.bottom = '10px';
+initialInstructionsDiv.style.left = '10px';
+initialInstructionsDiv.style.color = 'white';
+initialInstructionsDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+initialInstructionsDiv.style.padding = '10px';
+initialInstructionsDiv.style.fontFamily = 'Arial, sans-serif';
+initialInstructionsDiv.style.fontSize = '14px';
+initialInstructionsDiv.style.borderRadius = '5px';
+initialInstructionsDiv.style.zIndex = '1000';
+initialInstructionsDiv.innerHTML = 'Press 1, 2, 3, 4, or 5, or select from buttons on top to switch viewpoints.<br>Press SPACE to toggle flying mode.<br>Use W, A, S, D, Q, Z to fly.';
+document.body.appendChild(initialInstructionsDiv);
+
 
 // Function to start interpolation
 function startInterpolation(viewpoint) {
@@ -201,6 +246,15 @@ function startInterpolation(viewpoint) {
     // Set target points to the selected viewpoint
     targetPosition.copy(viewpoint.position);
     targetLookAt.copy(viewpoint.lookAt);
+
+    // Hide all viewpoint overlays
+    viewpointOverlays.forEach(div => div.style.display = 'none');
+
+    // Show the overlay corresponding to the selected viewpoint
+    const viewpointIndex = viewpoints.indexOf(viewpoint);
+    if (viewpointIndex !== -1) {
+        viewpointOverlays[viewpointIndex].style.display = 'block';
+    }
 }
 
 // Function to update the interpolation
@@ -265,6 +319,8 @@ window.addEventListener('keydown', (event) => {
 
 // Animation loop with flying controls
 const moveSpeed = 100; // Adjust the speed as needed
+
+
 
 function animate(currentTime) {
     const deltaTime = (currentTime - previousTime) / 1000; // Convert to seconds
@@ -475,9 +531,11 @@ window.addEventListener('keydown', (event) => {
 });
 
 
+
 // Animation loop
 let previousTime = 0;
 animate();
+
 
 // Handle window resize
 window.addEventListener('resize', () => {
@@ -486,30 +544,93 @@ window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }, false);
 
-// Create a div for the text overlay
-const overlayDiv = document.createElement('div');
-overlayDiv.style.position = 'absolute';
-overlayDiv.style.top = '10px';
-overlayDiv.style.left = '10px';
-overlayDiv.style.color = 'white';
-overlayDiv.style.fontFamily = 'Arial, sans-serif';
-overlayDiv.style.fontSize = '14px';
-overlayDiv.style.zIndex = '1000';
-overlayDiv.innerHTML = 'Press 1, 2, 3, or 4 to switch viewpoints.<br>Press SPACE to toggle flying mode.<br>Use W, A, S, D, Q, Z to fly.<br>Press G to start the animation.';
-document.body.appendChild(overlayDiv);
+// // Create a div for the text overlay
+// const overlayDiv = document.createElement('div');
+// overlayDiv.style.position = 'absolute';
+// overlayDiv.style.top = '10px';
+// overlayDiv.style.left = '10px';
+// overlayDiv.style.color = 'white';
+// overlayDiv.style.fontFamily = 'Arial, sans-serif';
+// overlayDiv.style.fontSize = '14px';
+// overlayDiv.style.zIndex = '1000';
+// overlayDiv.innerHTML = 'Press 1, 2, 3, 4, or 5 to switch viewpoints.<br>Press SPACE to toggle flying mode.<br>Use W, A, S, D, Q, Z to fly.<br>Press G to start the animation.';
+// document.body.appendChild(overlayDiv);
+
+
 
 // Create buttons for viewpoints
 const buttonContainer = document.createElement('div');
 buttonContainer.style.position = 'absolute';
-buttonContainer.style.top = '50px';
+buttonContainer.style.top = '5px';
 buttonContainer.style.left = '10px';
 buttonContainer.style.zIndex = '1000';
 document.body.appendChild(buttonContainer);
 
 viewpoints.forEach((viewpoint, index) => {
     const button = document.createElement('button');
-    button.innerText = `Viewpoint ${index + 1}`;
+    button.innerText = `${viewpoints[index].name}`;
     button.style.margin = '5px';
     button.addEventListener('click', () => startInterpolation(viewpoint));
     buttonContainer.appendChild(button);
+});
+
+// Add detailed content to each viewpoint overlay div
+viewpointOverlays[0].innerHTML = `
+    <h3>Chapelle Des Praz (Rhino) - 1</h3>
+    <p>This viewpoint showcases the Chapelle Des Praz model created in Rhino.</p>
+`;
+
+viewpointOverlays[1].innerHTML = `
+    <h3>Patch (Nomad Sculpt) - 2</h3>
+    <p>This viewpoint highlights the Patch model sculpted in Nomad Sculpt.</p>
+`;
+
+// Add detailed content to Viewpoint Overlay 3 with a button to start the animation
+viewpointOverlays[2].innerHTML = `
+    <h3>Vulture (Blender) - 3</h3>
+    <p>This viewpoint features the Vulture model created in Blender.</p>
+    <button id="start-animation-button">Start Animation</button>
+    <p>Click the button or press <strong>G</strong> to start the animation.</p>
+`;
+
+// Add an event listener to the button in Viewpoint Overlay 3
+const startAnimationButton = document.getElementById('start-animation-button');
+if (startAnimationButton) {
+    startAnimationButton.addEventListener('click', () => {
+        if (clipAction1 && clipAction2) {
+            // Stop the default animation (clipAction2)
+            clipAction2.stop();
+
+            // Reset and play the first animation (clipAction1)
+            clipAction1.reset(); // Reset the animation to the beginning
+            clipAction1.play(); // Play the animation from the start
+
+            // Listen for when clipAction1 finishes
+            clipAction1.getMixer().addEventListener('finished', () => {
+                // When clipAction1 finishes, resume the default animation (clipAction2)
+                clipAction2.play();
+            });
+        }
+    });
+}
+
+viewpointOverlays[3].innerHTML = `
+    <h3>Aiguille du Midi (Photogrammetry) - 4</h3>
+    <p>This viewpoint displays the Aiguille du Midi model generated using photogrammetry.</p>
+`;
+
+viewpointOverlays[4].innerHTML = `
+    <h3>Resume & Contact - 5</h3>
+    <p>This viewpoint provides information about the creator and contact details.</p>
+`;
+
+// Add some basic styling to the overlay divs
+viewpointOverlays.forEach(div => {
+    div.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+    div.style.padding = '10px';
+    div.style.borderRadius = '5px';
+    div.style.marginBottom = '10px';
+    div.style.fontFamily = 'Arial, sans-serif';
+    div.style.fontSize = '14px';
+    div.style.color = 'white';
 });
