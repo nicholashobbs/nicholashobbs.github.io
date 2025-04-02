@@ -651,7 +651,7 @@ viewpointOverlays[4].innerHTML = `
     <h2>Work Experience</h2>
     
     <div class="section">
-    <p class="job-title">Operations Manager - Lefty's Bar and Grill <span class="date">(2023–2025)</span></p>
+    <p class="job-title">Operations Manager - Lefty's Bar and Grill - Ketchum, ID<span class="date">(2023–2025)</span></p>
     <ul>
         <li>Worked toward optimization of daily operational workflows by implementing data-driven strategies, resulting in cost savings and efficiency gains.</li>
         <li>Designed and deployed custom data tools to automate inventory tracking, streamline supply chain ordering, and analyze key performance metrics.</li>
@@ -661,7 +661,7 @@ viewpointOverlays[4].innerHTML = `
 </div>
 
 <div class="section">
-    <p class="job-title">Sales Operations Manager - Red Rock <span class="date">(2023)</span></p>
+    <p class="job-title">Sales Operations Manager - Red Rock - SLC, UT<span class="date">(2023)</span></p>
     <ul>
         <li>Managed customer relationships to ensure satisfaction and foster long-term partnerships.</li>
         <li>Created data tools to organize client information and contact for those clients, improving sales operations efficiency.</li>
@@ -670,7 +670,7 @@ viewpointOverlays[4].innerHTML = `
 </div>
 
 <div class="section">
-    <p class="job-title">Software Engineer - Off Piste <span class="date">(2021–2022)</span></p>
+    <p class="job-title">Software Engineer - Off Piste - SLC, UT<span class="date">(2021–2022)</span></p>
     <ul>
         <li>Developed applications using Rust and Solana, leveraging memory safety for efficient smart contracts.</li>
         <li>Prototyped ideas in Python to implement pricing and determine smart contract functionality.</li>
@@ -679,10 +679,10 @@ viewpointOverlays[4].innerHTML = `
 </div>
 
 <div class="section">
-    <p class="job-title">Data Scientist - Openlattice <span class="date">(2019–2020)</span></p>
+    <p class="job-title">Data Scientist - Openlattice - Redwood City, CA<span class="date">(2019–2020)</span></p>
     <ul>
         <li>Built a graph database to integrate client data, improving data relationships and accessibility.</li>
-        <li>Developed Python tools for seamless data integration, improving efficiency of integration process by 10x.</li>
+        <li>Developed Python tools for seamless data integration, improving efficiency of integration process by over 10x.</li>
         <li>Built custom API endpoints in Kotlin for use by data scientists and clients.</li>
         <li>Utilized BERT for deduplication, improving data quality and consistency.</li>
         <li>Created custom D3 visualizations tailored to client needs.</li>
@@ -690,11 +690,36 @@ viewpointOverlays[4].innerHTML = `
 </div>
 
 <div class="section">
-    <p class="job-title">Data Analyst - Nightfall AI <span class="date">(2019)</span></p>
+    <p class="job-title">Data Analyst - Nightfall AI - San Francisco, CA<span class="date">(2019)</span></p>
     <ul>
         <li>Built data tagging tools integrated with BERT models to identify sensitive information (PHI, PII, API keys).</li>
         <li>Optimized data processing workflows for accuracy and efficiency in data loss prevention.</li>
         <li>Collaborated with cross-functional teams to ensure compliance with data protection standards.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <p class="job-title">Data Scientist - Freelance - San Francisco, CA<span class="date">(2017-2019)</span></p>
+    <ul>
+        <li>Created program to automatically turn commented transcripts from interviews with student loan recipients and performed sentiment analysis, turning word documents into a large database and picking out relevant lines from interviews.</li>
+        <li>Built a program using a trie data structure and web-based visualizations to categorize ingredients that had been purchased and corresponding prices for a company providing meals to seniors.</li>
+        <li>Worked on dockerized program for A/B testing placement of ads and clickthrough metrics for testing UX options side by side.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <p class="job-title">Cybersecurity Analyst - Evolve Security - Chicago, IL<span class="date">(2017)</span></p>
+    <ul>
+        <li>Performed complete vulnerability assessments and penetration testing for local nonprofits in Chicago Area.</li>
+        <li>Created a system for analyzing security from various angles based on client needs, from social engineering, to physical security, to web hacking.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <p class="job-title">Data Science Fellow - Sorenson Impact Center - SLC, UT<span class="date">(2017)</span></p>
+    <ul>
+        <li>Created an analysis for University of Utah and State Government officials examining costs and benefits of providing educational subsidies to people who were formerly taken care of by the state who age out of foster care at 18.</li>
+        <li>Analyzed the effects of recent crime prevention tactics and the effects of the Justice Reinvestment Initiative on prison recidivism in Utah.</li>
     </ul>
 </div>
     
