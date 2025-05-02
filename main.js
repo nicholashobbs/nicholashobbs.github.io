@@ -660,14 +660,6 @@ viewpointOverlays[4].innerHTML = `
     </ul>
 </div>
 
-<div class="section">
-    <p class="job-title">Sales Operations Manager - Red Rock - SLC, UT<span class="date">(2023)</span></p>
-    <ul>
-        <li>Managed customer relationships to ensure satisfaction and foster long-term partnerships.</li>
-        <li>Created data tools to organize client information and contact for those clients, improving sales operations efficiency.</li>
-        <li>Analyzed sales data to identify trends and opportunities, supporting strategic choices for creating new, popular products.</li>
-    </ul>
-</div>
 
 <div class="section">
     <p class="job-title">Software Engineer - Off Piste - SLC, UT<span class="date">(2021–2022)</span></p>
@@ -690,7 +682,7 @@ viewpointOverlays[4].innerHTML = `
 </div>
 
 <div class="section">
-    <p class="job-title">Data Analyst - Nightfall AI - San Francisco, CA<span class="date">(2019)</span></p>
+    <p class="job-title">Data Analyst - Nightfall AI - San Francisco, CA<span class="date">(2018-2019)</span></p>
     <ul>
         <li>Built data tagging tools integrated with BERT models to identify sensitive information (PHI, PII, API keys).</li>
         <li>Optimized data processing workflows for accuracy and efficiency in data loss prevention.</li>
@@ -708,7 +700,7 @@ viewpointOverlays[4].innerHTML = `
 </div>
 
 <div class="section">
-    <p class="job-title">Cybersecurity Analyst - Evolve Security - Chicago, IL<span class="date">(2017)</span></p>
+    <p class="job-title">Cybersecurity Analyst - Evolve Security - Chicago, IL<span class="date">(2017-2018)</span></p>
     <ul>
         <li>Performed complete vulnerability assessments and penetration testing for local nonprofits in Chicago Area.</li>
         <li>Created a system for analyzing security from various angles based on client needs, from social engineering, to physical security, to web hacking.</li>
