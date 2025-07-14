@@ -1,0 +1,70 @@
+/* Inspired by seoul256 color palette (dark theme) */
+:root {
+    --background: #3a3a3a;
+    --foreground: #d0d0d0;
+    --comment: #8a8a8a;
+    --accent1: #d68787;
+    --accent2: #87d7af;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Roboto Mono', monospace;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--accent1);
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: var(--comment);
+    margin-top: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+nav li {
+    margin: 1rem 0;
+}
+
+nav a {
+    color: var(--foreground);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--accent2);
+    outline: none;
+}
+
+footer {
+    margin-top: 4rem;
+    color: var(--comment);
+}
