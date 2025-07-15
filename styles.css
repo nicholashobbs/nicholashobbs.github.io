@@ -68,3 +68,44 @@ footer {
     margin-top: 4rem;
     color: var(--comment);
 }
+
+/* Add this to the end of styles.css */
+.cursor {
+    display: inline-block;
+    background-color: var(--foreground);
+    margin-left: 2px;
+    animation: blink 1s infinite;
+    width: 1px; /* Adjust width of the cursor */
+}
+
+/* For a more traditional block cursor */
+.cursor.block {
+   height: 1.3rem; /* Should match the font-size */
+   vertical-align: middle;
+}
+
+@keyframes blink {
+    49% { background-color: var(--foreground); }
+    50% { background-color: transparent; }
+    99% { background-color: transparent; }
+}
+
+/* Add this to the end of styles.css */
+.contact-links {
+    margin-bottom: 1.5rem;
+}
+
+.contact-links a {
+    color: var(--foreground);
+    text-decoration: none;
+    margin: 0 1rem;
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.contact-links a:hover,
+.contact-links a:focus {
+    color: var(--accent2);
+    border-bottom: 1px solid var(--accent2);
+}

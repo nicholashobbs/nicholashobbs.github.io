@@ -651,12 +651,12 @@ viewpointOverlays[4].innerHTML = `
     <h2>Work Experience</h2>
     
     <div class="section">
-    <p class="job-title">Operations Manager - Lefty's Bar and Grill - Ketchum, ID<span class="date">(2023–2025)</span></p>
+    <p class="job-title">Data Scientist - Freelance - Salt Lake City, UT<span class="date">(2018–2025)</span></p>
     <ul>
-        <li>Worked toward optimization of daily operational workflows by implementing data-driven strategies, resulting in cost savings and efficiency gains.</li>
-        <li>Designed and deployed custom data tools to automate inventory tracking, streamline supply chain ordering, and analyze key performance metrics.</li>
-        <li>Implemented new POS systems and trained staff on their use, improving order accuracy and reducing lost revenue.</li>
-        <li>Utilized analytics platforms to monitor and report on operational KPIs, enabling data-backed decision-making and process refinement.</li>
+        <li>Workflow Optimization - Streamlined workflows and data-driven strategies, cutting costs and boosting efficiency at Lefty’s Bar and Grill in Ketchum, Idaho.</li>
+        <li>Inventory Automation - Built web-based inventory tools to automate tracking and identify inefficiencies for MealSuite, a startup delivering meals to the elderly.</li>
+        <li>A/B Testing - Built platform for testing clickthrough on various UI configurations for Ample Insight.</li>
+        <li>NLP - Integrated a series of tools to do sentiment analysis, turn commented word docs into a database, and display relevant information for Kleimann Communications.</li>
     </ul>
 </div>
 
@@ -690,14 +690,6 @@ viewpointOverlays[4].innerHTML = `
     </ul>
 </div>
 
-<div class="section">
-    <p class="job-title">Data Scientist - Freelance - San Francisco, CA<span class="date">(2017-2019)</span></p>
-    <ul>
-        <li>Created program to automatically turn commented transcripts from interviews with student loan recipients and performed sentiment analysis, turning word documents into a large database and picking out relevant lines from interviews.</li>
-        <li>Built a program using a trie data structure and web-based visualizations to categorize ingredients that had been purchased and corresponding prices for a company providing meals to seniors.</li>
-        <li>Worked on dockerized program for A/B testing placement of ads and clickthrough metrics for testing UX options side by side.</li>
-    </ul>
-</div>
 
 <div class="section">
     <p class="job-title">Cybersecurity Analyst - Evolve Security - Chicago, IL<span class="date">(2017-2018)</span></p>
