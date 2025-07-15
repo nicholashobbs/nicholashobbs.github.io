@@ -117,3 +117,124 @@ footer {
     50% { background-color: transparent; }
     99% { background-color: transparent; }
 }
+
+/* --- Final Resume Page Styles --- */
+
+.resume-container {
+    max-width: 900px;
+    text-align: left;
+    margin: 4rem auto;
+}
+
+.back-link,
+.contact-info a {
+    color: var(--accent-blue); /* Use blue for navigation/contact links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.back-link:visited,
+.contact-info a:visited {
+    color: var(--accent-blue); /* Ensure visited links keep the theme color */
+}
+
+.back-link:hover,
+.contact-info a:hover {
+    color: var(--accent-green);
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.resume-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+}
+
+.resume-header h1 {
+    color: var(--foreground);
+    margin-bottom: 0.5rem;
+}
+
+.contact-info {
+    color: var(--comment);
+}
+
+.resume-section h2 {
+    font-size: 1.5rem;
+    color: var(--accent-red);
+    border-bottom: 1px solid var(--comment);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.job-entry {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid #4a4a4a; /* A slightly lighter border for subtlety */
+}
+.job-entry:last-of-type {
+    border-bottom: none;
+}
+
+.job-header {
+    flex-basis: 70%;
+}
+
+.job-title {
+    font-size: 1.25rem;
+    color: var(--accent-green); /* Green for job titles to make them pop */
+    font-weight: 700;
+    margin: 0;
+}
+
+.job-meta {
+    font-size: 1rem;
+    color: var(--comment);
+    margin-top: 0.25rem;
+}
+
+.job-company {
+    color: var(--foreground);
+}
+
+.job-date {
+    flex-basis: 30%;
+    text-align: right;
+    color: var(--accent-yellow); /* Yellow for dates to create a clear timeline */
+    font-weight: 700;
+    padding-top: 0.1rem; /* Fine-tune vertical alignment */
+}
+
+.resume-list {
+    flex-basis: 100%;
+    margin-top: 1.5rem;
+    list-style: none;
+    padding-left: 0;
+}
+
+.resume-item {
+    display: flex;
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+}
+
+.resume-item::before {
+    content: '›'; /* A more elegant chevron bullet */
+    color: var(--accent-blue);
+    margin-right: 1rem;
+    font-weight: 700;
+}
+
+.resume-item strong {
+    color: var(--accent-yellow);
+    font-weight: 400; /* Bolding is less necessary with color */
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+}
