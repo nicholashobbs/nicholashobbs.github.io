@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const pauseAfterDeleting = 500;
 
     // TUNING LEVER 1: The speed of the corruption "ticker" in events per second.
-    const corruptionRatePerSecond = [ 2, 3, 4, 5, 6, 10, 17, 30, 40 ];
+    const corruptionRatePerSecond = [ 1, 2, 3, 4, 6, 8, 17, 30, 40 ];
 
     // TUNING LEVER 2: The chance for any character to change on a single tick.
     // These numbers are small because they are applied to *every* character on every tick.
