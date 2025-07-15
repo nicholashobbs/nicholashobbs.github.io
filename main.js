@@ -627,18 +627,18 @@ viewpointOverlays[4].innerHTML = `
     <h1>Nicholas Hobbs</h1>
     <p style="text-align: center;"><strong>Email:</strong> nicholas.r.hobbs (at) gmail.com - <strong>Phone:</strong> (801) 664-7021</p>
     <p style="text-align: center;">
-    <a href="https://www.linkedin.com/in/nrhobbs/" target="_blank" 
-     style="text-decoration: none; color: white; margin-left: 10px;"
-        onmouseover="this.style.color='red'" 
+    <a href="https://www.linkedin.com/in/nrhobbs/" target="_blank"
+      style="text-decoration: none; color: white; margin-left: 10px;"
+        onmouseover="this.style.color='red'"
         onmouseout="this.style.color='white'"
         onfocus="this.style.color='white'"
         onmousedown="this.style.color='white'"
         onmouseup="this.style.color='white'">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;">
         LinkedIn
-    </a> - 
+    </a> -
     <a href="https://github.com/nicholashobbs" target="_blank" style="text-decoration: none; color: white; margin-left: 10px;"
-        onmouseover="this.style.color='red'" 
+        onmouseover="this.style.color='red'"
         onmouseout="this.style.color='white'"
         onfocus="this.style.color='white'"
         onmousedown="this.style.color='white'"
@@ -648,80 +648,76 @@ viewpointOverlays[4].innerHTML = `
     </a>
     </p>
 
+    <h2>Professional Summary</h2>
+    <p>Entrepreneurial engineer with a strong foundation in data science, distributed systems, and cybersecurity. My career trajectory began with hands-on threat analysis, evolved into building robust data science tools, designing secure distributed systems, and ultimately launching my own technical ventures. I'm now seeking to apply this unique blend of deep technical skills and business acumen to drive innovation in security-focused or data-driven environments.</p>
+
     <h2>Work Experience</h2>
-    
+
     <div class="section">
-    <p class="job-title">Data Scientist - Freelance - Salt Lake City, UT<span class="date">(2018–2025)</span></p>
+    <p class="job-title">Contract Work - Entrepreneurial Ventures<span class="date">(2022 – Present)</span></p>
     <ul>
-        <li>Workflow Optimization - Streamlined workflows and data-driven strategies, cutting costs and boosting efficiency at Lefty’s Bar and Grill in Ketchum, Idaho.</li>
-        <li>Inventory Automation - Built web-based inventory tools to automate tracking and identify inefficiencies for MealSuite, a startup delivering meals to the elderly.</li>
-        <li>A/B Testing - Built platform for testing clickthrough on various UI configurations for Ample Insight.</li>
-        <li>NLP - Integrated a series of tools to do sentiment analysis, turn commented word docs into a database, and display relevant information for Kleimann Communications.</li>
-    </ul>
-</div>
-
-
-<div class="section">
-    <p class="job-title">Software Engineer - Off Piste - SLC, UT<span class="date">(2021–2022)</span></p>
-    <ul>
-        <li>Developed applications using Rust and Solana, leveraging memory safety for efficient smart contracts.</li>
-        <li>Prototyped ideas in Python to implement pricing and determine smart contract functionality.</li>
-        <li>Contributed to front-end design using D3 and React, creating interactive visualizations for user engagement.</li>
+        <li>Focused on entrepreneurial ventures, leveraging a broad range of technical skills to develop and launch new products and services.</li>
+        <li>Honed ability to identify market opportunities, rapidly prototype solutions, and manage full-stack development cycles.</li>
+        <li>Developed and deployed AI/NLP-driven applications using Python and Flask, leveraging MongoDB for data persistence.</li>
+        <li>Implemented forecasting and model training pipelines, including A/B testing methodologies to optimize performance.</li>
+        <li>Utilized Docker and AWS for containerization and cloud deployment, ensuring scalability and reliability of services.</li>
+        <li>Managed and maintained Linux-based environments for development and production.</li>
     </ul>
 </div>
 
 <div class="section">
-    <p class="job-title">Data Scientist - Openlattice - Redwood City, CA<span class="date">(2019–2020)</span></p>
+    <p class="job-title">Software Engineer - Off Piste<span class="date">(2021 – 2022)</span></p>
     <ul>
-        <li>Built a graph database to integrate client data, improving data relationships and accessibility.</li>
-        <li>Developed Python tools for seamless data integration, improving efficiency of integration process by over 10x.</li>
-        <li>Built custom API endpoints in Kotlin for use by data scientists and clients.</li>
-        <li>Utilized BERT for deduplication, improving data quality and consistency.</li>
-        <li>Created custom D3 visualizations tailored to client needs.</li>
+        <li>Contributed to the development of novel smart contracts in Rust, focusing on performance, security, and distributed ledger technology.</li>
+        <li>Architected and implemented smart contracts in Rust, ensuring secure and efficient execution within a distributed system.</li>
+        <li>Developed backend services and microservices using TypeScript and Node.js, integrating with blockchain infrastructure.</li>
+        <li>Designed and implemented asynchronous and concurrent programming patterns to optimize system performance.</li>
+        <li>Established robust CI/CD pipelines and comprehensive unit testing frameworks to ensure code quality and reliability.</li>
+        <li>Contributed to distributed system design and performance optimization for blockchain applications.</li>
     </ul>
 </div>
 
 <div class="section">
-    <p class="job-title">Data Analyst - Nightfall AI - San Francisco, CA<span class="date">(2018-2019)</span></p>
+    <p class="job-title">Data Scientist - Openlattice<span class="date">(2019 – 2021)</span></p>
     <ul>
-        <li>Built data tagging tools integrated with BERT models to identify sensitive information (PHI, PII, API keys).</li>
-        <li>Optimized data processing workflows for accuracy and efficiency in data loss prevention.</li>
-        <li>Collaborated with cross-functional teams to ensure compliance with data protection standards.</li>
-    </ul>
-</div>
-
-
-<div class="section">
-    <p class="job-title">Cybersecurity Analyst - Evolve Security - Chicago, IL<span class="date">(2017-2018)</span></p>
-    <ul>
-        <li>Performed complete vulnerability assessments and penetration testing for local nonprofits in Chicago Area.</li>
-        <li>Created a system for analyzing security from various angles based on client needs, from social engineering, to physical security, to web hacking.</li>
+        <li>Managed and contributed to the development of sophisticated data science tools, overseeing projects from data engineering to advanced machine learning models in Python and Java.</li>
+        <li>Led projects focused on building and optimizing data science tools using Numpy and Pandas for data manipulation and analysis.</li>
+        <li>Developed and maintained backend services and RESTful APIs using Java and Kotlin.</li>
+        <li>Implemented TensorFlow and LLM-based deep learning models for various data analysis tasks.</li>
+        <li>Utilized Dagster for orchestrating complex data engineering pipelines and data architecture.</li>
+        <li>Employed Docker and Git for version control, containerization, and collaborative development.</li>
     </ul>
 </div>
 
 <div class="section">
-    <p class="job-title">Data Science Fellow - Sorenson Impact Center - SLC, UT<span class="date">(2017)</span></p>
+    <p class="job-title">Data Analyst - Nightfall<span class="date">(2019)</span></p>
     <ul>
-        <li>Created an analysis for University of Utah and State Government officials examining costs and benefits of providing educational subsidies to people who were formerly taken care of by the state who age out of foster care at 18.</li>
-        <li>Analyzed the effects of recent crime prevention tactics and the effects of the Justice Reinvestment Initiative on prison recidivism in Utah.</li>
+        <li>Engaged with leading experts in machine learning and data loss prevention to develop and refine models for identifying and protecting sensitive information.</li>
+        <li>Gained hands-on experience with cutting-edge NLP techniques.</li>
+        <li>Contributed to the development and evaluation of PyTorch-based NLP models for data loss prevention.</li>
+        <li>Applied principles of experimental design and data selection to optimize model performance and generalizability.</li>
+        <li>Gained practical experience with the application of LLMs in security contexts.</li>
     </ul>
 </div>
-    
+
+<div class="section">
+    <p class="job-title">Cybersecurity Analyst - Evolve Security<span class="date">(2018 – 2019)</span></p>
+    <ul>
+        <li>Performed anomaly detection and investigated security incidents using Splunk.</li>
+        <li>Applied deep understanding of networking fundamentals to identify and mitigate vulnerabilities.</li>
+        <li>Implemented and enforced security best practices, data governance, and data privacy protocols.</li>
+    </ul>
+</div>
+
     <h2>Education</h2>
     <div class="section">
-        <p><strong>BS Mathematics and Statistics</strong> - University of Utah <span class="date">(2012-2017)</span></p>
-        <p><strong>HKUST</strong> - Math Exchange Program, Hong Kong <span class="date">(2013)</span></p>
-        <p><strong>Nankai University</strong> - Chinese Language Immersion Program, Nankai, China <span class="date">(2013)</span></p>
+        <p><strong>B.S. in Mathematics and Statistics</strong> - University of Utah - Salt Lake City, UT <span class="date">(2012 – 2017)</span></p>
+        <ul>
+            <li><strong>Data Science Fellowship:</strong> Sorenson Impact Center (2017) - Conducted econometric analysis and built predictive models for social impact projects.</li>
+            <li><strong>Exchange Programs:</strong> Hong Kong University of Science and Technology (Mathematics) & Nankai University (Mandarin Chinese) (2013)</li>
+            <li><strong>Relevant Coursework:</strong> Cryptography, Number Theory, Statistical Inference, Statistical Programming, Stochastic Processes.</li>
+        </ul>
     </div>
-    
-    <h2>Skills</h2>
-    <div class="section">
-        <p><strong>Work:</strong> Python (pandas, matplotlib, numpy, sklearn, scipy, tensorflow, keras, spacy, nltk, transformer, gensim, librosa), Statistics, Rust, JavaScript, NLP, Kotlin</p>
-        <p><strong>Design:</strong> Projects in D3, p5, Blender, Valence 3D, Nomad Sculpt, Procreate, three.js, Rhino/Grasshopper, Sketchup</p>
-    </div>
-    
-    <h2>Statement</h2>
-    <p>I am looking for tech jobs that allow me to learn deeper computer science concepts while incorporating more elements of design. I am interested in architecture, video games, 3D modeling, and creative work. Having spent college and my early career analyzing data and optimizing computational processes, I aim to leverage organization, data visualization, design, and gamification to create interactive and engaging experiences.</p>
 `;
 
 // Add some basic styling to the overlay divs
