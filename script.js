@@ -18,32 +18,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const pauseAfterTyping = 3000;
     const pauseAfterDeleting = 500;
 
-    // ADJUSTMENT 1: Slower and more deliberate corruption speed.
-    // The time (in ms) for each character's individual timer is now longer.
-    const corruptionIntervalRanges = [
-        [20000, 40000], // Level 0: A character might change every 20-40 seconds. Very slow.
-        [15000, 30000], // Level 1
-        [10000, 20000], // Level 2
-        [5000, 10000],  // Level 3
-        [2000, 6000],   // Level 4
-        [1000, 4000],   // Level 5
-        [500, 2000],    // Level 6
-        [300, 1000],    // Level 7
-        [200, 500]      // Level 8: Final stage is active but not frantic.
-    ];
+    // TUNING LEVER 1: The speed of the corruption "ticker" in events per second.
+    const corruptionRatePerSecond = [ 2, 3, 4, 5, 6, 10, 17, 30, 40 ];
 
-    // ADJUSTMENT 2: A smoother, more controlled probability ramp.
-    // This gives us fine-grained control over the chance of corruption at each level.
-    const corruptionProbabilities = [
-        0.10,   // Level 0: 10% chance per tick
-        0.15,   // Level 1
-        0.25,   // Level 2
-        0.35,   // Level 3
-        0.50,   // Level 4
-        0.65,   // Level 5
-        0.80,   // Level 6
-        0.95,   // Level 7
-        1.00    // Level 8: 100% chance to corrupt any remaining clean characters.
+    // TUNING LEVER 2: The chance for any character to change on a single tick.
+    // These numbers are small because they are applied to *every* character on every tick.
+    const corruptionChancePerTick = [
+        0.002, // Level 0: Very low chance
+        0.003,  // Level 1
+        0.004,  // Level 2
+        0.005,  // Level 3
+        0.007,  // Level 4
+        0.009,  // Level 5
+        0.011,   // Level 6
+        0.02,   // Level 7
+        0.03    // Level 8: Highest base chance
     ];
     
     // A corrupted character is much less likely to change again.
@@ -58,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let textElementsState = [];
     let currentPacerIndex = 0;
     let needsRender = false;
+    let corruptionTimerId = null;
     
     // --- 3. CORE ARCHITECTURE ---
 
@@ -85,48 +75,49 @@ document.addEventListener('DOMContentLoaded', function() {
         requestAnimationFrame(renderLoop);
     }
     
-    function startCharacterLoop(charState) {
-        const [min, max] = corruptionIntervalRanges[currentPacerIndex];
-        const delay = Math.random() * (max - min) + min;
+    /**
+     * The new "Corruption Ticker". On each tick, it attempts to corrupt every character.
+     */
+    function corruptionTicker() {
+        const chance = corruptionChancePerTick[currentPacerIndex];
+        let changed = false;
 
-        charState.timerId = setTimeout(() => {
-            const probability = corruptionProbabilities[currentPacerIndex];
-            const attemptProbability = charState.isCorrupted ? probability * reCorruptionPenalty : probability;
-            
-            if (charState.current.trim().length > 0 && Math.random() < attemptProbability) {
-                charState.isCorrupted = true;
-                charState.current = glitchChars[Math.floor(Math.random() * glitchChars.length)];
-                charState.color = glitchColorPalette[Math.floor(Math.random() * glitchColorPalette.length)];
-                needsRender = true;
-            }
-            startCharacterLoop(charState);
-        }, delay);
-    }
-    
-    function stopAllCharacterLoops() {
         textElementsState.forEach(state => {
             state.charStates.forEach(charState => {
-                if (charState.timerId) clearTimeout(charState.timerId);
+                const attemptProbability = charState.isCorrupted ? chance * reCorruptionPenalty : chance;
+                if (charState.current.trim().length > 0 && Math.random() < attemptProbability) {
+                    charState.isCorrupted = true;
+                    charState.current = glitchChars[Math.floor(Math.random() * glitchChars.length)];
+                    charState.color = glitchColorPalette[Math.floor(Math.random() * glitchColorPalette.length)];
+                    changed = true;
+                }
             });
         });
+
+        if (changed) {
+            needsRender = true;
+        }
+
+        const rate = corruptionRatePerSecond[currentPacerIndex];
+        const delay = 1000 / rate;
+        corruptionTimerId = setTimeout(corruptionTicker, delay);
     }
 
     function startNewCorruptionCycle() {
-        stopAllCharacterLoops();
+        if (corruptionTimerId) clearTimeout(corruptionTimerId);
+
         textElementsState = [];
         pristineState.forEach(item => {
             const charStates = item.originalText.split('').map(char => ({
                 current: char,
                 isCorrupted: false,
-                color: null,
-                timerId: null
+                color: null
             }));
             textElementsState.push({ element: item.element, charStates: charStates });
         });
+        
         needsRender = true;
-        textElementsState.forEach(state => {
-            state.charStates.forEach(charState => startCharacterLoop(charState));
-        });
+        corruptionTicker();
     }
 
     function typeEffectLoop() {
