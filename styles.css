@@ -128,14 +128,14 @@ footer {
 
 .back-link,
 .contact-info a {
-    color: var(--accent-blue); /* Use blue for navigation/contact links */
+    color: var(--accent-blue);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .back-link:visited,
 .contact-info a:visited {
-    color: var(--accent-blue); /* Ensure visited links keep the theme color */
+    color: var(--accent-blue);
 }
 
 .back-link:hover,
@@ -177,8 +177,9 @@ footer {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 2.5rem 0;
-    border-bottom: 1px solid #4a4a4a; /* A slightly lighter border for subtlety */
+    border-bottom: 1px solid #4a4a4a;
 }
+
 .job-entry:last-of-type {
     border-bottom: none;
 }
@@ -189,7 +190,7 @@ footer {
 
 .job-title {
     font-size: 1.25rem;
-    color: var(--accent-green); /* Green for job titles to make them pop */
+    color: var(--accent-green);
     font-weight: 700;
     margin: 0;
 }
@@ -207,9 +208,9 @@ footer {
 .job-date {
     flex-basis: 30%;
     text-align: right;
-    color: var(--accent-yellow); /* Yellow for dates to create a clear timeline */
+    color: var(--accent-yellow);
     font-weight: 700;
-    padding-top: 0.1rem; /* Fine-tune vertical alignment */
+    padding-top: 0.1rem;
 }
 
 .resume-list {
@@ -219,22 +220,24 @@ footer {
     padding-left: 0;
 }
 
+/* --- The Fix is Here --- */
 .resume-item {
-    display: flex;
+    position: relative; /* Establishes a positioning context for the bullet */
+    padding-left: 2rem; /* Creates space for the bullet */
     margin-bottom: 1.2rem;
     line-height: 1.7;
 }
 
 .resume-item::before {
-    content: '›'; /* A more elegant chevron bullet */
+    content: '›';
     color: var(--accent-blue);
-    margin-right: 1rem;
     font-weight: 700;
+    position: absolute; /* Takes the bullet out of the text flow */
+    left: 0; /* Aligns it to the far left of the padded space */
+    top: 0.1rem; /* Fine-tunes vertical alignment */
 }
 
 .resume-item strong {
-    color: var(--accent-yellow);
-    font-weight: 400; /* Bolding is less necessary with color */
+    font-weight: 700; /* This makes the text properly bold */
     margin-right: 0.5rem;
-    flex-shrink: 0;
 }
