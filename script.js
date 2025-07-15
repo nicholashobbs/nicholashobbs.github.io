@@ -5,21 +5,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const taglines = [
     "Clarifying Data with Security and Design",
 
-    "Securing Data with Interactive Clarity",
+    "Security, Data, Interactive Clarity",
 
-    "Design for Security, and Data",
+    "Clarifying Data with Se¢»rity ▓nd Design",
 
-    "Clarifying Data with Se¢urity ▓nd Design",
+    "S█¢ur▓ty, Ð»ta wi▓h Intera¢tive ¢larity",
 
-    "S█¢ur▓ng Ðata wi▓h Intera¢tive ¢larity",
+    "Ðe§█gn ƒ▒r Se¢urιty, αnd Ða▒a",
 
-    "De§█gn ƒ▒r Se¢urιty, αnd Da▒a",
-
-    "C█ar※fying Dα╚α wιth §█cur█ty",
+    "C█ar※fying §█cur█ty Dα╚α",
 
     "S▒cu▓in█ Ðata ▒▓ wιt█ Cla▒ιty",
 
-    "▓▒▒ Dεsιgn ▒▓▒ S▒c▓rity ║╚",
+    "▓▒▒ Ðεsιgn ▒▓▒ S▒c▓rity ║╚",
 
     "║▌§¿█║▒▓▒ ╝·╚»«╟▓▒ █║"
 ];
